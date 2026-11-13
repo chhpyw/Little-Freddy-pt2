@@ -1,0 +1,138 @@
+[
+  {
+    "check": "configured models installed",
+    "passed": true,
+    "chat_model": "qwen3:1.7b",
+    "embed_model": "nomic-embed-text"
+  },
+  {
+    "check": "live embedding",
+    "passed": true,
+    "dimensions": 768
+  },
+  {
+    "check": "live tutor Beginner / Free Chat",
+    "passed": true,
+    "status": 200,
+    "response_characters": 73,
+    "contains_thai": true,
+    "seconds": 0.42
+  },
+  {
+    "check": "live tutor Beginner / Guided Lesson",
+    "passed": true,
+    "status": 200,
+    "response_characters": 29,
+    "contains_thai": true,
+    "seconds": 0.25
+  },
+  {
+    "check": "live tutor Beginner / Roleplay",
+    "passed": true,
+    "status": 200,
+    "response_characters": 42,
+    "contains_thai": true,
+    "seconds": 0.18
+  },
+  {
+    "check": "live tutor Beginner / Grammar Help",
+    "passed": true,
+    "status": 200,
+    "response_characters": 89,
+    "contains_thai": true,
+    "seconds": 0.49
+  },
+  {
+    "check": "live tutor Intermediate / Free Chat",
+    "passed": false,
+    "status": 200,
+    "response_characters": 100,
+    "contains_thai": false,
+    "seconds": 0.47
+  },
+  {
+    "check": "live tutor Intermediate / Guided Lesson",
+    "passed": true,
+    "status": 200,
+    "response_characters": 40,
+    "contains_thai": true,
+    "seconds": 0.21
+  },
+  {
+    "check": "live tutor Intermediate / Roleplay",
+    "passed": true,
+    "status": 200,
+    "response_characters": 116,
+    "contains_thai": true,
+    "seconds": 0.3
+  },
+  {
+    "check": "live tutor Intermediate / Grammar Help",
+    "passed": true,
+    "status": 200,
+    "response_characters": 84,
+    "contains_thai": true,
+    "seconds": 0.35
+  },
+  {
+    "check": "live tutor Advanced / Free Chat",
+    "passed": true,
+    "status": 200,
+    "response_characters": 115,
+    "contains_thai": true,
+    "seconds": 0.64
+  },
+  {
+    "check": "live tutor Advanced / Guided Lesson",
+    "passed": true,
+    "status": 200,
+    "response_characters": 128,
+    "contains_thai": true,
+    "seconds": 0.45
+  },
+  {
+    "check": "live tutor Advanced / Roleplay",
+    "passed": true,
+    "status": 200,
+    "response_characters": 95,
+    "contains_thai": true,
+    "seconds": 0.58
+  },
+  {
+    "check": "live tutor Advanced / Grammar Help",
+    "passed": true,
+    "status": 200,
+    "response_characters": 78,
+    "contains_thai": true,
+    "seconds": 0.37
+  },
+  {
+    "check": "live PDF extraction and embedding upload",
+    "passed": true,
+    "status": 200
+  },
+  {
+    "check": "live explicit PDF retrieval",
+    "passed": true,
+    "status": 200,
+    "answer_has_price": true,
+    "source_metadata": [
+      "freddy-smoke.pdf"
+    ],
+    "answer_cites_filename": true
+  },
+  {
+    "check": "live semantic retrieval",
+    "passed": true,
+    "status": 200,
+    "answer_has_price": true,
+    "source_metadata": [
+      "freddy-smoke.pdf"
+    ],
+    "answer_cites_filename": true
+  },
+  {
+    "check": "temporary PDF deletion and index removal",
+    "passed": true
+  }
+]

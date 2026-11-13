@@ -1,23 +1,41 @@
-# Python
+# Python environments and caches
+.venv/
+venv/
+env/
+ENV/
 __pycache__/
 *.py[cod]
-*$py.class
 *.so
 .Python
-env/
-venv/
-.venv/
 pip-log.txt
 pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+htmlcov/
 
-# Environment Variables
+# Secrets and local account configuration
 .env
 .env.*
+*.pem
+*.key
+credentials*.json
+secrets*.json
+.aws/
 
-# Application Specific
+# User documents, derived indexes, learner data (including SQLite sidecars)
 uploads/
-vector_index.json
+vector_index*.json
+*.sqlite
+*.sqlite3
+*.db
+*.sqlite-*
+*.sqlite3-*
+*.db-*
+.index-*
+.upload-*
+.delete-*
 
-# OS files
+# Local test artifacts / editor and OS files
+node_modules/
 .DS_Store
 Thumbs.db
