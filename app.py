@@ -223,8 +223,14 @@ def tutor_prompt(settings):
     "You are Freddy's supportive AI Thai Tutor. Teach Thai through comprehensible input. "
     f"Learner proficiency: {settings['level']}. {TUTOR_LEVELS[settings['level']]} "
     f"Conversation mode: {settings['mode']}. {TUTOR_MODES[settings['mode']]} "
-    "Always include Thai script for Thai examples. "
-    + ("Include clearly labeled pronunciation guides alongside Thai examples. " if settings['pronunciation'] else
+    "In every teaching response, include a relevant Thai phrase or sentence in Thai script as part of the actual lesson or conversation. "
+    "Connect it naturally to the learner's question; never append unrelated Thai text just to include Thai characters. "
+    "Give a brief English meaning or explanation when needed for understanding, following the level and lesson translation preferences. "
+    "Check that the Thai and English express the same meaning in context, with natural word order and the correct classifier for the item or serving. "
+    "When ordering an item, use ขอ + item + quantity + classifier as appropriate; do not translate English please literally as ขอให้ (which has other uses, such as wishes). "
+    "Use ครับ for masculine polite statements/questions, ค่ะ for feminine statements and คะ for feminine questions; follow the learner's preferred style without assuming gender. "
+    "If unsure about a translation, tone or usage, say so and recommend checking with a qualified Thai speaker; never claim native verification. "
+    + ("Include clearly labeled pronunciation guides alongside Thai examples. Use tone marks à low, â falling, á high, ǎ rising, unmarked mid; doubled vowels for length; ɔ, ɛ, ʉ for distinct vowels; k/p/t unaspirated, kh/ph/th aspirated, j for จ and ch for ช/ฉ. Do not invent a pronunciation when uncertain. " if settings['pronunciation'] else
        "Do not include romanization or pronunciation guides unless the learner explicitly asks. ")
     + "Use the conversation history to reuse previously introduced vocabulary in new contexts. "
     "Introduce at most one or two new words per turn. Increase difficulty gradually only after the learner shows understanding; "
@@ -368,6 +374,9 @@ def chat():
 
     try:
         payload = {"model": CHAT_MODEL, "messages": augmented_messages, "stream": False}
+        if settings is not None:
+            # Favor focused teaching over creative drift and bound each attempt.
+            payload['options'] = {'temperature': 0.2, 'num_predict': 384}
         # Qwen3's optional thinking can exhaust the request timeout for short practice turns.
         if CHAT_MODEL.split(':')[0] in ('qwen3', 'qwen3.5'):
             payload['think'] = False
@@ -378,7 +387,19 @@ def chat():
         if not isinstance(answer, str) or not answer.strip():
             return jsonify({'error': 'Ollama returned an empty response. Please try again.'}), 502
         if settings is not None and not any('\u0e01' <= character <= '\u0e2e' for character in answer):
-            warnings.append('The local model replied without Thai script. Request a Thai example or retry in Guided Lesson mode.')
+            # Regenerate once with the same context, history, mode and generation settings.
+            # Character presence detects omissions only; it cannot certify teaching quality.
+            retry_payload = dict(payload, messages=[{
+                'role': 'system',
+                'content': system_prompt + '\n\nThe previous attempt omitted Thai script. Rewrite the answer to the learner’s latest request with a relevant Thai phrase or sentence integrated naturally into the teaching, and appropriate English explanation. Preserve the chosen mode, source facts and filename/URL citations. Do not append unrelated Thai or invent facts.'
+            }] + messages)
+            retry_result = ollama_request('/api/chat', retry_payload)
+            retry_message = retry_result.get('message') if isinstance(retry_result, dict) else None
+            retry_answer = retry_message.get('content') if isinstance(retry_message, dict) else None
+            if isinstance(retry_answer, str) and any('\u0e01' <= character <= '\u0e2e' for character in retry_answer):
+                answer = retry_answer
+            else:
+                warnings.append('The local model omitted Thai script even after a retry. Showing its original response; the Thai teaching requirement was not met. Please try again.')
         return jsonify({"response": answer, "doc_sources": list(doc_sources), "web_sources": web_sources, "warnings": warnings})
     except Exception as e:
         app.logger.error("Chat response failed: %s", type(e).__name__)

@@ -156,7 +156,7 @@ async function openLesson() {
     content.append(element('h3', 'Build a sentence'), element('p', lesson.pattern),
       element('h3', 'Politeness and tone'),
       element('p', 'ครับ (khráp) is commonly used by men. Women commonly use ค่ะ (khâ) for statements and คะ (khá) for questions. Choose particles that fit your identity and speaking style. Add them at the end of a sentence.'),
-      element('p', 'Thai has five tones. Pitch and vowel length can change meaning. Romanization uses à (low), â (falling), á (high), ǎ (rising), and unmarked vowels (mid). Listen to a Thai voice and repeat; playback does not assess your pronunciation.'));
+      element('p', 'Thai has five tones. Pitch and vowel length can change meaning. Romanization uses à (low), â (falling), á (high), ǎ (rising), and unmarked vowels (mid). Doubled vowels are long; ɔ, ɛ and ʉ are distinct vowel sounds. In aao and ɛɛo, the doubled vowel is long and o is a final glide. Initial k, p and t are unaspirated; kh, ph and th are aspirated (not English f or th). j represents จ; ch represents ช/ฉ. Proper names may retain their English spelling, as Freddy does here. These are pronunciation aids, not IPA. Listen to a Thai voice and repeat; playback does not assess your pronunciation.'));
     curriculumData.tones.forEach(([tone, thai, roman, english, hint]) => {
       content.append(element('p', `${tone}: ${hint}`), phraseRow(thai, roman, english));
     });

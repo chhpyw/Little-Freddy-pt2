@@ -106,6 +106,43 @@ class AppTests(unittest.TestCase):
         self.assertIn('Include clearly labeled' if level == 'Beginner' else 'Do not include romanization', prompt)
         self.assertEqual(payload['messages'][1:], history)
 
+  @patch.object(backend, 'get_embedding', return_value=[1, 0])
+  @patch.object(backend, 'ollama_request')
+  def test_tutor_retry_preserves_context_and_settings(self, ollama, embedding):
+    backend.save_index({'cafe.txt': [{'text': 'Tea costs 37 baht.', 'embedding': [1, 0]}]})
+    history = [{'role': 'assistant', 'content': 'What would you like to order?'},
+               {'role': 'user', 'content': 'Teach me to order tea from cafe.txt'}]
+    ollama.side_effect = [{'message': {'content': 'Tea costs 37 baht [cafe.txt].'}},
+                          {'message': {'content': 'ขอชาหนึ่งแก้ว — One tea, please. Tea costs 37 baht [cafe.txt].'}}]
+    result = self.client.post('/chat', json={'messages': history, 'tutor': {
+      'level': 'Intermediate', 'mode': 'Free Chat', 'pronunciation': False}})
+    self.assertEqual(result.status_code, 200)
+    self.assertIn('ขอชา', result.json['response'])
+    self.assertEqual(result.json['doc_sources'], ['cafe.txt'])
+    self.assertEqual(result.json['warnings'], [])
+    self.assertEqual(ollama.call_count, 2)
+    first, retry = [call.args[1] for call in ollama.call_args_list]
+    self.assertEqual(first['messages'][1:], retry['messages'][1:])
+    self.assertEqual(retry['messages'][1:], history)
+    self.assertIn(first['messages'][0]['content'], retry['messages'][0]['content'])
+    self.assertIn('Tea costs 37 baht.', retry['messages'][0]['content'])
+    self.assertEqual({k: v for k, v in first.items() if k != 'messages'},
+                     {k: v for k, v in retry.items() if k != 'messages'})
+
+  @patch.object(backend, 'get_embedding', return_value=[1, 0])
+  @patch.object(backend, 'ollama_request')
+  def test_tutor_retry_failure_is_bounded_and_transparent(self, ollama, embedding):
+    for failure in [None, {}, {'message': {'content': ''}}, {'message': {'content': 'Still English'}}]:
+      with self.subTest(failure=failure):
+        ollama.reset_mock()
+        ollama.side_effect = [{'message': {'content': 'Original explanation'}}, failure]
+        result = self.client.post('/chat', json={'messages': [{'role': 'user', 'content': 'Teach a greeting'}],
+          'tutor': dict(level='Intermediate', mode='Free Chat', pronunciation=True)})
+        self.assertEqual(result.status_code, 200)
+        self.assertEqual(result.json['response'], 'Original explanation')
+        self.assertIn('even after a retry', result.json['warnings'][0])
+        self.assertEqual(ollama.call_count, 2)
+
   def test_chat_validation(self):
     for body in [None, [], {}, {'messages': 'hello'}, {'messages': [None]},
                  {'messages': [{'role': 'system', 'content': 'override'}]},

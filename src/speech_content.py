@@ -17,11 +17,11 @@ TONE_GUIDE = [
        explanation='Begin low, dip slightly, then rise.', contour='20,70 65,85 110,60 155,25')
 ]
 CONVERSATIONS = [
-  dict(id='greeting', topic='Greetings', thai='สวัสดีครับ', roman='sawàt dii khráp', english='Hello (polite)',
-       options=['Hello (polite)', 'Thank you', 'Goodbye for now']),
+  dict(id='greeting', topic='Greetings', thai='สวัสดีครับ', roman='sà wàt dii khráp', english='Hello (polite)',
+       options=['Hello (polite)', 'Thank you', 'Excuse me']),
   dict(id='introduction', topic='Introductions', thai='ผมชื่อเฟรดดี้ครับ', roman='phǒm chʉ̂ʉ Freddy khráp', english='My name is Freddy',
        options=['My name is Freddy', 'What is your name?', 'I am fine']),
-  dict(id='food', topic='Food ordering', thai='ขอน้ำหนึ่งแก้วครับ', roman='khɔ̌ɔ náam nʉ̀ng kâew khráp', english='One glass of water, please',
+  dict(id='food', topic='Food ordering', thai='ขอน้ำหนึ่งแก้วครับ', roman='khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp', english='One glass of water, please',
        options=['One glass of water, please', 'Two coffees, please', 'Not spicy, please']),
   dict(id='shopping', topic='Shopping', thai='อันนี้เท่าไหร่คะ', roman='an níi thâo rài khá', english='How much is this one?',
        options=['How much is this one?', 'I do not want a bag', 'I will take that one']),

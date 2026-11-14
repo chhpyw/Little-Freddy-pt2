@@ -139,7 +139,7 @@ $('clear-chat').addEventListener('click', () => {
   saveConversation();
   $('chat-window').replaceChildren();
   $('user-input').value = '';
-  appendMessage('assistant', 'Sawasdee! What would you like to practice today?');
+  appendMessage('assistant', 'สวัสดี! (sà wàt dii — Hello!) What would you like to practice today?');
   status('chat-status', '');
 });
 $('tutor-level').addEventListener('change', () => {
