@@ -1,0 +1,559 @@
+[
+  {
+    "model": "qwen3.5:4b",
+    "case": "greeting",
+    "repeat": 1,
+    "status": 200,
+    "passed": true,
+    "seconds": 3.31,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "Here is a simple and friendly greeting you can use to start our conversation. It's polite for both men and women.\nThai example (script checked only): สวัสดีครับ\nPronunciation guide: Sawatdee khrap\nEnglish meaning: Hello (male speaker)\nThai example (script checked only): สวัสดีค่ะ\nPronunciation guide: Sawatdee kah\nEnglish meaning: Hello (female speaker)\nLanguage quotation (Thai): สวัสดีครับ\nThis is the standard greeting used by male speakers. The word 'สวัสดี' means hello, and 'ครับ' adds politeness.",
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Hello (male speaker)",
+            "romanization": "Sawatdee khrap",
+            "thai": "สวัสดีครับ"
+          },
+          {
+            "english": "Hello (female speaker)",
+            "romanization": "Sawatdee kah",
+            "thai": "สวัสดีค่ะ"
+          }
+        ],
+        "explanation": "Here is a simple and friendly greeting you can use to start our conversation. It's polite for both men and women.",
+        "language_notes": [
+          {
+            "explanation": "This is the standard greeting used by male speakers. The word 'สวัสดี' means hello, and 'ครับ' adds politeness.",
+            "language": "Thai",
+            "quote": "สวัสดีครับ"
+          }
+        ],
+        "reference_titles": []
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Here is a simple and friendly greeting you can use to start our conversation. It's polite for both men and women.\",\n  \"examples\": [\n    {\n      \"thai\": \"สวัสดีครับ\",\n      \"english\": \"Hello (male speaker)\",\n      \"romanization\": \"Sawatdee khrap\"\n    },\n    {\n      \"thai\": \"สวัสดีค่ะ\",\n      \"english\": \"Hello (female speaker)\",\n      \"romanization\": \"Sawatdee kah\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"สวัสดีครับ\",\n      \"explanation\": \"This is the standard greeting used by male speakers. The word 'สวัสดี' means hello, and 'ครับ' adds politeness.\"\n    }\n  ],\n  \"reference_titles\": []\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "food-ordering",
+    "repeat": 1,
+    "status": 200,
+    "passed": true,
+    "seconds": 15.91,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 2,
+      "response": "Here is how you can politely order one plate of non-spicy fried rice in Thai. We will use the polite particle 'ครับ' (khráp) for a masculine tone, which is standard for general requests.\nThai example (script checked only): ขอข้าวผัดไม่เผ็ดหนึ่งจาน ครับ\nPronunciation guide: Kao khua pad mai paeed nueng jan khráp\nEnglish meaning: I would like one plate of non-spicy fried rice, please.\nThai example (script checked only): ข้าวผัดไม่เผ็ด\nPronunciation guide: Khua pad mai paeed\nEnglish meaning: Non-spicy fried rice\nThai example (script checked only): หนึ่งจาน\nPronunciation guide: Nueng jan\nEnglish meaning: One plate/meal\nLanguage quotation (Thai): ขอข้าวผัดไม่เผ็ดหนึ่งจาน ครับ\nThis sentence breaks down into: 'Kao' (I request), 'Khua pad' (fried rice), 'Mai paeed' (not spicy), 'Nueng jan' (one plate), and 'Khráp' (polite masculine particle). The word order follows the structure of Request + Item + Description + Quantity + Classifier.\nReference title: Thai Restaurant Ordering Guide",
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "I would like one plate of non-spicy fried rice, please.",
+            "romanization": "Kao khua pad mai paeed nueng jan khráp",
+            "thai": "ขอข้าวผัดไม่เผ็ดหนึ่งจาน ครับ"
+          },
+          {
+            "english": "Non-spicy fried rice",
+            "romanization": "Khua pad mai paeed",
+            "thai": "ข้าวผัดไม่เผ็ด"
+          },
+          {
+            "english": "One plate/meal",
+            "romanization": "Nueng jan",
+            "thai": "หนึ่งจาน"
+          }
+        ],
+        "explanation": "Here is how you can politely order one plate of non-spicy fried rice in Thai. We will use the polite particle 'ครับ' (khráp) for a masculine tone, which is standard for general requests.",
+        "language_notes": [
+          {
+            "explanation": "This sentence breaks down into: 'Kao' (I request), 'Khua pad' (fried rice), 'Mai paeed' (not spicy), 'Nueng jan' (one plate), and 'Khráp' (polite masculine particle). The word order follows the structure of Request + Item + Description + Quantity + Classifier.",
+            "language": "Thai",
+            "quote": "ขอข้าวผัดไม่เผ็ดหนึ่งจาน ครับ"
+          }
+        ],
+        "reference_titles": [
+          "Thai Restaurant Ordering Guide"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Great choice! Ordering food is a fun way to practice Thai. Today we'll focus on how to politely ask for 'one plate of non-spicy fried rice'. In Thai, we use the polite particle 'ครับ' (khráp) if you are male or 'ค่ะ' (ká) if female. The phrase 'ไม่เผ็ด' (mai pèt) means 'not spicy', and 'ข้าวผัด' (khào phat) is 'fried rice'. We also need to specify 'หนึ่งจาน' (nûng ján), which means 'one plate', using the classifier 'จาน' (ján).\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ\",\n      \"english\": \"I would like one plate of non-spicy fried rice, please.\",\n      \"romanization\": \"Kòo khào phát mai pèt nûng ján khráp\"\n    },\n    {\n      \"thai\": \"ขอข้าวผัดไม่เผ็ดหนึ่งจานค่ะ\",\n      \"english\": \"I would like one plate of non-spicy fried rice, please.\",\n      \"romanization\": \"Kòo khào phát mai pèt nûng ján ká\"\n    },\n    {\n      \"thai\": \"ข้าวผัดไม่เผ็ด... ขอหนึ่งจาน\",\n      \"english\": \"Non-spicy fried rice... I'll take one plate.\",\n      \"romanization\": \"Khào phát mai pèt... kòo nûng ján\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอ + item + quantity + classifier\",\n      \"explanation\": \"This is the standard polite structure for ordering: 'Kò' (want) + food item + number + noun. For rice, we use 'จาน' (plate). Remember to add 'ครับ' or 'ค่ะ' at the end for politeness.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ไม่เผ็ด\",\n      \"explanation\": \"'Mai pèt' means 'not spicy'. It's a common way to ask for mild food. The tone mark on 'pèt' is falling (â), making it sound like 'pet'.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ข้าวผัด\",\n      \"explanation\": \"'Khào phát' means 'fried rice'. Note that 'phát' has a high tone mark (á), pronounced like 'pat'.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Ordering Guide.pdf\"\n  ]\n}",
+        "rejection": "Quote labeled Thai contains inappropriate script"
+      },
+      {
+        "content": "{\n  \"explanation\": \"Here is how you can politely order one plate of non-spicy fried rice in Thai. We will use the polite particle 'ครับ' (khráp) for a masculine tone, which is standard for general requests.\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอข้าวผัดไม่เผ็ดหนึ่งจาน ครับ\",\n      \"english\": \"I would like one plate of non-spicy fried rice, please.\",\n      \"romanization\": \"Kao khua pad mai paeed nueng jan khráp\"\n    },\n    {\n      \"thai\": \"ข้าวผัดไม่เผ็ด\",\n      \"english\": \"Non-spicy fried rice\",\n      \"romanization\": \"Khua pad mai paeed\"\n    },\n    {\n      \"thai\": \"หนึ่งจาน\",\n      \"english\": \"One plate/meal\",\n      \"romanization\": \"Nueng jan\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอข้าวผัดไม่เผ็ดหนึ่งจาน ครับ\",\n      \"explanation\": \"This sentence breaks down into: 'Kao' (I request), 'Khua pad' (fried rice), 'Mai paeed' (not spicy), 'Nueng jan' (one plate), and 'Khráp' (polite masculine particle). The word order follows the structure of Request + Item + Description + Quantity + Classifier.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Restaurant Ordering Guide\"\n  ]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "correct-wrong-language",
+    "repeat": 1,
+    "status": 200,
+    "passed": true,
+    "seconds": 5.82,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "You are absolutely right! The previous response contained a language error where I used Burmese script instead of Thai script for the teaching material. Thank you for catching that. Here is the correct way to order one glass of water in actual Thai, written in proper Thai Unicode characters.\nThai example (script checked only): ขอแก้วน้ำหนึ่งแก้ว\nPronunciation guide: Kao kae nam num kae\nEnglish meaning: Request: One glass of water\nThai example (script checked only): ขอแก้วน้ำเย็น\nPronunciation guide: Kao kae nam yen\nEnglish meaning: Request: Cold water (glass implied)\nThai example (script checked only): ขอแก้วน้ำเปล่า\nPronunciation guide: Kao kae nam plao\nEnglish meaning: Request: Plain water (no ice/sugar implied)\nLanguage quotation (Thai): ขอแก้วน้ำหนึ่งแก้ว\nThis phrase breaks down as: ขอ (request) + แก้ว (glass) + น้ำ (water) + หนึ่ง (one) + แก้ว (classifier for glasses). Note that 'แก้ว' is used twice here: once as a noun and once as a classifier. The tone marks are unmarked (mid) for most syllables, except the final 'น้ำ' which has a falling tone.",
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Request: One glass of water",
+            "romanization": "Kao kae nam num kae",
+            "thai": "ขอแก้วน้ำหนึ่งแก้ว"
+          },
+          {
+            "english": "Request: Cold water (glass implied)",
+            "romanization": "Kao kae nam yen",
+            "thai": "ขอแก้วน้ำเย็น"
+          },
+          {
+            "english": "Request: Plain water (no ice/sugar implied)",
+            "romanization": "Kao kae nam plao",
+            "thai": "ขอแก้วน้ำเปล่า"
+          }
+        ],
+        "explanation": "You are absolutely right! The previous response contained a language error where I used Burmese script instead of Thai script for the teaching material. Thank you for catching that. Here is the correct way to order one glass of water in actual Thai, written in proper Thai Unicode characters.",
+        "language_notes": [
+          {
+            "explanation": "This phrase breaks down as: ขอ (request) + แก้ว (glass) + น้ำ (water) + หนึ่ง (one) + แก้ว (classifier for glasses). Note that 'แก้ว' is used twice here: once as a noun and once as a classifier. The tone marks are unmarked (mid) for most syllables, except the final 'น้ำ' which has a falling tone.",
+            "language": "Thai",
+            "quote": "ขอแก้วน้ำหนึ่งแก้ว"
+          }
+        ],
+        "reference_titles": []
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"You are absolutely right! The previous response contained a language error where I used Burmese script instead of Thai script for the teaching material. Thank you for catching that. Here is the correct way to order one glass of water in actual Thai, written in proper Thai Unicode characters.\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอแก้วน้ำหนึ่งแก้ว\",\n      \"english\": \"Request: One glass of water\",\n      \"romanization\": \"Kao kae nam num kae\"\n    },\n    {\n      \"thai\": \"ขอแก้วน้ำเย็น\",\n      \"english\": \"Request: Cold water (glass implied)\",\n      \"romanization\": \"Kao kae nam yen\"\n    },\n    {\n      \"thai\": \"ขอแก้วน้ำเปล่า\",\n      \"english\": \"Request: Plain water (no ice/sugar implied)\",\n      \"romanization\": \"Kao kae nam plao\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอแก้วน้ำหนึ่งแก้ว\",\n      \"explanation\": \"This phrase breaks down as: ขอ (request) + แก้ว (glass) + น้ำ (water) + หนึ่ง (one) + แก้ว (classifier for glasses). Note that 'แก้ว' is used twice here: once as a noun and once as a classifier. The tone marks are unmarked (mid) for most syllables, except the final 'น้ำ' which has a falling tone.\"\n    }\n  ],\n  \"reference_titles\": []\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "language-discussion",
+    "repeat": 1,
+    "status": 502,
+    "passed": false,
+    "seconds": 12.98,
+    "response": {
+      "code": "invalid_thai_generation",
+      "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model."
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Hello! It's great that you're interested in greetings from different cultures. While 'မင်္ဂလာပါ' (Mingalar pa) is a formal Burmese greeting meaning 'Welcome' or 'Greetings', we'll focus on the Thai equivalent today. In Thai, the common friendly greeting is 'สวัสดีครับ/ค่ะ'. Let's explore this together in our relaxed chat about how greetings connect us across languages.\",\n  \"examples\": [\n    {\n      \"thai\": \"สวัสดีครับ\",\n      \"english\": \"Hello (masculine polite)\",\n      \"romanization\": \"Sawatdee khrap\"\n    },\n    {\n      \"thai\": \"สวัสดีค่ะ\",\n      \"english\": \"Hello (feminine polite)\",\n      \"romanization\": \"Sawatdee kah\"\n    },\n    {\n      \"thai\": \"ยินดีต้อนรับครับ\",\n      \"english\": \"Welcome, please come in (masculine)\",\n      \"romanization\": \"Yin dtong nam khrap\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"สวัสดีครับ\",\n      \"explanation\": \"This is the standard masculine polite greeting used in Thailand. The tone mark on 'ส' is unmarked (mid), while 'า' has a high tone and 'ด' is unmarked. It's similar to 'Mingalar pa' but uses Thai phonology.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ยินดีต้อนรับครับ\",\n      \"explanation\": \"A more formal version meaning 'Welcome'. The doubled vowel 'ตอ' indicates length, and the suffix 'รับ' adds the meaning of 'receive'. This phrase is often used when welcoming guests.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Language Basics: Greetings and Politeness\"\n  ]\n}",
+        "rejection": "Invalid explanation script"
+      },
+      {
+        "content": "{\n  \"explanation\": \"While you mentioned the Burmese greeting 'မင်္ဂလာပါ' (Mingalar pa), which means 'Welcome!' or 'Hello!', today we will focus on its Thai equivalent. In Thailand, the standard polite greeting is 'สวัสดีครับ/ค่ะ'. This word is versatile and used in almost all social situations, from casual chats to formal business meetings. Unlike some languages where you must choose between a formal and informal version, Thai uses one word for both, adjusting only the ending particle based on who you are speaking to.\",\n  \"examples\": [\n    {\n      \"thai\": \"สวัสดีครับ\",\n      \"english\": \"Hello (male speaker)\",\n      \"romanization\": \"Sawatdee khrap\"\n    },\n    {\n      \"thai\": \"สวัสดีค่ะ\",\n      \"english\": \"Hello (female speaker)\",\n      \"romanization\": \"Sawatdee ka\"\n    },\n    {\n      \"thai\": \"สวัสดีครับ ผมชื่อ ก้อง\",\n      \"english\": \"Hello, my name is Kong.\",\n      \"romanization\": \"Sawatdee khrap phom chom Kong\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"สวัสดีครับ ผมชื่อ ก้อง\",\n      \"explanation\": \"This sentence introduces the standard greeting 'Sawatdee' followed by a polite male particle 'khrap', and then states the speaker's name. It demonstrates how to combine a greeting with personal introduction in a natural conversation flow.\"\n    }\n  ],\n  \"reference_titles\": []\n}",
+        "rejection": "Invalid explanation script"
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "greeting",
+    "repeat": 2,
+    "status": 200,
+    "passed": true,
+    "seconds": 5.12,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "Hello! Let's start our conversation with a warm greeting. In Thai, we often use 'Sawasdee' to greet friends or strangers politely.\nThai example (script checked only): สวัสดีครับ\nPronunciation guide: sawat-dii khrap\nEnglish meaning: Hello (male speaker)\nThai example (script checked only): สวัสดีค่ะ\nPronunciation guide: sawat-dii ka\nEnglish meaning: Hello (female speaker)\nThai example (script checked only): สวัสดีครับ/ค่ะ\nPronunciation guide: sawat-dii khrap/ka\nEnglish meaning: Hello (gender-neutral form)\nLanguage quotation (Thai): สวัสดีครับ\nThis is the standard polite greeting used by males. The tone mark on 'Sa' (à) makes it fall, and 'dee' has no mark for a mid tone.\nLanguage quotation (Thai): สวัสดีค่ะ\nThis is the standard polite greeting used by females. The final vowel 'a' (à) indicates a falling tone at the end.",
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Hello (male speaker)",
+            "romanization": "sawat-dii khrap",
+            "thai": "สวัสดีครับ"
+          },
+          {
+            "english": "Hello (female speaker)",
+            "romanization": "sawat-dii ka",
+            "thai": "สวัสดีค่ะ"
+          },
+          {
+            "english": "Hello (gender-neutral form)",
+            "romanization": "sawat-dii khrap/ka",
+            "thai": "สวัสดีครับ/ค่ะ"
+          }
+        ],
+        "explanation": "Hello! Let's start our conversation with a warm greeting. In Thai, we often use 'Sawasdee' to greet friends or strangers politely.",
+        "language_notes": [
+          {
+            "explanation": "This is the standard polite greeting used by males. The tone mark on 'Sa' (à) makes it fall, and 'dee' has no mark for a mid tone.",
+            "language": "Thai",
+            "quote": "สวัสดีครับ"
+          },
+          {
+            "explanation": "This is the standard polite greeting used by females. The final vowel 'a' (à) indicates a falling tone at the end.",
+            "language": "Thai",
+            "quote": "สวัสดีค่ะ"
+          }
+        ],
+        "reference_titles": []
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Hello! Let's start our conversation with a warm greeting. In Thai, we often use 'Sawasdee' to greet friends or strangers politely.\",\n  \"examples\": [\n    {\n      \"thai\": \"สวัสดีครับ\",\n      \"english\": \"Hello (male speaker)\",\n      \"romanization\": \"sawat-dii khrap\"\n    },\n    {\n      \"thai\": \"สวัสดีค่ะ\",\n      \"english\": \"Hello (female speaker)\",\n      \"romanization\": \"sawat-dii ka\"\n    },\n    {\n      \"thai\": \"สวัสดีครับ/ค่ะ\",\n      \"english\": \"Hello (gender-neutral form)\",\n      \"romanization\": \"sawat-dii khrap/ka\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"สวัสดีครับ\",\n      \"explanation\": \"This is the standard polite greeting used by males. The tone mark on 'Sa' (à) makes it fall, and 'dee' has no mark for a mid tone.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"สวัสดีค่ะ\",\n      \"explanation\": \"This is the standard polite greeting used by females. The final vowel 'a' (à) indicates a falling tone at the end.\"\n    }\n  ],\n  \"reference_titles\": []\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "food-ordering",
+    "repeat": 2,
+    "status": 200,
+    "passed": true,
+    "seconds": 19.46,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 2,
+      "response": "Here is how you can politely order one plate of non-spicy fried rice in Thai. We will use the polite particle 'ครับ' (khrap) for masculine speakers and 'ค่ะ' (ka) for feminine speakers. The key phrase involves using 'ขอ' (kho) to mean 'I would like', followed by the item, quantity, and the specific classifier for rice dishes.\nThai example (script checked only): ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ\nPronunciation guide: Kho khao pad mai paeed nueng jaan khrap\nEnglish meaning: I would like one plate of non-spicy fried rice, please.\nThai example (script checked only): ขอข้าวผัดไม่เผ็ดหนึ่งจานค่ะ\nPronunciation guide: Kho khao pad mai paeed nueng jaan ka\nEnglish meaning: I would like one plate of non-spicy fried rice, please.\nThai example (script checked only): ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ\nPronunciation guide: Kho khao pad mai paeed nueng jaan khrap\nEnglish meaning: I would like one plate of non-spicy fried rice, please.\nLanguage quotation (Thai): ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ\nThis sentence breaks down as: 'Kho' (I would like) + 'Khao pad' (fried rice) + 'Mai paeed' (not spicy) + 'Nueng jaan' (one plate). The word 'Jaan' is the classifier used for serving portions of food, similar to how we use 'plate' or 'serving' in English.\nLanguage quotation (Thai): ไม่เผ็ด\n'Mai paeed' means 'not spicy'. In Thai restaurants, if you want to avoid heat, always specify 'mai paeed' because many dishes are naturally spicy by default.\nLanguage quotation (Thai): หนึ่งจาน\n'Nueng jaan' means 'one plate'. The word 'Jaan' is crucial here; without it, the sentence sounds incomplete. It indicates a standard serving size.\nReference title: Thai Restaurant Ordering Guide.pdf",
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "I would like one plate of non-spicy fried rice, please.",
+            "romanization": "Kho khao pad mai paeed nueng jaan khrap",
+            "thai": "ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ"
+          },
+          {
+            "english": "I would like one plate of non-spicy fried rice, please.",
+            "romanization": "Kho khao pad mai paeed nueng jaan ka",
+            "thai": "ขอข้าวผัดไม่เผ็ดหนึ่งจานค่ะ"
+          },
+          {
+            "english": "I would like one plate of non-spicy fried rice, please.",
+            "romanization": "Kho khao pad mai paeed nueng jaan khrap",
+            "thai": "ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ"
+          }
+        ],
+        "explanation": "Here is how you can politely order one plate of non-spicy fried rice in Thai. We will use the polite particle 'ครับ' (khrap) for masculine speakers and 'ค่ะ' (ka) for feminine speakers. The key phrase involves using 'ขอ' (kho) to mean 'I would like', followed by the item, quantity, and the specific classifier for rice dishes.",
+        "language_notes": [
+          {
+            "explanation": "This sentence breaks down as: 'Kho' (I would like) + 'Khao pad' (fried rice) + 'Mai paeed' (not spicy) + 'Nueng jaan' (one plate). The word 'Jaan' is the classifier used for serving portions of food, similar to how we use 'plate' or 'serving' in English.",
+            "language": "Thai",
+            "quote": "ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ"
+          },
+          {
+            "explanation": "'Mai paeed' means 'not spicy'. In Thai restaurants, if you want to avoid heat, always specify 'mai paeed' because many dishes are naturally spicy by default.",
+            "language": "Thai",
+            "quote": "ไม่เผ็ด"
+          },
+          {
+            "explanation": "'Nueng jaan' means 'one plate'. The word 'Jaan' is crucial here; without it, the sentence sounds incomplete. It indicates a standard serving size.",
+            "language": "Thai",
+            "quote": "หนึ่งจาน"
+          }
+        ],
+        "reference_titles": [
+          "Thai Restaurant Ordering Guide.pdf"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Great choice! Ordering food is a fun way to practice Thai. To order 'one plate of non-spicy fried rice', we use the polite structure 'ขอ' (kɔː) for 'I would like'. We specify 'หนึ่งจาน' (nûang jǎan) for 'one plate' and 'ข้าวผัดไม่เผ็ด' (kâo pàt mâi pèet) for 'non-spicy fried rice'. Remember, in Thai, we often put the adjective before the noun. Let's practice this together.\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ\",\n      \"english\": \"I would like one plate of non-spicy fried rice, please.\",\n      \"romanization\": \"Kɔː kâo pàt mâi pèet nûang jǎan khráp\"\n    },\n    {\n      \"thai\": \"ข้าวผัดไม่เผ็ด\",\n      \"english\": \"Non-spicy fried rice\",\n      \"romanization\": \"Kâo pàt mâi pèet\"\n    },\n    {\n      \"thai\": \"หนึ่งจาน\",\n      \"english\": \"One plate\",\n      \"romanization\": \"Nûang jǎan\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ\",\n      \"explanation\": \"This is the polite way to order. 'ขอ' means 'I would like'. 'ข้าวผัดไม่เผ็ด' describes the dish without spice. 'หนึ่งจาน' specifies one plate. The tone mark on 'ส' in 'จาน' is falling (â), making it sound like 'jǎan'. The final 'ครับ' adds politeness for a male speaker.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ข้าวผัดไม่เผ็ด\",\n      \"explanation\": \"'ข้าวผัด' is fried rice. We add 'ไม่' (mâi) to mean 'not', and 'เผ็ด' (pèet) for 'spicy'. So, 'ไม่เผ็ด' literally means 'not spicy'. This phrase is very common in restaurants.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"หนึ่งจาน\",\n      \"explanation\": \"'หนึ่ง' (nûang) means one. 'จาน' (jǎan) is the classifier for plates or bowls of food. We always use this structure when counting plates: number + classifier.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Restaurant Ordering Guide.pdf\"\n  ]\n}",
+        "rejection": "Invalid explanation script"
+      },
+      {
+        "content": "{\n  \"explanation\": \"Here is how you can politely order one plate of non-spicy fried rice in Thai. We will use the polite particle 'ครับ' (khrap) for masculine speakers and 'ค่ะ' (ka) for feminine speakers. The key phrase involves using 'ขอ' (kho) to mean 'I would like', followed by the item, quantity, and the specific classifier for rice dishes.\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ\",\n      \"english\": \"I would like one plate of non-spicy fried rice, please.\",\n      \"romanization\": \"Kho khao pad mai paeed nueng jaan khrap\"\n    },\n    {\n      \"thai\": \"ขอข้าวผัดไม่เผ็ดหนึ่งจานค่ะ\",\n      \"english\": \"I would like one plate of non-spicy fried rice, please.\",\n      \"romanization\": \"Kho khao pad mai paeed nueng jaan ka\"\n    },\n    {\n      \"thai\": \"ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ\",\n      \"english\": \"I would like one plate of non-spicy fried rice, please.\",\n      \"romanization\": \"Kho khao pad mai paeed nueng jaan khrap\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ\",\n      \"explanation\": \"This sentence breaks down as: 'Kho' (I would like) + 'Khao pad' (fried rice) + 'Mai paeed' (not spicy) + 'Nueng jaan' (one plate). The word 'Jaan' is the classifier used for serving portions of food, similar to how we use 'plate' or 'serving' in English.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ไม่เผ็ด\",\n      \"explanation\": \"'Mai paeed' means 'not spicy'. In Thai restaurants, if you want to avoid heat, always specify 'mai paeed' because many dishes are naturally spicy by default.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"หนึ่งจาน\",\n      \"explanation\": \"'Nueng jaan' means 'one plate'. The word 'Jaan' is crucial here; without it, the sentence sounds incomplete. It indicates a standard serving size.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Restaurant Ordering Guide.pdf\"\n  ]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "correct-wrong-language",
+    "repeat": 2,
+    "status": 200,
+    "passed": true,
+    "seconds": 12.23,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 2,
+      "response": "You are absolutely right! The previous response contained text in the Myanmar (Burmese) script instead of Thai. I apologize for that error. Here is the correct way to order one glass of water in Thai, using proper Thai script and English pronunciation guides.\nThai example (script checked only): ขอแก้วน้ำหนึ่งแก้ว\nPronunciation guide: Kao kae nam num kae\nEnglish meaning: Kao kae nam num kae (I want one glass of water)\nThai example (script checked only): ขอแก้วน้ำเย็น\nPronunciation guide: Kao kae nam yen\nEnglish meaning: Kao kae nam yen (I want cold water)\nThai example (script checked only): ขอแก้วน้ำเปล่า\nPronunciation guide: Kao kae nam plao\nEnglish meaning: Kao kae nam plao (I want plain water / tap water)\nLanguage quotation (Thai): ขอแก้วน้ำหนึ่งแก้ว\nThis phrase means 'I want one glass of water'. The word 'ขอ' (kào) is the polite way to say 'I want' or 'Please give me'. 'แก้ว' (kǎe) means 'glass', and 'น้ำ' (nam) means 'water'. Note that 'หนึ่ง' (num) means 'one', but when counting glasses, we often just repeat the noun 'แก้ว' instead of saying 'num kae' explicitly in casual speech.\nReference title: Thai Language Basics: Ordering Food",
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Kao kae nam num kae (I want one glass of water)",
+            "romanization": "Kao kae nam num kae",
+            "thai": "ขอแก้วน้ำหนึ่งแก้ว"
+          },
+          {
+            "english": "Kao kae nam yen (I want cold water)",
+            "romanization": "Kao kae nam yen",
+            "thai": "ขอแก้วน้ำเย็น"
+          },
+          {
+            "english": "Kao kae nam plao (I want plain water / tap water)",
+            "romanization": "Kao kae nam plao",
+            "thai": "ขอแก้วน้ำเปล่า"
+          }
+        ],
+        "explanation": "You are absolutely right! The previous response contained text in the Myanmar (Burmese) script instead of Thai. I apologize for that error. Here is the correct way to order one glass of water in Thai, using proper Thai script and English pronunciation guides.",
+        "language_notes": [
+          {
+            "explanation": "This phrase means 'I want one glass of water'. The word 'ขอ' (kào) is the polite way to say 'I want' or 'Please give me'. 'แก้ว' (kǎe) means 'glass', and 'น้ำ' (nam) means 'water'. Note that 'หนึ่ง' (num) means 'one', but when counting glasses, we often just repeat the noun 'แก้ว' instead of saying 'num kae' explicitly in casual speech.",
+            "language": "Thai",
+            "quote": "ขอแก้วน้ำหนึ่งแก้ว"
+          }
+        ],
+        "reference_titles": [
+          "Thai Language Basics: Ordering Food"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"You are absolutely right! The previous response contained text in the Myanmar (Burmese) script, which is not Thai. I apologize for that error. Let's focus on ordering a glass of water correctly in Thai using standard Thai script and proper grammar.\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอแก้วน้ำเปล่า\",\n      \"english\": \"I would like a glass of plain water.\",\n      \"romanization\": \"Kao khae naem plae\"\n    },\n    {\n      \"thai\": \"ขอแก้วน้ำเย็น\",\n      \"english\": \"I would like a glass of cold water.\",\n      \"romanization\": \"Kao khae naem yen\"\n    },\n    {\n      \"thai\": \"ขอแก้วน้ำเปล่า 1 แก้ว\",\n      \"english\": \"I would like one glass of plain water.\",\n      \"romanization\": \"Kao khae naem plae, 1 khae\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอ + item + quantity + classifier\",\n      \"explanation\": \"When ordering food or drinks in Thai, the structure is 'Kao' (I want) + the item name + number + the specific classifier. For glasses of water, the classifier is 'khae' (แก้ว). Note that 'Kao' here means 'request' or 'ask for', not 'wish' like in English.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Language Basics: Ordering Food and Drinks\"\n  ]\n}",
+        "rejection": "Quote labeled Thai contains inappropriate script"
+      },
+      {
+        "content": "{\n  \"explanation\": \"You are absolutely right! The previous response contained text in the Myanmar (Burmese) script instead of Thai. I apologize for that error. Here is the correct way to order one glass of water in Thai, using proper Thai script and English pronunciation guides.\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอแก้วน้ำหนึ่งแก้ว\",\n      \"english\": \"Kao kae nam num kae (I want one glass of water)\",\n      \"romanization\": \"Kao kae nam num kae\"\n    },\n    {\n      \"thai\": \"ขอแก้วน้ำเย็น\",\n      \"english\": \"Kao kae nam yen (I want cold water)\",\n      \"romanization\": \"Kao kae nam yen\"\n    },\n    {\n      \"thai\": \"ขอแก้วน้ำเปล่า\",\n      \"english\": \"Kao kae nam plao (I want plain water / tap water)\",\n      \"romanization\": \"Kao kae nam plao\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอแก้วน้ำหนึ่งแก้ว\",\n      \"explanation\": \"This phrase means 'I want one glass of water'. The word 'ขอ' (kào) is the polite way to say 'I want' or 'Please give me'. 'แก้ว' (kǎe) means 'glass', and 'น้ำ' (nam) means 'water'. Note that 'หนึ่ง' (num) means 'one', but when counting glasses, we often just repeat the noun 'แก้ว' instead of saying 'num kae' explicitly in casual speech.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Language Basics: Ordering Food\"\n  ]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "language-discussion",
+    "repeat": 2,
+    "status": 502,
+    "passed": false,
+    "seconds": 12.23,
+    "response": {
+      "code": "invalid_thai_generation",
+      "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model."
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Hello! It's great to meet you. You asked about the Burmese greeting 'မင်္ဂလာပါ' (Mingalar pa). While that is a beautiful traditional greeting from Myanmar, today we will focus on learning the Thai equivalent, which shares similar warmth and politeness. In our conversation, I'll introduce one new word: 'สวัสดี' (sawatdee), meaning 'hello'.\",\n  \"examples\": [\n    {\n      \"thai\": \"สวัสดีครับ\",\n      \"english\": \"Hello.\",\n      \"romanization\": \"Sawat-dee khrap\"\n    },\n    {\n      \"thai\": \"สวัสดีค่ะ\",\n      \"english\": \"Hello.\",\n      \"romanization\": \"Sawat-dee ka\"\n    },\n    {\n      \"thai\": \"ยินดีต้อนรับครับ\",\n      \"english\": \"Welcome.\",\n      \"romanization\": \"Yin-doo-tay nuap khrap\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"สวัสดีครับ\",\n      \"explanation\": \"This is the standard polite greeting used by men. 'สวัสดี' means hello, and 'ครับ' adds politeness.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ยินดีต้อนรับค่ะ\",\n      \"explanation\": \"This is the polite form used by women to say welcome. Note the change from 'ครับ' to 'ค่ะ' for feminine speakers.\"\n    }\n  ],\n  \"reference_titles\": []\n}",
+        "rejection": "Invalid explanation script"
+      },
+      {
+        "content": "{\n  \"explanation\": \"Hello! It's great that you're interested in greetings from different cultures. While 'မင်္ဂလာပါ' (Mingalar Pa) is a formal Burmese greeting often used when meeting someone for the first time, we will focus on teaching the Thai equivalent today to keep our lesson relevant to your Thai learning goals.\",\n  \"examples\": [\n    {\n      \"thai\": \"สวัสดีครับ\",\n      \"english\": \"Sawasdee khrap (Hello)\",\n      \"romanization\": \"saw-sad dee khrap\"\n    },\n    {\n      \"thai\": \"สวัสดีค่ะ\",\n      \"english\": \"Sawasdee ka (Hello)\",\n      \"romanization\": \"saw-sad dee ka\"\n    },\n    {\n      \"thai\": \"ยินดีต้อนรับครับ\",\n      \"english\": \"Yin dtay nuap khrap (Welcome)\",\n      \"romanization\": \"yin dtay nuap khrap\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"สวัสดีครับ\",\n      \"explanation\": \"This is the standard polite greeting for men. The tone marks are unmarked (mid) on 'Sa' and 'Wa', with a high tone on 'Dee'. It means 'Hello' or 'Greetings'.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ยินดีต้อนรับครับ\",\n      \"explanation\": \"This is a warmer way to say 'Welcome'. The first syllable 'Yin' has a rising tone (á), and 'dtay' has a falling tone (â). It expresses a friendly welcome.\"\n    }\n  ],\n  \"reference_titles\": []\n}",
+        "rejection": "Invalid explanation script"
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "greeting",
+    "repeat": 3,
+    "status": 200,
+    "passed": true,
+    "seconds": 4.74,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "Hello! Let's start our friendly chat with a warm greeting. In Thai, we often use 'Sawasdee' to say hello or goodbye. It's polite for everyone, whether you're meeting someone new or saying farewell.\nThai example (script checked only): สวัสดีครับ\nPronunciation guide: sǎ-wat-dêe khráp\nEnglish meaning: Hello (male speaker)\nThai example (script checked only): สวัสดีค่ะ\nPronunciation guide: sǎ-wat-dêe kâa\nEnglish meaning: Hello (female speaker)\nThai example (script checked only): สวัสดีครับ/ค่ะ\nPronunciation guide: sǎ-wat-dêe khráp/kâa\nEnglish meaning: Hello (gender-neutral form)\nLanguage quotation (Thai): สวัสดีครับ\nThis is the standard polite greeting used by males. The tone mark on 'ส' (sǎ) indicates a falling tone, and 'ครับ' adds politeness.",
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Hello (male speaker)",
+            "romanization": "sǎ-wat-dêe khráp",
+            "thai": "สวัสดีครับ"
+          },
+          {
+            "english": "Hello (female speaker)",
+            "romanization": "sǎ-wat-dêe kâa",
+            "thai": "สวัสดีค่ะ"
+          },
+          {
+            "english": "Hello (gender-neutral form)",
+            "romanization": "sǎ-wat-dêe khráp/kâa",
+            "thai": "สวัสดีครับ/ค่ะ"
+          }
+        ],
+        "explanation": "Hello! Let's start our friendly chat with a warm greeting. In Thai, we often use 'Sawasdee' to say hello or goodbye. It's polite for everyone, whether you're meeting someone new or saying farewell.",
+        "language_notes": [
+          {
+            "explanation": "This is the standard polite greeting used by males. The tone mark on 'ส' (sǎ) indicates a falling tone, and 'ครับ' adds politeness.",
+            "language": "Thai",
+            "quote": "สวัสดีครับ"
+          }
+        ],
+        "reference_titles": []
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Hello! Let's start our friendly chat with a warm greeting. In Thai, we often use 'Sawasdee' to say hello or goodbye. It's polite for everyone, whether you're meeting someone new or saying farewell.\",\n  \"examples\": [\n    {\n      \"thai\": \"สวัสดีครับ\",\n      \"english\": \"Hello (male speaker)\",\n      \"romanization\": \"sǎ-wat-dêe khráp\"\n    },\n    {\n      \"thai\": \"สวัสดีค่ะ\",\n      \"english\": \"Hello (female speaker)\",\n      \"romanization\": \"sǎ-wat-dêe kâa\"\n    },\n    {\n      \"thai\": \"สวัสดีครับ/ค่ะ\",\n      \"english\": \"Hello (gender-neutral form)\",\n      \"romanization\": \"sǎ-wat-dêe khráp/kâa\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"สวัสดีครับ\",\n      \"explanation\": \"This is the standard polite greeting used by males. The tone mark on 'ส' (sǎ) indicates a falling tone, and 'ครับ' adds politeness.\"\n    }\n  ],\n  \"reference_titles\": []\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "food-ordering",
+    "repeat": 3,
+    "status": 200,
+    "passed": true,
+    "seconds": 14.39,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 2,
+      "response": "Hello! It's great you want to learn how to order food. Today we will practice ordering a plate of non-spicy fried rice at a restaurant. In Thai, we use polite particles like 'ครับ' (khrup) for men and 'ค่ะ' (ka) for women when making requests or statements. We also use the classifier 'จาน' (jan - plate) to count plates of food.\nThai example (script checked only): ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ\nPronunciation guide: Kao khao pad mai paeed nueng jan khrup\nEnglish meaning: I would like one plate of non-spicy fried rice, please.\nThai example (script checked only): ข้าวผัดไม่เผ็ด\nPronunciation guide: Khao pad mai paeed\nEnglish meaning: Non-spicy fried rice\nThai example (script checked only): หนึ่งจาน\nPronunciation guide: Nueng jan\nEnglish meaning: One plate\nLanguage quotation (Thai): ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ\nThis sentence means 'I would like one plate of non-spicy fried rice, please.' Here, 'ขอ' (kao) means 'I want/request', 'ข้าวผัดไม่เผ็ด' (khao pad mai paeed) is 'non-spicy fried rice', 'หนึ่งจาน' (nueng jan) is 'one plate', and 'ครับ' (khrup) adds politeness for a male speaker.\nReference title: Thai Restaurant Ordering Guide",
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "I would like one plate of non-spicy fried rice, please.",
+            "romanization": "Kao khao pad mai paeed nueng jan khrup",
+            "thai": "ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ"
+          },
+          {
+            "english": "Non-spicy fried rice",
+            "romanization": "Khao pad mai paeed",
+            "thai": "ข้าวผัดไม่เผ็ด"
+          },
+          {
+            "english": "One plate",
+            "romanization": "Nueng jan",
+            "thai": "หนึ่งจาน"
+          }
+        ],
+        "explanation": "Hello! It's great you want to learn how to order food. Today we will practice ordering a plate of non-spicy fried rice at a restaurant. In Thai, we use polite particles like 'ครับ' (khrup) for men and 'ค่ะ' (ka) for women when making requests or statements. We also use the classifier 'จาน' (jan - plate) to count plates of food.",
+        "language_notes": [
+          {
+            "explanation": "This sentence means 'I would like one plate of non-spicy fried rice, please.' Here, 'ขอ' (kao) means 'I want/request', 'ข้าวผัดไม่เผ็ด' (khao pad mai paeed) is 'non-spicy fried rice', 'หนึ่งจาน' (nueng jan) is 'one plate', and 'ครับ' (khrup) adds politeness for a male speaker.",
+            "language": "Thai",
+            "quote": "ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ"
+          }
+        ],
+        "reference_titles": [
+          "Thai Restaurant Ordering Guide"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Great choice! Ordering food is a fun way to practice Thai. Today we'll focus on how to politely ask for 'non-spicy fried rice' (which is called 'Pad Krapao' in Thai, but you can specify it's not spicy). We'll use the polite structure 'Khor...' (ขอ...), which means 'I would like...', perfect for ordering.\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ\",\n      \"english\": \"I'd like one plate of non-spicy fried rice, please.\",\n      \"romanization\": \"Khor khaophat mai paeed nueng jan khrap\"\n    },\n    {\n      \"thai\": \"ข้าวผัดไม่เผ็ด (Pad Krap Mai Paeed)\",\n      \"english\": \"Non-spicy fried rice\",\n      \"romanization\": \"Khaophat mai paeed\"\n    },\n    {\n      \"thai\": \"ขอข้าวผัดหนึ่งจานด้วยครับ\",\n      \"english\": \"I'd like one plate of it, too.\",\n      \"romanization\": \"Khor khaophat nueng jan duay khrap\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอ + item + quantity + classifier\",\n      \"explanation\": \"This is the standard polite formula for ordering. 'Khor' (ขอ) means 'I request/ask for'. The 'classifier' here is 'jan' (จาน), meaning 'plate' or 'serving', which is crucial because Thai counts items by their shape, not just numbers.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ไม่เผ็ด\",\n      \"explanation\": \"'Mai paeed' (ไม่เผ็ด) literally means 'not spicy'. In Thai restaurants, if you want plain fried rice without the chili paste, this is the exact phrase to use.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Restaurant Ordering Guide.pdf\"\n  ]\n}",
+        "rejection": "Thai example contains missing or inappropriate script"
+      },
+      {
+        "content": "{\n  \"explanation\": \"Hello! It's great you want to learn how to order food. Today we will practice ordering a plate of non-spicy fried rice at a restaurant. In Thai, we use polite particles like 'ครับ' (khrup) for men and 'ค่ะ' (ka) for women when making requests or statements. We also use the classifier 'จาน' (jan - plate) to count plates of food.\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ\",\n      \"english\": \"I would like one plate of non-spicy fried rice, please.\",\n      \"romanization\": \"Kao khao pad mai paeed nueng jan khrup\"\n    },\n    {\n      \"thai\": \"ข้าวผัดไม่เผ็ด\",\n      \"english\": \"Non-spicy fried rice\",\n      \"romanization\": \"Khao pad mai paeed\"\n    },\n    {\n      \"thai\": \"หนึ่งจาน\",\n      \"english\": \"One plate\",\n      \"romanization\": \"Nueng jan\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอข้าวผัดไม่เผ็ดหนึ่งจานครับ\",\n      \"explanation\": \"This sentence means 'I would like one plate of non-spicy fried rice, please.' Here, 'ขอ' (kao) means 'I want/request', 'ข้าวผัดไม่เผ็ด' (khao pad mai paeed) is 'non-spicy fried rice', 'หนึ่งจาน' (nueng jan) is 'one plate', and 'ครับ' (khrup) adds politeness for a male speaker.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Restaurant Ordering Guide\"\n  ]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "correct-wrong-language",
+    "repeat": 3,
+    "status": 200,
+    "passed": true,
+    "seconds": 7.63,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "You are absolutely right! The previous response contained a language error. I have corrected it below. To order one glass of water politely in Thai, you say: 'ขอแก้วน้ำหนึ่งแก้ว' (Khor kae nam num kae). This translates to 'Please give me one glass of water.' Note that 'แก้ว' (gae) means 'glass' and is used as a classifier for liquids like water. The tone marks are crucial: the first 'k' in 'ขอ' is unmarked (mid), while the 'a' in 'น้ำ' has a falling tone.\nThai example (script checked only): ขอแก้วน้ำหนึ่งแก้ว\nPronunciation guide: Khor kae nam num kae\nEnglish meaning: Please give me one glass of water.\nThai example (script checked only): ขอเครื่องดื่มฟรี\nPronunciation guide: Koh khram khrueang frii\nEnglish meaning: I'd like free drinks (often implies water).\nThai example (script checked only): น้ำเปล่าครับ/ค่ะ\nPronunciation guide: Nam plao khrap/khae\nEnglish meaning: Plain water (polite request).\nLanguage quotation (Thai): ขอแก้วน้ำหนึ่งแก้ว\nThis is the standard polite phrase for ordering one glass of water. 'ขอ' means 'please give me', 'แก้วน้ำ' is 'glass of water', and 'หนึ่ง' means 'one'. The final 'แก้ว' acts as the classifier.\nLanguage quotation (Thai): น้ำเปล่าครับ/ค่ะ\nA shorter, very common way to ask for plain water. Use 'ครับ' if you are male and 'ค่ะ' if you are female.\nReference title: Thai Language Basics: Ordering Food",
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Please give me one glass of water.",
+            "romanization": "Khor kae nam num kae",
+            "thai": "ขอแก้วน้ำหนึ่งแก้ว"
+          },
+          {
+            "english": "I'd like free drinks (often implies water).",
+            "romanization": "Koh khram khrueang frii",
+            "thai": "ขอเครื่องดื่มฟรี"
+          },
+          {
+            "english": "Plain water (polite request).",
+            "romanization": "Nam plao khrap/khae",
+            "thai": "น้ำเปล่าครับ/ค่ะ"
+          }
+        ],
+        "explanation": "You are absolutely right! The previous response contained a language error. I have corrected it below. To order one glass of water politely in Thai, you say: 'ขอแก้วน้ำหนึ่งแก้ว' (Khor kae nam num kae). This translates to 'Please give me one glass of water.' Note that 'แก้ว' (gae) means 'glass' and is used as a classifier for liquids like water. The tone marks are crucial: the first 'k' in 'ขอ' is unmarked (mid), while the 'a' in 'น้ำ' has a falling tone.",
+        "language_notes": [
+          {
+            "explanation": "This is the standard polite phrase for ordering one glass of water. 'ขอ' means 'please give me', 'แก้วน้ำ' is 'glass of water', and 'หนึ่ง' means 'one'. The final 'แก้ว' acts as the classifier.",
+            "language": "Thai",
+            "quote": "ขอแก้วน้ำหนึ่งแก้ว"
+          },
+          {
+            "explanation": "A shorter, very common way to ask for plain water. Use 'ครับ' if you are male and 'ค่ะ' if you are female.",
+            "language": "Thai",
+            "quote": "น้ำเปล่าครับ/ค่ะ"
+          }
+        ],
+        "reference_titles": [
+          "Thai Language Basics: Ordering Food"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"You are absolutely right! The previous response contained a language error. I have corrected it below. To order one glass of water politely in Thai, you say: 'ขอแก้วน้ำหนึ่งแก้ว' (Khor kae nam num kae). This translates to 'Please give me one glass of water.' Note that 'แก้ว' (gae) means 'glass' and is used as a classifier for liquids like water. The tone marks are crucial: the first 'k' in 'ขอ' is unmarked (mid), while the 'a' in 'น้ำ' has a falling tone.\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอแก้วน้ำหนึ่งแก้ว\",\n      \"english\": \"Please give me one glass of water.\",\n      \"romanization\": \"Khor kae nam num kae\"\n    },\n    {\n      \"thai\": \"ขอเครื่องดื่มฟรี\",\n      \"english\": \"I'd like free drinks (often implies water).\",\n      \"romanization\": \"Koh khram khrueang frii\"\n    },\n    {\n      \"thai\": \"น้ำเปล่าครับ/ค่ะ\",\n      \"english\": \"Plain water (polite request).\",\n      \"romanization\": \"Nam plao khrap/khae\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอแก้วน้ำหนึ่งแก้ว\",\n      \"explanation\": \"This is the standard polite phrase for ordering one glass of water. 'ขอ' means 'please give me', 'แก้วน้ำ' is 'glass of water', and 'หนึ่ง' means 'one'. The final 'แก้ว' acts as the classifier.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"น้ำเปล่าครับ/ค่ะ\",\n      \"explanation\": \"A shorter, very common way to ask for plain water. Use 'ครับ' if you are male and 'ค่ะ' if you are female.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Language Basics: Ordering Food\"\n  ]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "language-discussion",
+    "repeat": 3,
+    "status": 502,
+    "passed": false,
+    "seconds": 15.27,
+    "response": {
+      "code": "invalid_thai_generation",
+      "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model."
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Hello! It's great you're interested in greetings from different cultures. While 'မင်္ဂလာပါ' (Mingalar pa) is a common Burmese greeting, today we'll focus on its Thai equivalent to help you navigate conversations smoothly.\",\n  \"examples\": [\n    {\n      \"thai\": \"สวัสดีครับ\",\n      \"english\": \"Sawasdee khrap (Hello)\",\n      \"romanization\": \"Sawas-dee Khrap\"\n    },\n    {\n      \"thai\": \"สวัสดีค่ะ\",\n      \"english\": \"Sawasdee ka (Hello)\",\n      \"romanization\": \"Sawas-dee Ka\"\n    },\n    {\n      \"thai\": \"สวัสดีครับ/ค่ะ\",\n      \"english\": \"Sawasdee khrap/ka (Hello - gender neutral form)\",\n      \"romanization\": \"Sawas-dee Khrap/Ka\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"สวัสดีครับ\",\n      \"explanation\": \"This is the standard polite greeting used by men. The tone mark on 'ส' (S) is unmarked (mid), and 'ะ' indicates a short vowel sound.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"สวัสดีค่ะ\",\n      \"explanation\": \"This is the standard polite greeting used by women. The tone mark on 'ส' (S) is unmarked (mid), and 'ะ' indicates a short vowel sound.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"สวัสดีครับ/ค่ะ\",\n      \"explanation\": \"This form is often used when the speaker's gender is unknown or to be polite regardless of gender. The slash indicates either masculine or feminine ending.\"\n    }\n  ],\n  \"reference_titles\": []\n}",
+        "rejection": "Invalid explanation script"
+      },
+      {
+        "content": "{\n  \"explanation\": \"Hello! It's great to meet you. You mentioned the Burmese greeting 'မင်္ဂလာပါ' (Mingalar Pa). While that is indeed a common formal greeting in Myanmar, today we will focus on its Thai equivalent and how it fits into our conversation. In Thai, we use a similar phrase for formal greetings, which is very polite and widely used in both spoken and written contexts.\",\n  \"examples\": [\n    {\n      \"thai\": \"สวัสดีครับ\",\n      \"english\": \"Sawasdee khrap (Hello)\",\n      \"romanization\": \"Sawas-dee Khrap\"\n    },\n    {\n      \"thai\": \"สวัสดีค่ะ\",\n      \"english\": \"Sawasdee ka (Hello)\",\n      \"romanization\": \"Sawas-dee Ka\"\n    },\n    {\n      \"thai\": \"ยินดีด้วยครับ\",\n      \"english\": \"Yin Dai Yoo Khrap (Congratulations/Good to meet you)\",\n      \"romanization\": \"Yin Dai Yoo Khrap\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"สวัสดีครับ\",\n      \"explanation\": \"This is the standard polite greeting used by men. It means 'Hello' or 'Good to meet you'. The tone mark on the first syllable (à) makes it fall, giving it a warm and welcoming sound.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"สวัสดีค่ะ\",\n      \"explanation\": \"This is the standard polite greeting used by women. It means 'Hello' or 'Good to meet you'. The tone mark on the first syllable (à) makes it fall, similar to the male version but with a softer ending.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ยินดีด้วยครับ\",\n      \"explanation\": \"This phrase is often used when meeting someone for the first time or congratulating them on an achievement. It literally means 'Congratulations', but in a greeting context, it conveys 'It's good to meet you'.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Language Basics: Greetings and Politeness\"\n  ]\n}",
+        "rejection": "Invalid explanation script"
+      }
+    ]
+  }
+]

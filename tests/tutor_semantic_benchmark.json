@@ -1,0 +1,188 @@
+[
+  {
+    "id": "greeting",
+    "category": "greetings",
+    "expected_example_id": "greeting",
+    "prompt": "Teach a polite greeting and ask the other person their name. Explain which part means hello.",
+    "expected": {
+      "thai": "สวัสดีค่ะ คุณชื่ออะไรคะ",
+      "english": "Hello. What is your name?",
+      "romanization": "sà wàt dii khâ khun chʉ̂ʉ à rai khá"
+    },
+    "semantic_checklist": [
+      "สวัสดี means hello, not ค่ะ.",
+      "ค่ะ ends the statement; คะ ends the question."
+    ]
+  },
+  {
+    "id": "introduction",
+    "category": "greetings",
+    "expected_example_id": "introduction",
+    "prompt": "Teach me to introduce myself as Ann casually. Explain whether a pronoun is required.",
+    "expected": {
+      "thai": "ชื่อแอนค่ะ",
+      "english": "My name is Ann. (Casual introduction.)",
+      "romanization": "chʉ̂ʉ ɛɛn khâ"
+    },
+    "semantic_checklist": [
+      "ชื่อ means name/be named.",
+      "Subject omission is natural in context; ฉันชื่อแอนค่ะ remains valid."
+    ]
+  },
+  {
+    "id": "rice",
+    "category": "food",
+    "expected_example_id": "food-rice",
+    "prompt": "Teach ordering one plate of non-spicy fried rice. Briefly explain the serving classifier and politeness.",
+    "expected": {
+      "thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ",
+      "english": "One plate of fried rice, not spicy, please.",
+      "romanization": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp"
+    },
+    "semantic_checklist": [
+      "Exactly one plate; fried rice, not plain rice.",
+      "ไม่เผ็ด means not spicy, not mildly spicy.",
+      "จาน counts platefuls; ข้าว is rice, not a classifier.",
+      "นะครับ softens this request."
+    ]
+  },
+  {
+    "id": "water",
+    "category": "food",
+    "expected_example_id": "food-water",
+    "prompt": "Teach ordering one glass of water. Explain the quantity and classifier.",
+    "expected": {
+      "thai": "ขอน้ำหนึ่งแก้วครับ",
+      "english": "One glass of water, please.",
+      "romanization": "khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp"
+    },
+    "semantic_checklist": [
+      "น้ำ is water.",
+      "หนึ่งแก้ว is one glass serving; no invented ingredients.",
+      "ขอ requests the item; not a literal ขอให้ construction."
+    ]
+  },
+  {
+    "id": "near",
+    "category": "directions",
+    "expected_example_id": "directions-near",
+    "prompt": "Teach saying the nearby restroom is around here. Explain the reference point.",
+    "expected": {
+      "thai": "ห้องน้ำอยู่แถวนี้ค่ะ",
+      "english": "The restroom is around here. (Nearby-location reply.)",
+      "romanization": "hɔ̂ng náam yùu thɛ̌ɛo níi khâ"
+    },
+    "semantic_checklist": [
+      "แถวนี้ means around here.",
+      "Do not gloss the phrase as far from here or change the reference point."
+    ]
+  },
+  {
+    "id": "far",
+    "category": "directions",
+    "expected_example_id": "directions-far",
+    "prompt": "Teach saying the restroom is far from here. Explain the difference between ใกล้ and ไกล.",
+    "expected": {
+      "thai": "ห้องน้ำอยู่ไกลจากที่นี่ค่ะ",
+      "english": "The restroom is far from here. (Alternative far-location reply.)",
+      "romanization": "hɔ̂ng náam yùu klai jàak thîi nîi khâ"
+    },
+    "semantic_checklist": [
+      "ไกล = far, mid klai; ใกล้ = near, falling klâi.",
+      "จากที่นี่ = from here, not near here."
+    ]
+  },
+  {
+    "id": "twenty",
+    "category": "numbers",
+    "expected_example_id": "numbers-twenty",
+    "prompt": "Teach saying twenty baht. Explain the number, not two or thirty.",
+    "expected": {
+      "thai": "ยี่สิบบาทค่ะ",
+      "english": "Twenty baht.",
+      "romanization": "yîi sìp bàat khâ"
+    },
+    "semantic_checklist": [
+      "ยี่สิบ = 20, not 2, 12 or 30.",
+      "บาท is currency; ค่ะ is not part of the number."
+    ]
+  },
+  {
+    "id": "price",
+    "category": "numbers",
+    "expected_example_id": "shopping-price",
+    "prompt": "Teach asking how much is this one, politely. Explain the question words.",
+    "expected": {
+      "thai": "สวัสดีค่ะ อันนี้เท่าไหร่คะ",
+      "english": "Hello. How much is this one?",
+      "romanization": "sà wàt dii khâ an níi thâo rài khá"
+    },
+    "semantic_checklist": [
+      "อันนี้ = this one, not that one.",
+      "เท่าไหร่ asks how much; no invented price.",
+      "คะ is the feminine polite question ending."
+    ]
+  },
+  {
+    "id": "decline",
+    "category": "shopping",
+    "expected_example_id": "shopping-bag",
+    "prompt": "Teach how to decline an offered bag and thank the seller. Explain the shopping context.",
+    "expected": {
+      "thai": "ไม่รับถุงค่ะ ขอบคุณค่ะ",
+      "english": "I won’t take a bag, thank you. (Alternative when a bag is offered.)",
+      "romanization": "mâi ráp thǔng khâ khɔ̀ɔp khun khâ"
+    },
+    "semantic_checklist": [
+      "Declines, rather than requests, a bag.",
+      "ไม่รับ = not accepting/taking in this context; ขอบคุณ = thanks."
+    ]
+  },
+  {
+    "id": "bag-question",
+    "category": "shopping",
+    "expected_example_id": "shopping-question",
+    "prompt": "Teach asking do you have a bag after choosing this item. Explain the question particle.",
+    "expected": {
+      "thai": "เอาอันนี้ค่ะ มีถุงไหมคะ",
+      "english": "I’ll take this one. Do you have a bag?",
+      "romanization": "ao an níi khâ mii thǔng mái khá"
+    },
+    "semantic_checklist": [
+      "มีถุงไหม asks availability, not a refusal.",
+      "ไหม citation mǎi vs conversational mái; คะ high khá."
+    ]
+  },
+  {
+    "id": "confirmation",
+    "category": "polite speech",
+    "expected_example_id": "polite-confirmation",
+    "prompt": "Teach how to say yes politely as a confirmation. Explain the particle alternatives without claiming this answers every question.",
+    "expected": {
+      "thai": "ใช่ค่ะ / ใช่ครับ",
+      "english": "Yes / correct. (Polite feminine / masculine alternatives.)",
+      "romanization": "châi khâ / châi khráp"
+    },
+    "semantic_checklist": [
+      "ใช่ can confirm yes/correct in context.",
+      "ค่ะ / ครับ are style alternatives, not both spoken obligatorily.",
+      "Thai often answers other yes/no questions by repeating the relevant verb."
+    ]
+  },
+  {
+    "id": "particles",
+    "category": "polite speech",
+    "expected_example_id": "shopping-question",
+    "prompt": "Explain คะ versus ค่ะ using the choosing-an-item and bag-question phrase. Keep citation and conversational ไหม distinct.",
+    "expected": {
+      "thai": "เอาอันนี้ค่ะ มีถุงไหมคะ",
+      "english": "I’ll take this one. Do you have a bag?",
+      "romanization": "ao an níi khâ mii thǔng mái khá"
+    },
+    "semantic_checklist": [
+      "ค่ะ falling khâ for statement; คะ high khá for question.",
+      "ไหม citation rising mǎi; conversational high mái.",
+      "Do not call คะ rising or ค่ะ high."
+    ]
+  }
+]

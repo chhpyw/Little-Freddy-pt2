@@ -1,0 +1,80 @@
+[
+  {
+    "check": "configured models installed",
+    "passed": true,
+    "chat_model": "qwen3:1.7b",
+    "embed_model": "nomic-embed-text"
+  },
+  {
+    "check": "live embedding",
+    "passed": true,
+    "dimensions": 768
+  },
+  {
+    "check": "live tutor Intermediate / Free Chat",
+    "passed": true,
+    "status": 200,
+    "response": "\u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e35\u0e04\u0e23\u0e31\u0e1a  \nHello!",
+    "warnings": [],
+    "response_characters": 19,
+    "contains_thai": true,
+    "seconds": 0.11
+  },
+  {
+    "check": "live synthetic Thai text reindex",
+    "passed": true,
+    "diagnostics": [
+      {
+        "filename": "thai.txt",
+        "status": "indexed",
+        "chunks": 2,
+        "dimensions": 768
+      }
+    ]
+  },
+  {
+    "check": "temporary Thai text cleanup",
+    "passed": true
+  },
+  {
+    "check": "live PDF extraction and embedding upload",
+    "passed": true,
+    "status": 200
+  },
+  {
+    "check": "live explicit PDF retrieval",
+    "passed": true,
+    "status": 200,
+    "answer_has_price": true,
+    "source_metadata": [
+      "freddy-smoke.pdf"
+    ],
+    "answer_cites_filename": true
+  },
+  {
+    "check": "live semantic retrieval",
+    "passed": true,
+    "status": 200,
+    "answer_has_price": true,
+    "source_metadata": [
+      "freddy-smoke.pdf"
+    ],
+    "answer_cites_filename": true
+  },
+  {
+    "check": "live synthetic PDF reindex",
+    "passed": true,
+    "diagnostics": [
+      {
+        "filename": "freddy-smoke.pdf",
+        "status": "indexed",
+        "chunks": 1,
+        "dimensions": 768
+      }
+    ]
+  },
+  {
+    "check": "temporary PDF deletion and index removal",
+    "passed": true
+  }
+]

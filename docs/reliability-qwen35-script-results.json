@@ -1,0 +1,860 @@
+[
+  {
+    "model": "qwen3.5:4b",
+    "case": "greeting",
+    "repeat": 1,
+    "status": 200,
+    "passed": true,
+    "seconds": 4.89,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): สวัสดี means 'Hello'. It is used to greet someone politely. The tone mark on the first syllable (à) indicates a low tone, which gives it a friendly and welcoming sound.\nReviewed curriculum example (greetings; not native-verified): สวัสดีค่ะ คุณชื่ออะไรคะ\nCurriculum pronunciation guide: sà wàt dii khâ khun chʉ̂ʉ à rai khá\nCurriculum meaning: Hello. What is your name?\nCurriculum usage note: ผม / ฉัน + ชื่อ + name = My name is … . In a casual introduction the pronoun can be omitted: ชื่อแอนค่ะ (chʉ̂ʉ ɛɛn khâ). ฉันชื่อแอนค่ะ remains a valid familiar alternative; these are alternative introductions. คุณชื่ออะไร = What is your name? ฉัน is familiar; ดิฉัน is a more formal feminine option. ครับ can end statements or questions; use ค่ะ for statements and คะ for questions in the feminine polite style.\nReference title: greetings",
+      "reviewed_examples": [
+        {
+          "english": "Hello. What is your name?",
+          "id": "greeting",
+          "lesson_id": "greetings",
+          "romanization": "sà wàt dii khâ khun chʉ̂ʉ à rai khá",
+          "thai": "สวัสดีค่ะ คุณชื่ออะไรคะ",
+          "usage": "ผม / ฉัน + ชื่อ + name = My name is … . In a casual introduction the pronoun can be omitted: ชื่อแอนค่ะ (chʉ̂ʉ ɛɛn khâ). ฉันชื่อแอนค่ะ remains a valid familiar alternative; these are alternative introductions. คุณชื่ออะไร = What is your name? ฉัน is familiar; ดิฉัน is a more formal feminine option. ครับ can end statements or questions; use ค่ะ for statements and คะ for questions in the feminine polite style.",
+          "vocabulary": [
+            {
+              "english": "Hello",
+              "roman": "sà wàt dii",
+              "thai": "สวัสดี"
+            },
+            {
+              "english": "Thank you",
+              "roman": "khɔ̀ɔp khun",
+              "thai": "ขอบคุณ"
+            },
+            {
+              "english": "Polite particle, commonly used by men",
+              "roman": "khráp",
+              "thai": "ครับ"
+            },
+            {
+              "english": "Polite statement particle, commonly used by women",
+              "roman": "khâ",
+              "thai": "ค่ะ"
+            },
+            {
+              "english": "Name / be named",
+              "roman": "chʉ̂ʉ",
+              "thai": "ชื่อ"
+            },
+            {
+              "english": "You (polite / neutral)",
+              "roman": "khun",
+              "thai": "คุณ"
+            },
+            {
+              "english": "I, commonly used by men in polite speech",
+              "roman": "phǒm",
+              "thai": "ผม"
+            },
+            {
+              "english": "I (familiar; often used by women)",
+              "roman": "chǎn",
+              "thai": "ฉัน"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Hello. What is your name?",
+            "romanization": "sà wàt dii khâ khun chʉ̂ʉ à rai khá",
+            "thai": "สวัสดีค่ะ คุณชื่ออะไรคะ"
+          }
+        ],
+        "explanation": "สวัสดี means 'Hello'. It is used to greet someone politely. The tone mark on the first syllable (à) indicates a low tone, which gives it a friendly and welcoming sound.",
+        "language_notes": [],
+        "reference_titles": [
+          "greetings"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"สวัสดี means 'Hello'. It is used to greet someone politely. The tone mark on the first syllable (à) indicates a low tone, which gives it a friendly and welcoming sound.\",\n  \"language_notes\": [],\n  \"reference_titles\": [\"greetings\"],\n  \"example_ids\": [\"greeting\"]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "food-ordering",
+    "repeat": 1,
+    "status": 200,
+    "passed": true,
+    "seconds": 3.68,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): Great choice! To order one plate of non-spicy fried rice, you say 'ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ'. This uses the polite request structure 'ขอ + item + number + classifier' followed by a preference. Remember that 'จาน' (jaan) counts platefuls of food, while 'แก้ว' (kɛ̂ɛo) counts drinks.\nReviewed curriculum example (food; not native-verified): ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ\nCurriculum pronunciation guide: khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp\nCurriculum meaning: One plate of fried rice, not spicy, please.\nCurriculum usage note: ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.\nReference title: food-rice",
+      "reviewed_examples": [
+        {
+          "english": "One plate of fried rice, not spicy, please.",
+          "id": "food-rice",
+          "lesson_id": "food",
+          "romanization": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp",
+          "thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ",
+          "usage": "ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+          "vocabulary": [
+            {
+              "english": "May I have / please give me",
+              "roman": "khɔ̌ɔ",
+              "thai": "ขอ"
+            },
+            {
+              "english": "Rice",
+              "roman": "khâao",
+              "thai": "ข้าว"
+            },
+            {
+              "english": "Water",
+              "roman": "náam",
+              "thai": "น้ำ"
+            },
+            {
+              "english": "Coffee",
+              "roman": "kaa fɛɛ",
+              "thai": "กาแฟ"
+            },
+            {
+              "english": "Glass; classifier for drinks served by the glass",
+              "roman": "kɛ̂ɛo",
+              "thai": "แก้ว"
+            },
+            {
+              "english": "Plate; classifier for food served by the plate",
+              "roman": "jaan",
+              "thai": "จาน"
+            },
+            {
+              "english": "Not spicy",
+              "roman": "mâi phèt",
+              "thai": "ไม่เผ็ด"
+            },
+            {
+              "english": "Delicious",
+              "roman": "à rɔ̀i",
+              "thai": "อร่อย"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "One plate of fried rice, not spicy, please.",
+            "romanization": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp",
+            "thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ"
+          }
+        ],
+        "explanation": "Great choice! To order one plate of non-spicy fried rice, you say 'ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ'. This uses the polite request structure 'ขอ + item + number + classifier' followed by a preference. Remember that 'จาน' (jaan) counts platefuls of food, while 'แก้ว' (kɛ̂ɛo) counts drinks.",
+        "language_notes": [],
+        "reference_titles": [
+          "food-rice"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Great choice! To order one plate of non-spicy fried rice, you say 'ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ'. This uses the polite request structure 'ขอ + item + number + classifier' followed by a preference. Remember that 'จาน' (jaan) counts platefuls of food, while 'แก้ว' (kɛ̂ɛo) counts drinks.\",\n  \"language_notes\": [],\n  \"reference_titles\": [\"food-rice\"],\n  \"example_ids\": [\"food-rice\"]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "correct-wrong-language",
+    "repeat": 1,
+    "status": 200,
+    "passed": true,
+    "seconds": 3.09,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): You are right! The previous text was a description, not an actual sentence. Here is how you say it: 'ขอน้ำหนึ่งแก้วครับ' (khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp). This means 'One glass of water, please.' Note that 'แก้ว' (kɛ̂ɛo) is the classifier for drinks served by the glass, while 'จาน' (jaan) counts platefuls of food.\nReviewed curriculum example (food; not native-verified): ขอน้ำหนึ่งแก้วครับ\nCurriculum pronunciation guide: khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp\nCurriculum meaning: One glass of water, please.\nCurriculum usage note: ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.\nReference title: food-water",
+      "reviewed_examples": [
+        {
+          "english": "One glass of water, please.",
+          "id": "food-water",
+          "lesson_id": "food",
+          "romanization": "khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp",
+          "thai": "ขอน้ำหนึ่งแก้วครับ",
+          "usage": "ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+          "vocabulary": [
+            {
+              "english": "May I have / please give me",
+              "roman": "khɔ̌ɔ",
+              "thai": "ขอ"
+            },
+            {
+              "english": "Rice",
+              "roman": "khâao",
+              "thai": "ข้าว"
+            },
+            {
+              "english": "Water",
+              "roman": "náam",
+              "thai": "น้ำ"
+            },
+            {
+              "english": "Coffee",
+              "roman": "kaa fɛɛ",
+              "thai": "กาแฟ"
+            },
+            {
+              "english": "Glass; classifier for drinks served by the glass",
+              "roman": "kɛ̂ɛo",
+              "thai": "แก้ว"
+            },
+            {
+              "english": "Plate; classifier for food served by the plate",
+              "roman": "jaan",
+              "thai": "จาน"
+            },
+            {
+              "english": "Not spicy",
+              "roman": "mâi phèt",
+              "thai": "ไม่เผ็ด"
+            },
+            {
+              "english": "Delicious",
+              "roman": "à rɔ̀i",
+              "thai": "อร่อย"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "One glass of water, please.",
+            "romanization": "khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp",
+            "thai": "ขอน้ำหนึ่งแก้วครับ"
+          }
+        ],
+        "explanation": "You are right! The previous text was a description, not an actual sentence. Here is how you say it: 'ขอน้ำหนึ่งแก้วครับ' (khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp). This means 'One glass of water, please.' Note that 'แก้ว' (kɛ̂ɛo) is the classifier for drinks served by the glass, while 'จาน' (jaan) counts platefuls of food.",
+        "language_notes": [],
+        "reference_titles": [
+          "food-water"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"You are right! The previous text was a description, not an actual sentence. Here is how you say it: 'ขอน้ำหนึ่งแก้วครับ' (khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp). This means 'One glass of water, please.' Note that 'แก้ว' (kɛ̂ɛo) is the classifier for drinks served by the glass, while 'จาน' (jaan) counts platefuls of food.\",\n  \"language_notes\": [],\n  \"reference_titles\": [\"food-water\"],\n  \"example_ids\": [\"food-water\"]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "language-discussion",
+    "repeat": 1,
+    "status": 502,
+    "passed": false,
+    "seconds": 5.17,
+    "response": {
+      "code": "invalid_thai_generation",
+      "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model."
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Let's start by looking at a traditional greeting from Myanmar: မင်္ဂလာပါ (Mingalar pa). It means 'Welcome' or 'Greetings'. Now, let's learn how to say hello in Thai! The common way is สวัสดีค่ะ (sà wàt dii khâ), which means 'Hello'.\",\n  \"language_notes\": [],\n  \"reference_titles\": [],\n  \"example_ids\": [\"greeting\"]\n}",
+        "rejection": "Invalid explanation script"
+      },
+      {
+        "content": "{\n  \"explanation\": \"Here is the Burmese greeting you asked about: မင်္ဂလာပါ (Mingalar pa). It means 'Welcome!' or 'Hello!'. Now let's learn the Thai equivalent: สวัสดีค่ะ (sà wàt dii khâ), which also means 'Hello' and is used by women in polite speech.\",\n  \"language_notes\": [],\n  \"reference_titles\": [],\n  \"example_ids\": [\"greeting\"]\n}",
+        "rejection": "Invalid explanation script"
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "greeting",
+    "repeat": 2,
+    "status": 200,
+    "passed": true,
+    "seconds": 1.07,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): สวัสดี means 'Hello'. It is used to greet someone politely. The tone is neutral (unmarked).\nReviewed curriculum example (greetings; not native-verified): สวัสดีค่ะ คุณชื่ออะไรคะ\nCurriculum pronunciation guide: sà wàt dii khâ khun chʉ̂ʉ à rai khá\nCurriculum meaning: Hello. What is your name?\nCurriculum usage note: ผม / ฉัน + ชื่อ + name = My name is … . In a casual introduction the pronoun can be omitted: ชื่อแอนค่ะ (chʉ̂ʉ ɛɛn khâ). ฉันชื่อแอนค่ะ remains a valid familiar alternative; these are alternative introductions. คุณชื่ออะไร = What is your name? ฉัน is familiar; ดิฉัน is a more formal feminine option. ครับ can end statements or questions; use ค่ะ for statements and คะ for questions in the feminine polite style.\nReference title: greetings",
+      "reviewed_examples": [
+        {
+          "english": "Hello. What is your name?",
+          "id": "greeting",
+          "lesson_id": "greetings",
+          "romanization": "sà wàt dii khâ khun chʉ̂ʉ à rai khá",
+          "thai": "สวัสดีค่ะ คุณชื่ออะไรคะ",
+          "usage": "ผม / ฉัน + ชื่อ + name = My name is … . In a casual introduction the pronoun can be omitted: ชื่อแอนค่ะ (chʉ̂ʉ ɛɛn khâ). ฉันชื่อแอนค่ะ remains a valid familiar alternative; these are alternative introductions. คุณชื่ออะไร = What is your name? ฉัน is familiar; ดิฉัน is a more formal feminine option. ครับ can end statements or questions; use ค่ะ for statements and คะ for questions in the feminine polite style.",
+          "vocabulary": [
+            {
+              "english": "Hello",
+              "roman": "sà wàt dii",
+              "thai": "สวัสดี"
+            },
+            {
+              "english": "Thank you",
+              "roman": "khɔ̀ɔp khun",
+              "thai": "ขอบคุณ"
+            },
+            {
+              "english": "Polite particle, commonly used by men",
+              "roman": "khráp",
+              "thai": "ครับ"
+            },
+            {
+              "english": "Polite statement particle, commonly used by women",
+              "roman": "khâ",
+              "thai": "ค่ะ"
+            },
+            {
+              "english": "Name / be named",
+              "roman": "chʉ̂ʉ",
+              "thai": "ชื่อ"
+            },
+            {
+              "english": "You (polite / neutral)",
+              "roman": "khun",
+              "thai": "คุณ"
+            },
+            {
+              "english": "I, commonly used by men in polite speech",
+              "roman": "phǒm",
+              "thai": "ผม"
+            },
+            {
+              "english": "I (familiar; often used by women)",
+              "roman": "chǎn",
+              "thai": "ฉัน"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Hello. What is your name?",
+            "romanization": "sà wàt dii khâ khun chʉ̂ʉ à rai khá",
+            "thai": "สวัสดีค่ะ คุณชื่ออะไรคะ"
+          }
+        ],
+        "explanation": "สวัสดี means 'Hello'. It is used to greet someone politely. The tone is neutral (unmarked).",
+        "language_notes": [],
+        "reference_titles": [
+          "greetings"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"สวัสดี means 'Hello'. It is used to greet someone politely. The tone is neutral (unmarked).\",\n  \"language_notes\": [],\n  \"reference_titles\": [\"greetings\"],\n  \"example_ids\": [\"greeting\"]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "food-ordering",
+    "repeat": 2,
+    "status": 200,
+    "passed": true,
+    "seconds": 2.27,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): Great! Here is how you say it: ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะคะ (khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná kǎa). This means 'One plate of fried rice, not spicy.' Note that we use จาน (jaan) for food served on a plate, and since you are asking politely as a woman, we end with ค่ะ (kǎa).\nReviewed curriculum example (food; not native-verified): ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ\nCurriculum pronunciation guide: khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp\nCurriculum meaning: One plate of fried rice, not spicy, please.\nCurriculum usage note: ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.\nReference title: food-rice",
+      "reviewed_examples": [
+        {
+          "english": "One plate of fried rice, not spicy, please.",
+          "id": "food-rice",
+          "lesson_id": "food",
+          "romanization": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp",
+          "thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ",
+          "usage": "ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+          "vocabulary": [
+            {
+              "english": "May I have / please give me",
+              "roman": "khɔ̌ɔ",
+              "thai": "ขอ"
+            },
+            {
+              "english": "Rice",
+              "roman": "khâao",
+              "thai": "ข้าว"
+            },
+            {
+              "english": "Water",
+              "roman": "náam",
+              "thai": "น้ำ"
+            },
+            {
+              "english": "Coffee",
+              "roman": "kaa fɛɛ",
+              "thai": "กาแฟ"
+            },
+            {
+              "english": "Glass; classifier for drinks served by the glass",
+              "roman": "kɛ̂ɛo",
+              "thai": "แก้ว"
+            },
+            {
+              "english": "Plate; classifier for food served by the plate",
+              "roman": "jaan",
+              "thai": "จาน"
+            },
+            {
+              "english": "Not spicy",
+              "roman": "mâi phèt",
+              "thai": "ไม่เผ็ด"
+            },
+            {
+              "english": "Delicious",
+              "roman": "à rɔ̀i",
+              "thai": "อร่อย"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "One plate of fried rice, not spicy, please.",
+            "romanization": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp",
+            "thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ"
+          }
+        ],
+        "explanation": "Great! Here is how you say it: ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะคะ (khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná kǎa). This means 'One plate of fried rice, not spicy.' Note that we use จาน (jaan) for food served on a plate, and since you are asking politely as a woman, we end with ค่ะ (kǎa).",
+        "language_notes": [],
+        "reference_titles": [
+          "food-rice"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Great! Here is how you say it: ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะคะ (khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná kǎa). This means 'One plate of fried rice, not spicy.' Note that we use จาน (jaan) for food served on a plate, and since you are asking politely as a woman, we end with ค่ะ (kǎa).\",\n  \"language_notes\": [],\n  \"reference_titles\": [\"food-rice\"],\n  \"example_ids\": [\"food-rice\"]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "correct-wrong-language",
+    "repeat": 2,
+    "status": 200,
+    "passed": true,
+    "seconds": 2.53,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): You are right! The previous text was a description, not an example sentence. Here is how you actually say it: 'ขอน้ำหนึ่งแก้วครับ' (khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp). This means 'One glass of water, please.' Note that 'แก้ว' (kɛ̂ɛo) is the classifier for drinks served by the glass, while 'จาน' (jaan) counts platefuls of food. The particle 'ครับ' softens the request politely.\nReviewed curriculum example (food; not native-verified): ขอน้ำหนึ่งแก้วครับ\nCurriculum pronunciation guide: khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp\nCurriculum meaning: One glass of water, please.\nCurriculum usage note: ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.\nReference title: food-water",
+      "reviewed_examples": [
+        {
+          "english": "One glass of water, please.",
+          "id": "food-water",
+          "lesson_id": "food",
+          "romanization": "khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp",
+          "thai": "ขอน้ำหนึ่งแก้วครับ",
+          "usage": "ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+          "vocabulary": [
+            {
+              "english": "May I have / please give me",
+              "roman": "khɔ̌ɔ",
+              "thai": "ขอ"
+            },
+            {
+              "english": "Rice",
+              "roman": "khâao",
+              "thai": "ข้าว"
+            },
+            {
+              "english": "Water",
+              "roman": "náam",
+              "thai": "น้ำ"
+            },
+            {
+              "english": "Coffee",
+              "roman": "kaa fɛɛ",
+              "thai": "กาแฟ"
+            },
+            {
+              "english": "Glass; classifier for drinks served by the glass",
+              "roman": "kɛ̂ɛo",
+              "thai": "แก้ว"
+            },
+            {
+              "english": "Plate; classifier for food served by the plate",
+              "roman": "jaan",
+              "thai": "จาน"
+            },
+            {
+              "english": "Not spicy",
+              "roman": "mâi phèt",
+              "thai": "ไม่เผ็ด"
+            },
+            {
+              "english": "Delicious",
+              "roman": "à rɔ̀i",
+              "thai": "อร่อย"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "One glass of water, please.",
+            "romanization": "khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp",
+            "thai": "ขอน้ำหนึ่งแก้วครับ"
+          }
+        ],
+        "explanation": "You are right! The previous text was a description, not an example sentence. Here is how you actually say it: 'ขอน้ำหนึ่งแก้วครับ' (khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp). This means 'One glass of water, please.' Note that 'แก้ว' (kɛ̂ɛo) is the classifier for drinks served by the glass, while 'จาน' (jaan) counts platefuls of food. The particle 'ครับ' softens the request politely.",
+        "language_notes": [],
+        "reference_titles": [
+          "food-water"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"You are right! The previous text was a description, not an example sentence. Here is how you actually say it: 'ขอน้ำหนึ่งแก้วครับ' (khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp). This means 'One glass of water, please.' Note that 'แก้ว' (kɛ̂ɛo) is the classifier for drinks served by the glass, while 'จาน' (jaan) counts platefuls of food. The particle 'ครับ' softens the request politely.\",\n  \"language_notes\": [],\n  \"reference_titles\": [\"food-water\"],\n  \"example_ids\": [\"food-water\"]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "language-discussion",
+    "repeat": 2,
+    "status": 502,
+    "passed": false,
+    "seconds": 5.16,
+    "response": {
+      "code": "invalid_thai_generation",
+      "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model."
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Here is the Burmese greeting 'မင်္ဂလာပါ' (pronounced min-gla-pa), which means 'Welcome!' or 'Hello!'. Now, let's look at the Thai equivalent: สวัสดีค่ะ (sà wàt dii khâ). This phrase means 'Hello' and is used for a polite female statement. The tone is low on 'ส', falling on 'ว', and high on 'ต'.\",\n  \"language_notes\": [\n    {\n      \"language\": \"Burmese\",\n      \"quote\": \"မင်္ဂလာပါ\"\n    ,\n      \"explanation\": \"This Burmese greeting is commonly used in formal or polite contexts, similar to 'Hello' or 'Welcome' in Thai.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"greetings.txt\"\n  ],\n  \"example_ids\": [\n    \"greeting\"\n  ]\n}",
+        "rejection": "Invalid explanation script"
+      },
+      {
+        "content": "{\n  \"explanation\": \"Let's start by looking at a common greeting from Myanmar: 'မင်္ဂလာပါ' (mying lah pa), which means 'Welcome!' or 'Hello!'. Now, let's learn the Thai equivalent: สวัสดีค่ะ (sà wàt dii khâ). This is how we say hello politely when speaking as a woman.\",\n  \"language_notes\": [],\n  \"reference_titles\": [],\n  \"example_ids\": [\"greeting\"]\n}",
+        "rejection": "Invalid explanation script"
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "greeting",
+    "repeat": 3,
+    "status": 200,
+    "passed": true,
+    "seconds": 1.19,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): สวัสดี (sà wàt dii) means 'Hello'. It is the most common way to start a conversation in Thai, used by both men and women.\nReviewed curriculum example (greetings; not native-verified): สวัสดีค่ะ คุณชื่ออะไรคะ\nCurriculum pronunciation guide: sà wàt dii khâ khun chʉ̂ʉ à rai khá\nCurriculum meaning: Hello. What is your name?\nCurriculum usage note: ผม / ฉัน + ชื่อ + name = My name is … . In a casual introduction the pronoun can be omitted: ชื่อแอนค่ะ (chʉ̂ʉ ɛɛn khâ). ฉันชื่อแอนค่ะ remains a valid familiar alternative; these are alternative introductions. คุณชื่ออะไร = What is your name? ฉัน is familiar; ดิฉัน is a more formal feminine option. ครับ can end statements or questions; use ค่ะ for statements and คะ for questions in the feminine polite style.\nReference title: greetings",
+      "reviewed_examples": [
+        {
+          "english": "Hello. What is your name?",
+          "id": "greeting",
+          "lesson_id": "greetings",
+          "romanization": "sà wàt dii khâ khun chʉ̂ʉ à rai khá",
+          "thai": "สวัสดีค่ะ คุณชื่ออะไรคะ",
+          "usage": "ผม / ฉัน + ชื่อ + name = My name is … . In a casual introduction the pronoun can be omitted: ชื่อแอนค่ะ (chʉ̂ʉ ɛɛn khâ). ฉันชื่อแอนค่ะ remains a valid familiar alternative; these are alternative introductions. คุณชื่ออะไร = What is your name? ฉัน is familiar; ดิฉัน is a more formal feminine option. ครับ can end statements or questions; use ค่ะ for statements and คะ for questions in the feminine polite style.",
+          "vocabulary": [
+            {
+              "english": "Hello",
+              "roman": "sà wàt dii",
+              "thai": "สวัสดี"
+            },
+            {
+              "english": "Thank you",
+              "roman": "khɔ̀ɔp khun",
+              "thai": "ขอบคุณ"
+            },
+            {
+              "english": "Polite particle, commonly used by men",
+              "roman": "khráp",
+              "thai": "ครับ"
+            },
+            {
+              "english": "Polite statement particle, commonly used by women",
+              "roman": "khâ",
+              "thai": "ค่ะ"
+            },
+            {
+              "english": "Name / be named",
+              "roman": "chʉ̂ʉ",
+              "thai": "ชื่อ"
+            },
+            {
+              "english": "You (polite / neutral)",
+              "roman": "khun",
+              "thai": "คุณ"
+            },
+            {
+              "english": "I, commonly used by men in polite speech",
+              "roman": "phǒm",
+              "thai": "ผม"
+            },
+            {
+              "english": "I (familiar; often used by women)",
+              "roman": "chǎn",
+              "thai": "ฉัน"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Hello. What is your name?",
+            "romanization": "sà wàt dii khâ khun chʉ̂ʉ à rai khá",
+            "thai": "สวัสดีค่ะ คุณชื่ออะไรคะ"
+          }
+        ],
+        "explanation": "สวัสดี (sà wàt dii) means 'Hello'. It is the most common way to start a conversation in Thai, used by both men and women.",
+        "language_notes": [],
+        "reference_titles": [
+          "greetings"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"สวัสดี (sà wàt dii) means 'Hello'. It is the most common way to start a conversation in Thai, used by both men and women.\",\n  \"language_notes\": [],\n  \"reference_titles\": [\"greetings\"],\n  \"example_ids\": [\"greeting\"]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "food-ordering",
+    "repeat": 3,
+    "status": 200,
+    "passed": true,
+    "seconds": 2.53,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): Great choice! To order one plate of non-spicy fried rice, you say 'ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ'. This uses the structure 'ขอ + item + number + classifier' (May I have...), followed by a preference ('not spicy'). The tone marks are: khɔ̌ɔ (falling), khâao (mid), phàt (rising), nʉ̀ng (falling), jaan (mid), mâi (rising), phèt (falling), ná khráp (falling).\nReviewed curriculum example (food; not native-verified): ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ\nCurriculum pronunciation guide: khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp\nCurriculum meaning: One plate of fried rice, not spicy, please.\nCurriculum usage note: ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.\nReference title: food-rice",
+      "reviewed_examples": [
+        {
+          "english": "One plate of fried rice, not spicy, please.",
+          "id": "food-rice",
+          "lesson_id": "food",
+          "romanization": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp",
+          "thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ",
+          "usage": "ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+          "vocabulary": [
+            {
+              "english": "May I have / please give me",
+              "roman": "khɔ̌ɔ",
+              "thai": "ขอ"
+            },
+            {
+              "english": "Rice",
+              "roman": "khâao",
+              "thai": "ข้าว"
+            },
+            {
+              "english": "Water",
+              "roman": "náam",
+              "thai": "น้ำ"
+            },
+            {
+              "english": "Coffee",
+              "roman": "kaa fɛɛ",
+              "thai": "กาแฟ"
+            },
+            {
+              "english": "Glass; classifier for drinks served by the glass",
+              "roman": "kɛ̂ɛo",
+              "thai": "แก้ว"
+            },
+            {
+              "english": "Plate; classifier for food served by the plate",
+              "roman": "jaan",
+              "thai": "จาน"
+            },
+            {
+              "english": "Not spicy",
+              "roman": "mâi phèt",
+              "thai": "ไม่เผ็ด"
+            },
+            {
+              "english": "Delicious",
+              "roman": "à rɔ̀i",
+              "thai": "อร่อย"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "One plate of fried rice, not spicy, please.",
+            "romanization": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp",
+            "thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ"
+          }
+        ],
+        "explanation": "Great choice! To order one plate of non-spicy fried rice, you say 'ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ'. This uses the structure 'ขอ + item + number + classifier' (May I have...), followed by a preference ('not spicy'). The tone marks are: khɔ̌ɔ (falling), khâao (mid), phàt (rising), nʉ̀ng (falling), jaan (mid), mâi (rising), phèt (falling), ná khráp (falling).",
+        "language_notes": [],
+        "reference_titles": [
+          "food-rice"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Great choice! To order one plate of non-spicy fried rice, you say 'ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ'. This uses the structure 'ขอ + item + number + classifier' (May I have...), followed by a preference ('not spicy'). The tone marks are: khɔ̌ɔ (falling), khâao (mid), phàt (rising), nʉ̀ng (falling), jaan (mid), mâi (rising), phèt (falling), ná khráp (falling).\",\n  \"language_notes\": [],\n  \"reference_titles\": [\"food-rice\"],\n  \"example_ids\": [\"food-rice\"]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "correct-wrong-language",
+    "repeat": 3,
+    "status": 200,
+    "passed": true,
+    "seconds": 2.83,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): You are right! The previous text was actually a description of how to say it, not the sentence itself. Here is the correct way to ask for one glass of water: 'ขอน้ำหนึ่งแก้วครับ' (khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp). This means 'May I have one glass of water?' Note that 'แก้ว' (kɛ̂ɛo) is the classifier for drinks served by the glass, while 'จาน' (jaan) counts platefuls of food. The particle 'ครับ' (khráp) softens the request politely.\nReviewed curriculum example (food; not native-verified): ขอน้ำหนึ่งแก้วครับ\nCurriculum pronunciation guide: khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp\nCurriculum meaning: One glass of water, please.\nCurriculum usage note: ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.\nReference title: food-water",
+      "reviewed_examples": [
+        {
+          "english": "One glass of water, please.",
+          "id": "food-water",
+          "lesson_id": "food",
+          "romanization": "khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp",
+          "thai": "ขอน้ำหนึ่งแก้วครับ",
+          "usage": "ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+          "vocabulary": [
+            {
+              "english": "May I have / please give me",
+              "roman": "khɔ̌ɔ",
+              "thai": "ขอ"
+            },
+            {
+              "english": "Rice",
+              "roman": "khâao",
+              "thai": "ข้าว"
+            },
+            {
+              "english": "Water",
+              "roman": "náam",
+              "thai": "น้ำ"
+            },
+            {
+              "english": "Coffee",
+              "roman": "kaa fɛɛ",
+              "thai": "กาแฟ"
+            },
+            {
+              "english": "Glass; classifier for drinks served by the glass",
+              "roman": "kɛ̂ɛo",
+              "thai": "แก้ว"
+            },
+            {
+              "english": "Plate; classifier for food served by the plate",
+              "roman": "jaan",
+              "thai": "จาน"
+            },
+            {
+              "english": "Not spicy",
+              "roman": "mâi phèt",
+              "thai": "ไม่เผ็ด"
+            },
+            {
+              "english": "Delicious",
+              "roman": "à rɔ̀i",
+              "thai": "อร่อย"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "One glass of water, please.",
+            "romanization": "khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp",
+            "thai": "ขอน้ำหนึ่งแก้วครับ"
+          }
+        ],
+        "explanation": "You are right! The previous text was actually a description of how to say it, not the sentence itself. Here is the correct way to ask for one glass of water: 'ขอน้ำหนึ่งแก้วครับ' (khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp). This means 'May I have one glass of water?' Note that 'แก้ว' (kɛ̂ɛo) is the classifier for drinks served by the glass, while 'จาน' (jaan) counts platefuls of food. The particle 'ครับ' (khráp) softens the request politely.",
+        "language_notes": [],
+        "reference_titles": [
+          "food-water"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"You are right! The previous text was actually a description of how to say it, not the sentence itself. Here is the correct way to ask for one glass of water: 'ขอน้ำหนึ่งแก้วครับ' (khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp). This means 'May I have one glass of water?' Note that 'แก้ว' (kɛ̂ɛo) is the classifier for drinks served by the glass, while 'จาน' (jaan) counts platefuls of food. The particle 'ครับ' (khráp) softens the request politely.\",\n  \"language_notes\": [],\n  \"reference_titles\": [\"food-water\"],\n  \"example_ids\": [\"food-water\"]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case": "language-discussion",
+    "repeat": 3,
+    "status": 502,
+    "passed": false,
+    "seconds": 3.42,
+    "response": {
+      "code": "invalid_thai_generation",
+      "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model."
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Let's start by looking at a common greeting from Myanmar: မင်္ဂလာပါ (myan kha la pa). It means 'Welcome!' or 'Hello!', often used when meeting someone for the first time. Now, let's learn how to greet in Thai. The Thai way is similar but uses different words and tones.\",\n  \"language_notes\": [],\n  \"reference_titles\": [],\n  \"example_ids\": [\"greeting\"]\n}",
+        "rejection": "Invalid explanation script"
+      },
+      {
+        "content": "{\n  \"explanation\": \"Here is the Burmese greeting you requested: မင်္ဂလာပါ (Mingalar pa). It means 'Welcome' or 'Hello'. Now, let's learn the Thai equivalent: สวัสดีค่ะ (sà wàt dii khâ), which also means 'Hello'. This is a common way to greet someone politely in Thailand.\",\n  \"language_notes\": [],\n  \"reference_titles\": [],\n  \"example_ids\": [\"greeting\"]\n}",
+        "rejection": "Invalid explanation script"
+      }
+    ]
+  }
+]

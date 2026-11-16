@@ -1,0 +1,81 @@
+[
+  {
+    "check": "configured models installed",
+    "passed": true,
+    "chat_model": "qwen3:1.7b",
+    "embed_model": "nomic-embed-text"
+  },
+  {
+    "check": "live embedding",
+    "passed": true,
+    "dimensions": 768
+  },
+  {
+    "check": "live tutor Intermediate / Free Chat",
+    "passed": true,
+    "status": 200,
+    "response": "AI-generated conversation (not language reviewed): \u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e35\u0e04\u0e48\u0e30 \u0e04\u0e38\u0e13\u0e0a\u0e37\u0e48\u0e2d\u0e2d\u0e30\u0e44\u0e23\u0e04\u0e30 - Hello. What is your name? (Short greeting with English gloss)\nReviewed curriculum example (greetings; not native-verified): \u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e35\u0e04\u0e48\u0e30 \u0e04\u0e38\u0e13\u0e0a\u0e37\u0e48\u0e2d\u0e2d\u0e30\u0e44\u0e23\u0e04\u0e30\nCurriculum pronunciation guide: s\u00e0 w\u00e0t dii kh\u00e2 khun ch\u0289\u0302\u0289 \u00e0 rai kh\u00e1\nCurriculum meaning: Hello. What is your name?\nCurriculum usage note: \u0e1c\u0e21 / \u0e09\u0e31\u0e19 + \u0e0a\u0e37\u0e48\u0e2d + name = My name is \u2026 . In a casual introduction the pronoun can be omitted: \u0e0a\u0e37\u0e48\u0e2d\u0e41\u0e2d\u0e19\u0e04\u0e48\u0e30 (ch\u0289\u0302\u0289 \u025b\u025bn kh\u00e2). \u0e09\u0e31\u0e19\u0e0a\u0e37\u0e48\u0e2d\u0e41\u0e2d\u0e19\u0e04\u0e48\u0e30 remains a valid familiar alternative; these are alternative introductions. \u0e04\u0e38\u0e13\u0e0a\u0e37\u0e48\u0e2d\u0e2d\u0e30\u0e44\u0e23 = What is your name? \u0e09\u0e31\u0e19 is familiar; \u0e14\u0e34\u0e09\u0e31\u0e19 is a more formal feminine option. \u0e04\u0e23\u0e31\u0e1a can end statements or questions; use \u0e04\u0e48\u0e30 for statements and \u0e04\u0e30 for questions in the feminine polite style.\nReference title: greeting",
+    "error": null,
+    "warnings": [],
+    "response_characters": 799,
+    "contains_thai": true,
+    "seconds": 2.16
+  },
+  {
+    "check": "live synthetic Thai text reindex",
+    "passed": true,
+    "diagnostics": [
+      {
+        "filename": "thai.txt",
+        "status": "indexed",
+        "chunks": 2,
+        "dimensions": 768
+      }
+    ]
+  },
+  {
+    "check": "temporary Thai text cleanup",
+    "passed": true
+  },
+  {
+    "check": "live PDF extraction and embedding upload",
+    "passed": true,
+    "status": 200
+  },
+  {
+    "check": "live explicit PDF retrieval",
+    "passed": false,
+    "status": 502,
+    "response": "",
+    "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model.",
+    "answer_has_price": false,
+    "source_metadata": [],
+    "answer_cites_filename": false
+  },
+  {
+    "check": "live semantic retrieval",
+    "passed": false,
+    "status": 502,
+    "response": "",
+    "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model.",
+    "answer_has_price": false,
+    "source_metadata": [],
+    "answer_cites_filename": false
+  },
+  {
+    "check": "live synthetic PDF reindex",
+    "passed": true,
+    "diagnostics": [
+      {
+        "filename": "freddy-smoke.pdf",
+        "status": "indexed",
+        "chunks": 1,
+        "dimensions": 768
+      }
+    ]
+  },
+  {
+    "check": "temporary PDF deletion and index removal",
+    "passed": true
+  }
+]

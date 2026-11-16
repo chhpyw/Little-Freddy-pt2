@@ -1,0 +1,85 @@
+[
+  {
+    "check": "configured models installed",
+    "passed": true,
+    "chat_model": "qwen3.5:4b",
+    "embed_model": "nomic-embed-text"
+  },
+  {
+    "check": "live embedding",
+    "passed": true,
+    "dimensions": 768
+  },
+  {
+    "check": "live tutor Intermediate / Free Chat",
+    "passed": true,
+    "status": 200,
+    "response": "Here is a simple and friendly greeting suitable for starting a conversation in Thai.\nThai example (script checked only): \u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e35\u0e04\u0e23\u0e31\u0e1a\nPronunciation guide: Sawatdee khrap\nEnglish meaning: Hello (masculine polite)\nThai example (script checked only): \u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e35\u0e04\u0e48\u0e30\nPronunciation guide: Sawatdee ka\nEnglish meaning: Hello (feminine polite)\nThai example (script checked only): \u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e35\u0e04\u0e23\u0e31\u0e1a/\u0e04\u0e48\u0e30\nPronunciation guide: Sawatdee khrap/ka\nEnglish meaning: Hello (gender-neutral polite)\nLanguage quotation (Thai): \u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e35\u0e04\u0e23\u0e31\u0e1a\nThis is the standard greeting used by men. The tone mark on '\u0e2a' is unmarked (mid), and '\u0e30' indicates a short vowel sound.",
+    "error": null,
+    "warnings": [],
+    "response_characters": 626,
+    "contains_thai": true,
+    "seconds": 4.1
+  },
+  {
+    "check": "live synthetic Thai text reindex",
+    "passed": true,
+    "diagnostics": [
+      {
+        "filename": "thai.txt",
+        "status": "indexed",
+        "chunks": 2,
+        "dimensions": 768
+      }
+    ]
+  },
+  {
+    "check": "temporary Thai text cleanup",
+    "passed": true
+  },
+  {
+    "check": "live PDF extraction and embedding upload",
+    "passed": true,
+    "status": 200
+  },
+  {
+    "check": "live explicit PDF retrieval",
+    "passed": true,
+    "status": 200,
+    "response": "The coconut water at Freddy's Bangkok practice cafe costs 37 baht. Here is a simple sentence to learn how to say 'coconut water' and 'costs'.\nThai example (script checked only): \u0e19\u0e49\u0e33\u0e21\u0e30\u0e1e\u0e23\u0e49\u0e32\u0e27\u0e2d\u0e48\u0e2d\u0e19 \u0e23\u0e32\u0e04\u0e32\u0e2a\u0e32\u0e21\u0e2a\u0e34\u0e1a\u0e40\u0e08\u0e47\u0e14\u0e1a\u0e32\u0e17\nPronunciation guide: Nam ma phrao ong, rakha sam jit bat\nEnglish meaning: Coconut water, price thirty-seven baht.\nThai example (script checked only): \u0e19\u0e49\u0e33\u0e21\u0e30\u0e1e\u0e23\u0e49\u0e32\u0e27\u0e2d\u0e48\u0e2d\u0e19 \u0e2b\u0e19\u0e36\u0e48\u0e07\u0e41\u0e01\u0e49\u0e27\nPronunciation guide: Nam ma phrao ong num kaeu\nEnglish meaning: One glass of coconut water.\nThai example (script checked only): \u0e23\u0e32\u0e04\u0e32\u0e2a\u0e32\u0e21\u0e2a\u0e34\u0e1a\u0e40\u0e08\u0e47\u0e14\u0e1a\u0e32\u0e17\u0e04\u0e23\u0e31\u0e1a\nPronunciation guide: Rakha sam jit bat kr\u00e1p\nEnglish meaning: The price is thirty-seven baht, please.\nLanguage quotation (Thai): \u0e19\u0e49\u0e33\u0e21\u0e30\u0e1e\u0e23\u0e49\u0e32\u0e27\u0e2d\u0e48\u0e2d\u0e19 \u0e23\u0e32\u0e04\u0e32\u0e2a\u0e32\u0e21\u0e2a\u0e34\u0e1a\u0e40\u0e08\u0e47\u0e14\u0e1a\u0e32\u0e17\nThis sentence means 'Coconut water, price thirty-seven baht'. It uses the number 37 (sam jit) and the word for coconut water.\nReference title: freddy-smoke.pdf",
+    "error": null,
+    "answer_has_price": true,
+    "source_metadata": [
+      "freddy-smoke.pdf"
+    ],
+    "answer_cites_filename": true
+  },
+  {
+    "check": "live semantic retrieval",
+    "passed": true,
+    "status": 200,
+    "response": "At the Bangkok practice cafe, coconut water costs 37 baht. Here is how to say that in Thai with natural word order and correct grammar for a beginner learner.\nThai example (script checked only): \u0e19\u0e49\u0e33\u0e21\u0e30\u0e1e\u0e23\u0e49\u0e32\u0e27\u0e23\u0e32\u0e04\u0e32\u0e2a\u0e32\u0e21\u0e2a\u0e34\u0e1a\u0e40\u0e08\u0e47\u0e14\u0e1a\u0e32\u0e17\nPronunciation guide: Nam ma-prao ra-kha sam-sit-jed-baht\nEnglish meaning: Coconut water costs thirty-seven baht.\nThai example (script checked only): \u0e17\u0e35\u0e48\u0e04\u0e32\u0e40\u0e1f\u0e48\u0e41\u0e1a\u0e07\u0e04\u0e47\u0e2d\u0e01 \u0e19\u0e49\u0e33\u0e21\u0e30\u0e1e\u0e23\u0e49\u0e32\u0e27\u0e2a\u0e32\u0e21\u0e2a\u0e34\u0e1a\u0e40\u0e08\u0e47\u0e14\u0e1a\u0e32\u0e17\nPronunciation guide: Thi cafee bangkok nam ma-prao sam-sit-jed-baht\nEnglish meaning: At Bangkok practice cafe, coconut water is thirty-seven baht.\nThai example (script checked only): \u0e02\u0e2d\u0e41\u0e01\u0e49\u0e27\u0e19\u0e49\u0e33\u0e21\u0e30\u0e1e\u0e23\u0e49\u0e32\u0e27\u0e2b\u0e19\u0e36\u0e48\u0e07\u0e41\u0e01\u0e49\u0e27\nPronunciation guide: Khor kaeo nam ma-prao num kaeo\nEnglish meaning: I would like one glass of coconut water.\nLanguage quotation (Thai): \u0e19\u0e49\u0e33\u0e21\u0e30\u0e1e\u0e23\u0e49\u0e32\u0e27\u0e23\u0e32\u0e04\u0e32\u0e2a\u0e32\u0e21\u0e2a\u0e34\u0e1a\u0e40\u0e08\u0e47\u0e14\u0e1a\u0e32\u0e17\nThis sentence uses the structure 'Item + price' to state cost naturally. The word '\u0e23\u0e32\u0e04\u0e32' means 'price'. Note that '\u0e2a\u0e32\u0e21\u0e2a\u0e34\u0e1a\u0e40\u0e08\u0e47\u0e14' is written as one number (37) in Thai, not separated by spaces like English.\nReference title: freddy-smoke.pdf",
+    "error": null,
+    "answer_has_price": true,
+    "source_metadata": [
+      "freddy-smoke.pdf"
+    ],
+    "answer_cites_filename": true
+  },
+  {
+    "check": "live synthetic PDF reindex",
+    "passed": true,
+    "diagnostics": [
+      {
+        "filename": "freddy-smoke.pdf",
+        "status": "indexed",
+        "chunks": 1,
+        "dimensions": 768
+      }
+    ]
+  },
+  {
+    "check": "temporary PDF deletion and index removal",
+    "passed": true
+  }
+]

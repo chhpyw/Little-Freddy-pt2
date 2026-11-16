@@ -1,0 +1,403 @@
+[
+  {
+    "model": "qwen3:1.7b",
+    "case": "greeting",
+    "repeat": 1,
+    "status": 200,
+    "passed": true,
+    "seconds": 1.21,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "Thai greeting: ค่ะ (kha) - 'Hello' or 'Hi'. It's a polite and friendly way to greet someone.\nThai example (script checked only): ค่ะ\nPronunciation guide: kha\nEnglish meaning: Hello\nLanguage quotation (Thai): ค่ะ\nThis is a common Thai greeting used in formal and informal settings.\nReference title: Thai Greetings and Phrases - Official Thai Language Resources",
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Hello",
+            "romanization": "kha",
+            "thai": "ค่ะ"
+          }
+        ],
+        "explanation": "Thai greeting: ค่ะ (kha) - 'Hello' or 'Hi'. It's a polite and friendly way to greet someone.",
+        "language_notes": [
+          {
+            "explanation": "This is a common Thai greeting used in formal and informal settings.",
+            "language": "Thai",
+            "quote": "ค่ะ"
+          }
+        ],
+        "reference_titles": [
+          "Thai Greetings and Phrases - Official Thai Language Resources"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Thai greeting: ค่ะ (kha) - 'Hello' or 'Hi'. It's a polite and friendly way to greet someone.\",\n  \"examples\": [\n    {\n      \"thai\": \"ค่ะ\",\n      \"english\": \"Hello\",\n      \"romanization\": \"kha\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ค่ะ\",\n      \"explanation\": \"This is a common Thai greeting used in formal and informal settings.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Greetings and Phrases - Official Thai Language Resources\"\n  ]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": "food-ordering",
+    "repeat": 1,
+    "status": 502,
+    "passed": false,
+    "seconds": 4.17,
+    "response": {
+      "code": "invalid_thai_generation",
+      "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model."
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"I will teach you how to order a non-spicy fried rice plate in Thai, with an English meaning and pronunciation.\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอให้ข้าวผัดไม่เผ็ด 1 จาน\",\n      \"english\": \"Order a non-spicy fried rice plate\",\n      \"romanization\": \"Tōtā wāpān phūtān mītān 1 จาน\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอให้ข้าวผัดไม่เผ็ด 1 จาน\",\n      \"explanation\": \"This is a common way to order a non-spicy fried rice plate in Thai.\"\n    },\n    {\n      \"language\": \"English\",\n      \"quote\": \"Order a non-spicy fried rice plate\",\n      \"explanation\": \"This is the English meaning of the Thai phrase above.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Restaurant Order Phrases\",\n    \"Thai Food Vocabulary\"\n  ]\n}",
+        "rejection": "Invalid explanation or pronunciation script"
+      },
+      {
+        "content": "{\n  \"explanation\": \"การสั่งอาหารในภาษาไทย ต้องใช้คำว่า 'ขอ' ตามลำดับ ตัวอย่าง: ขอ ข้าวผัดไม่เผ็ด 1 จาน\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอ ข้าวผัดไม่เผ็ด 1 จาน\",\n      \"english\": \"Order a non-spicy fried rice plate\",\n      \"romanization\": \"Tōu ข้าวผัดไม่เผ็ด 1 จาน\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอ ข้าวผัดไม่เผ็ด 1 จาน\",\n      \"explanation\": \"คำว่า 'ขอ' หมายถึง 'order' ในภาษาไทย คำว่า 'ข้าวผัดไม่เผ็ด' หมายถึง 'non-spicy fried rice'\"\n    },\n    {\n      \"language\": \"English\",\n      \"quote\": \"Order a non-spicy fried rice plate\",\n      \"explanation\": \"This is the English translation of the Thai phrase, showing the meaning of the order.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Restaurant Order Guide\",\n    \"Thai Language Pronunciation Rules\",\n    \"Thai Food Vocabulary\"\n  ]\n}",
+        "rejection": "Invalid explanation or pronunciation script"
+      }
+    ]
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": "correct-wrong-language",
+    "repeat": 1,
+    "status": 200,
+    "passed": true,
+    "seconds": 4.96,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 2,
+      "response": "The phrase 'ขอให้เป็นน้ำ' is correct in Thai, but the user mentioned 'Burmese' which is a different language. The correct Thai for 'order one glass of water' is 'ขอให้เป็นน้ำ 1 แก้ว', with the Thai pronunciation: ขอ-ให้-เป็น-น้ำ-1-แก้ว.\nThai example (script checked only): ขอให้เป็นน้ำ 1 แก้ว\nPronunciation guide: Tou-ki-pei-nua-1-kaaw\nEnglish meaning: Order one glass of water\nLanguage quotation (Thai): ขอให้เป็นน้ำ 1 แก้ว\nThis is the correct Thai for 'order one glass of water'. The word แก้ว means 'glass' and น้ำ means 'water'.\nLanguage quotation (Burmese): မြို့နှိုင်း ကို စားပါ\nThis is a different language (Burmese) and is not correct for the request. The correct Thai is 'ขอให้เป็นน้ำ 1 แก้ว'.\nReference title: Thai Language Guide\nReference title: Burmese Language Reference",
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Order one glass of water",
+            "romanization": "Tou-ki-pei-nua-1-kaaw",
+            "thai": "ขอให้เป็นน้ำ 1 แก้ว"
+          }
+        ],
+        "explanation": "The phrase 'ขอให้เป็นน้ำ' is correct in Thai, but the user mentioned 'Burmese' which is a different language. The correct Thai for 'order one glass of water' is 'ขอให้เป็นน้ำ 1 แก้ว', with the Thai pronunciation: ขอ-ให้-เป็น-น้ำ-1-แก้ว.",
+        "language_notes": [
+          {
+            "explanation": "This is the correct Thai for 'order one glass of water'. The word แก้ว means 'glass' and น้ำ means 'water'.",
+            "language": "Thai",
+            "quote": "ขอให้เป็นน้ำ 1 แก้ว"
+          },
+          {
+            "explanation": "This is a different language (Burmese) and is not correct for the request. The correct Thai is 'ขอให้เป็นน้ำ 1 แก้ว'.",
+            "language": "Burmese",
+            "quote": "မြို့နှိုင်း ကို စားပါ"
+          }
+        ],
+        "reference_titles": [
+          "Thai Language Guide",
+          "Burmese Language Reference"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"The phrase 'ขอให้เป็นน้ำ' is correct, but the original request was in Burmese, not Thai. The correct Thai phrase to order one glass of water is 'ขอให้เป็นน้ำ 1 แก้ว' (meaning 'order one glass of water').\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอให้เป็นน้ำ 1 แก้ว\",\n      \"english\": \"Order one glass of water\",\n      \"romanization\": \"Tōtō pān nāw 1 แก้ว\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอให้เป็นน้ำ 1 แก้ว\",\n      \"explanation\": \"This phrase is used to order one glass of water in Thai.\"\n    },\n    {\n      \"language\": \"Burmese\",\n      \"quote\": \"မြန်မာ မှ အမှု အများ အများ\",\n      \"explanation\": \"This is the Burmese translation of 'order one glass of water.'\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Language Guide: Ordering Food and Drink\",\n    \"Burmese Language Reference: Basic Phrases\"\n  ]\n}",
+        "rejection": "Invalid explanation or pronunciation script"
+      },
+      {
+        "content": "{\n  \"explanation\": \"The phrase 'ขอให้เป็นน้ำ' is correct in Thai, but the user mentioned 'Burmese' which is a different language. The correct Thai for 'order one glass of water' is 'ขอให้เป็นน้ำ 1 แก้ว', with the Thai pronunciation: ขอ-ให้-เป็น-น้ำ-1-แก้ว.\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอให้เป็นน้ำ 1 แก้ว\",\n      \"english\": \"Order one glass of water\",\n      \"romanization\": \"Tou-ki-pei-nua-1-kaaw\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอให้เป็นน้ำ 1 แก้ว\",\n      \"explanation\": \"This is the correct Thai for 'order one glass of water'. The word แก้ว means 'glass' and น้ำ means 'water'.\"\n    },\n    {\n      \"language\": \"Burmese\",\n      \"quote\": \"မြို့နှိုင်း ကို စားပါ\",\n      \"explanation\": \"This is a different language (Burmese) and is not correct for the request. The correct Thai is 'ขอให้เป็นน้ำ 1 แก้ว'.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Language Guide\",\n    \"Burmese Language Reference\"\n  ]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": "language-discussion",
+    "repeat": 1,
+    "status": 502,
+    "passed": false,
+    "seconds": 10.8,
+    "response": {
+      "code": "invalid_thai_generation",
+      "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model."
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"မင်္ဂလာပါ သည် မြန်မာ နောက်ဆုံး အမှုဖြစ်သော အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများကို ပြောင်းလဲခြင်းမှ အမှုအများ",
+        "rejection": "Unterminated string starting at: line 2 column 18 (char 19)"
+      },
+      {
+        "content": "{\n  \"explanation\": \"မင်္ဂလာပါ is a traditional Burmese greeting that means 'Good day' or 'May you be well.' It is commonly used in formal or polite contexts. The phrase is often said with a slight bow or gesture, showing respect and goodwill.\",\n  \"examples\": [\n    {\n      \"thai\": \"မင်္ဂလာပါ\",\n      \"english\": \"Good day\",\n      \"romanization\": \"Mang-lai-pa\"\n    },\n    {\n      \"thai\": \"မင်္ဂလာပါ ကိုယ့်ကို ကျော်ကြားပါ\",\n      \"english\": \"May you be well\",\n      \"romanization\": \"Mang-lai-pa e-kyu-kyu-e-sa-pa\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Burmese\",\n      \"quote\": \"မင်္ဂလာပါ\",\n      \"explanation\": \"This is a traditional Burmese greeting that means 'Good day' or 'May you be well.' It is commonly used in formal or polite contexts.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"မင်္ဂလာပါ\",\n      \"explanation\": \"This is a traditional Thai greeting that means 'Good day' or 'May you be well.' It is commonly used in formal or polite contexts.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Burmese Greetings and Phrases\",\n    \"Thai Language and Culture\"\n  ]\n}",
+        "rejection": "Invalid explanation script"
+      }
+    ]
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": "greeting",
+    "repeat": 2,
+    "status": 200,
+    "passed": true,
+    "seconds": 1.55,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "Thai greeting with English meaning and pronunciation guide\nThai example (script checked only): สวัสดีครับ\nPronunciation guide: Swa-tdī krap\nEnglish meaning: Hello\nLanguage quotation (English): Hello is a common greeting in Thai.\nIt is used to greet someone politely and initiate a conversation.\nLanguage quotation (Thai): สวัสดีครับ\nThis is a common Thai greeting, meaning 'Hello' or 'Good day.' It is used to greet someone politely and start a conversation.\nReference title: Thai Greetings and Phrases (2023)\nReference title: Common Thai Phrases for Everyday Use",
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Hello",
+            "romanization": "Swa-tdī krap",
+            "thai": "สวัสดีครับ"
+          }
+        ],
+        "explanation": "Thai greeting with English meaning and pronunciation guide",
+        "language_notes": [
+          {
+            "explanation": "It is used to greet someone politely and initiate a conversation.",
+            "language": "English",
+            "quote": "Hello is a common greeting in Thai."
+          },
+          {
+            "explanation": "This is a common Thai greeting, meaning 'Hello' or 'Good day.' It is used to greet someone politely and start a conversation.",
+            "language": "Thai",
+            "quote": "สวัสดีครับ"
+          }
+        ],
+        "reference_titles": [
+          "Thai Greetings and Phrases (2023)",
+          "Common Thai Phrases for Everyday Use"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Thai greeting with English meaning and pronunciation guide\",\n  \"examples\": [\n    {\n      \"thai\": \"สวัสดีครับ\",\n      \"english\": \"Hello\",\n      \"romanization\": \"Swa-tdī krap\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"English\",\n      \"quote\": \"Hello is a common greeting in Thai.\",\n      \"explanation\": \"It is used to greet someone politely and initiate a conversation.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"สวัสดีครับ\",\n      \"explanation\": \"This is a common Thai greeting, meaning 'Hello' or 'Good day.' It is used to greet someone politely and start a conversation.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Greetings and Phrases (2023)\",\n    \"Common Thai Phrases for Everyday Use\"\n  ]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": "food-ordering",
+    "repeat": 2,
+    "status": 502,
+    "passed": false,
+    "seconds": 11.03,
+    "response": {
+      "code": "invalid_thai_generation",
+      "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model."
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"I will teach you how to order a non-spicy fried rice plate in Thai. The phrase will be used naturally in a conversation.\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอให้เพิ่มข้าวผัดไม่เผ็ด 1 จาน\",\n      \"english\": \"I would like to order a non-spicy fried rice plate.\",\n      \"romanization\": \"Tōtō kāmā kāmā phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtān phūtā",
+        "rejection": "Unterminated string starting at: line 7 column 23 (char 307)"
+      },
+      {
+        "content": "{\n  \"explanation\": \"Let's learn how to order a plate of non-spicy fried rice in Thai. The phrase 'ขอข้าวผัดไม่เผ็ด' means 'order non-spicy fried rice.' We'll add a pronunciation guide and a relevant Thai phrase.\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอข้าวผัดไม่เผ็ด\",\n      \"english\": \"Order non-spicy fried rice\",\n      \"romanization\": \"Tōu kʰâw phāt māi ŋē̤d\"\n    },\n    {\n      \"thai\": \"ขอข้าวผัดไม่เผ็ด ครับ\",\n      \"english\": \"Order non-spicy fried rice, please\",\n      \"romanization\": \"Tōu kʰâw phāt māi ŋē̤d kʰā̤r\"\n    },\n    {\n      \"thai\": \"ขอข้าวผัดไม่เผ็ด ค่ะ\",\n      \"english\": \"Order non-spicy fried rice, please\",\n      \"romanization\": \"Tōu kʰâw phāt māi ŋē̤d kʰā̤r\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอข้าวผัดไม่เผ็ด ครับ\",\n      \"explanation\": \"This phrase is used to order non-spicy fried rice in a polite and respectful manner.\"\n    },\n    {\n      \"language\": \"English\",\n      \"quote\": \"Order non-spicy fried rice\",\n      \"explanation\": \"This is the direct translation of the Thai phrase and is commonly used in restaurant orders.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Restaurant Order Phrases\",\n    \"Thai Language and Culture\"\n  ]\n}",
+        "rejection": "Invalid explanation or pronunciation script"
+      }
+    ]
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": "correct-wrong-language",
+    "repeat": 2,
+    "status": 502,
+    "passed": false,
+    "seconds": 4.75,
+    "response": {
+      "code": "invalid_thai_generation",
+      "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model."
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"The phrase 'ขอให้เป็นน้ำ' is correct, but the sentence should be structured properly. The correct sentence is: ขอให้เป็นน้ำ 1 แก้ว.\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอให้เป็นน้ำ 1 แก้ว\",\n      \"english\": \"I want to order one glass of water\",\n      \"romanization\": \"Tōtō pān nān wān 1 แก้ว\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอให้เป็นน้ำ 1 แก้ว\",\n      \"explanation\": \"This phrase means 'I want to order one glass of water' and is used in formal contexts when ordering food or drinks.\"\n    },\n    {\n      \"language\": \"English\",\n      \"quote\": \"I want to order one glass of water\",\n      \"explanation\": \"This is a simple sentence that can be used in everyday conversations when ordering food or drinks.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Language Guide: Ordering Food and Drinks\",\n    \"Thai Grammar and Vocabulary: Essential Phrases\"\n  ]\n}",
+        "rejection": "Invalid explanation or pronunciation script"
+      },
+      {
+        "content": "{\n  \"explanation\": \"The phrase 'ขอให้เป็นน้ำ' is correct, but the learner may have confused 'น้ำ' (water) with 'น้ำส้ม' (soda water). The correct phrase to order one glass of water in Thai is 'ขอให้เป็นน้ำ 1 แก้ว' (I would like to order one glass of water).\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอให้เป็นน้ำ 1 แก้ว\",\n      \"english\": \"I would like to order one glass of water\",\n      \"romanization\": \"Tōtō pān nāw 1 แก้ว\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอให้เป็นน้ำ 1 แก้ว\",\n      \"explanation\": \"This phrase is used to order one glass of water in Thai. 'ขอ' means 'I would like to order,' 'ให้' means 'to,' 'เป็น' means 'to be,' 'น้ำ' means 'water,' and '1 แก้ว' means 'one glass.'\"\n    },\n    {\n      \"language\": \"English\",\n      \"quote\": \"I would like to order one glass of water\",\n      \"explanation\": \"This is the natural English translation of the Thai phrase. It is a simple and common way to express ordering food or drink in Thai.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Language Guide: Ordering Food and Drink\",\n    \"Thai Pronunciation Guide: Common Phrases\"\n  ]\n}",
+        "rejection": "Invalid explanation or pronunciation script"
+      }
+    ]
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": "language-discussion",
+    "repeat": 2,
+    "status": 502,
+    "passed": false,
+    "seconds": 10.79,
+    "response": {
+      "code": "invalid_thai_generation",
+      "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model."
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"မင်္ဂလာပါ သည် မျှော်လင့်ချက် ဖြစ်သည်။ မျှော်လင့်ချက် သည် အမှားများကို ဖြေရှင်းပေးသည်။ မျှော်လင့်ချက် သည် အမှားများကို ဖြေရှင်းပေးသည်။ မျှော်လင့်ချက် သည် အမှားများကို ဖြေရှင်းပေးသည်။ မျှော်လင့်ချက် သည် အမှားများကို ဖြေရှင်းပေးသည်။ မျှော်လင့်ချက် သည် အမှားများကို ဖြေရှင်းပေးသည်။ မျှော်လင့်ချက် သည် အမှားများကို ဖြေရှင်းပေးသည်။ မျှော်လင့်ချက် သည် အမှားများကို ဖြေရှင်းပေးသည်။ မျှော်လင့်ချက် သည် အမှားများကို ဖြေရှင်းပေးသည်။ မျှော်လင့်ချက် သည် အမှားများကို ဖြေရှင်းပေးသည်။ မျှော်လင့်ချက် သည် အမှားများကို ဖြေရှင်းပေးသည်။ မျှော်လင့်ချက် သည် အမှားများကို ဖြေရှင်းပေးသည်။ မျှော်လင့်ချက် သည် အမှားများကို ဖြေရှင်းပေးသည်။ မျှော်လင့်ချက် သည် အမှားများကို ဖြေရှင်",
+        "rejection": "Unterminated string starting at: line 2 column 18 (char 19)"
+      },
+      {
+        "content": "{\n  \"explanation\": \"မင်္ဂလာပါ is a traditional Burmese greeting that means 'Good day' or 'May you be well.' It is commonly used in formal or polite contexts. The phrase is often said with a bow or gesture of respect.\",\n  \"examples\": [\n    {\n      \"thai\": \"မင်္ဂလာပါ\",\n      \"english\": \"Good day\",\n      \"romanization\": \"Mun-ru-lai-pa\"\n    },\n    {\n      \"thai\": \"မင်္ဂလာပါ မှာ အောက်ပါပြောပါ။\",\n      \"english\": \"Good day, let's talk.\",\n      \"romanization\": \"Mun-ru-lai-pa ma a-ha-pif pah-pa\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Burmese\",\n      \"quote\": \"မင်္ဂလာပါ\",\n      \"explanation\": \"This is a traditional Burmese greeting that means 'Good day' or 'May you be well.' It is commonly used in formal or polite contexts.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"မင်္ဂလာပါ\",\n      \"explanation\": \"This is a traditional Thai greeting that means 'Good day' or 'May you be well.' It is commonly used in formal or polite contexts.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Burmese Greetings and Phrases\",\n    \"Thai Language and Culture\"\n  ]\n}",
+        "rejection": "Invalid explanation script"
+      }
+    ]
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": "greeting",
+    "repeat": 3,
+    "status": 200,
+    "passed": true,
+    "seconds": 1.47,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "Thai greeting with English meaning and pronunciation guide\nThai example (script checked only): สวัสดีครับ\nPronunciation guide: Swa-tdī krap\nEnglish meaning: Hello\nLanguage quotation (English): Hello is a common way to greet someone in Thai.\nIt is a simple and polite way to start a conversation.\nLanguage quotation (Thai): สวัสดีครับ\nThis is a common greeting used in formal and informal settings.\nReference title: Thai Greetings and Phrases (2023)\nReference title: Basic Thai Grammar and Vocabulary (2022)",
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Hello",
+            "romanization": "Swa-tdī krap",
+            "thai": "สวัสดีครับ"
+          }
+        ],
+        "explanation": "Thai greeting with English meaning and pronunciation guide",
+        "language_notes": [
+          {
+            "explanation": "It is a simple and polite way to start a conversation.",
+            "language": "English",
+            "quote": "Hello is a common way to greet someone in Thai."
+          },
+          {
+            "explanation": "This is a common greeting used in formal and informal settings.",
+            "language": "Thai",
+            "quote": "สวัสดีครับ"
+          }
+        ],
+        "reference_titles": [
+          "Thai Greetings and Phrases (2023)",
+          "Basic Thai Grammar and Vocabulary (2022)"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"Thai greeting with English meaning and pronunciation guide\",\n  \"examples\": [\n    {\n      \"thai\": \"สวัสดีครับ\",\n      \"english\": \"Hello\",\n      \"romanization\": \"Swa-tdī krap\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"English\",\n      \"quote\": \"Hello is a common way to greet someone in Thai.\",\n      \"explanation\": \"It is a simple and polite way to start a conversation.\"\n    },\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"สวัสดีครับ\",\n      \"explanation\": \"This is a common greeting used in formal and informal settings.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Greetings and Phrases (2023)\",\n    \"Basic Thai Grammar and Vocabulary (2022)\"\n  ]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": "food-ordering",
+    "repeat": 3,
+    "status": 200,
+    "passed": true,
+    "seconds": 6.45,
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 2,
+      "response": "การสั่งอาหารในภาษาไทย คือการพูดถึงสิ่งที่คุณต้องการซื้อ ซึ่งในกรณีนี้คุณต้องการสั่ง 'plate of non-spicy fried rice' ซึ่งหมายถึง 'plate' คือ 'ชุด' หรือ 'ชุดอาหาร'  'non-spicy' คือ 'ไม่เผ็ด' หรือ 'ไม่ใส่พริก'  'fried rice' คือ 'ข้าวผัด' หรือ 'ข้าวผัดไทย' ดังนั้น คำสั่งที่ถูกต้องคือ 'ขอให้สั่งชุดข้าวผัดไม่เผ็ด 1 ชุด' หรือ 'ขอให้สั่งชุดข้าวผัดไม่ใส่พริก 1 ชุด'\nThai example (script checked only): ขอให้สั่งชุดข้าวผัดไม่เผ็ด 1 ชุด\nPronunciation guide: Tō tō chūtō uwa phāt nai sān sān sān 1 chūtō\nEnglish meaning: Order a non-spicy fried rice plate\nThai example (script checked only): ขอให้สั่งชุดข้าวผัดไม่ใส่พริก 1 ชุด\nPronunciation guide: Tō tō chūtō uwa phāt nai sān sān sān 1 chūtō\nEnglish meaning: Order a non-spicy fried rice plate with no chili\nLanguage quotation (Thai): ขอให้สั่งชุดข้าวผัดไม่เผ็ด 1 ชุด\nคำนี้หมายถึง 'Order a non-spicy fried rice plate' ซึ่งเป็นคำสั่งที่ถูกต้องในภาษาไทย\nLanguage quotation (English): Order a non-spicy fried rice plate\nคำนี้หมายถึง 'Order a non-spicy fried rice plate' ซึ่งเป็นคำสั่งที่ถูกต้องในภาษาอังกฤษ\nReference title: Thai Restaurant Menu Example\nReference title: Thai Ordering Phrases",
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Order a non-spicy fried rice plate",
+            "romanization": "Tō tō chūtō uwa phāt nai sān sān sān 1 chūtō",
+            "thai": "ขอให้สั่งชุดข้าวผัดไม่เผ็ด 1 ชุด"
+          },
+          {
+            "english": "Order a non-spicy fried rice plate with no chili",
+            "romanization": "Tō tō chūtō uwa phāt nai sān sān sān 1 chūtō",
+            "thai": "ขอให้สั่งชุดข้าวผัดไม่ใส่พริก 1 ชุด"
+          }
+        ],
+        "explanation": "การสั่งอาหารในภาษาไทย คือการพูดถึงสิ่งที่คุณต้องการซื้อ ซึ่งในกรณีนี้คุณต้องการสั่ง 'plate of non-spicy fried rice' ซึ่งหมายถึง 'plate' คือ 'ชุด' หรือ 'ชุดอาหาร'  'non-spicy' คือ 'ไม่เผ็ด' หรือ 'ไม่ใส่พริก'  'fried rice' คือ 'ข้าวผัด' หรือ 'ข้าวผัดไทย' ดังนั้น คำสั่งที่ถูกต้องคือ 'ขอให้สั่งชุดข้าวผัดไม่เผ็ด 1 ชุด' หรือ 'ขอให้สั่งชุดข้าวผัดไม่ใส่พริก 1 ชุด'",
+        "language_notes": [
+          {
+            "explanation": "คำนี้หมายถึง 'Order a non-spicy fried rice plate' ซึ่งเป็นคำสั่งที่ถูกต้องในภาษาไทย",
+            "language": "Thai",
+            "quote": "ขอให้สั่งชุดข้าวผัดไม่เผ็ด 1 ชุด"
+          },
+          {
+            "explanation": "คำนี้หมายถึง 'Order a non-spicy fried rice plate' ซึ่งเป็นคำสั่งที่ถูกต้องในภาษาอังกฤษ",
+            "language": "English",
+            "quote": "Order a non-spicy fried rice plate"
+          }
+        ],
+        "reference_titles": [
+          "Thai Restaurant Menu Example",
+          "Thai Ordering Phrases"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"I will teach you how to order a non-spicy fried rice plate in Thai. The phrase will be used naturally in a conversation.\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอข้าวผัดไม่เผ็ด 1 จาน\",\n      \"english\": \"I want to order a non-spicy fried rice plate.\",\n      \"romanization\": \"Tōu wāw phāt mīt ŋāt 1 จาน\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอข้าวผัดไม่เผ็ด 1 จาน\",\n      \"explanation\": \"This phrase is used to order a non-spicy fried rice plate in Thai.\"\n    },\n    {\n      \"language\": \"English\",\n      \"quote\": \"I want to order a non-spicy fried rice plate.\",\n      \"explanation\": \"This is the English meaning of the Thai phrase above.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Restaurant Order Phrases\",\n    \"Thai Food Vocabulary\"\n  ]\n}",
+        "rejection": "Invalid explanation or pronunciation script"
+      },
+      {
+        "content": "{\n  \"explanation\": \"การสั่งอาหารในภาษาไทย คือการพูดถึงสิ่งที่คุณต้องการซื้อ ซึ่งในกรณีนี้คุณต้องการสั่ง 'plate of non-spicy fried rice' ซึ่งหมายถึง 'plate' คือ 'ชุด' หรือ 'ชุดอาหาร'  'non-spicy' คือ 'ไม่เผ็ด' หรือ 'ไม่ใส่พริก'  'fried rice' คือ 'ข้าวผัด' หรือ 'ข้าวผัดไทย' ดังนั้น คำสั่งที่ถูกต้องคือ 'ขอให้สั่งชุดข้าวผัดไม่เผ็ด 1 ชุด' หรือ 'ขอให้สั่งชุดข้าวผัดไม่ใส่พริก 1 ชุด'\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอให้สั่งชุดข้าวผัดไม่เผ็ด 1 ชุด\",\n      \"english\": \"Order a non-spicy fried rice plate\",\n      \"romanization\": \"Tō tō chūtō uwa phāt nai sān sān sān 1 chūtō\"\n    },\n    {\n      \"thai\": \"ขอให้สั่งชุดข้าวผัดไม่ใส่พริก 1 ชุด\",\n      \"english\": \"Order a non-spicy fried rice plate with no chili\",\n      \"romanization\": \"Tō tō chūtō uwa phāt nai sān sān sān 1 chūtō\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอให้สั่งชุดข้าวผัดไม่เผ็ด 1 ชุด\",\n      \"explanation\": \"คำนี้หมายถึง 'Order a non-spicy fried rice plate' ซึ่งเป็นคำสั่งที่ถูกต้องในภาษาไทย\"\n    },\n    {\n      \"language\": \"English\",\n      \"quote\": \"Order a non-spicy fried rice plate\",\n      \"explanation\": \"คำนี้หมายถึง 'Order a non-spicy fried rice plate' ซึ่งเป็นคำสั่งที่ถูกต้องในภาษาอังกฤษ\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Restaurant Menu Example\",\n    \"Thai Ordering Phrases\"\n  ]\n}",
+        "rejection": null
+      }
+    ]
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": "correct-wrong-language",
+    "repeat": 3,
+    "status": 502,
+    "passed": false,
+    "seconds": 5.76,
+    "response": {
+      "code": "invalid_thai_generation",
+      "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model."
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"The phrase 'ขอให้เป็นน้ำ' is correct, but the original request was in Burmese, not Thai. The correct Thai phrase to order one glass of water is 'ขอให้เป็นน้ำ 1 แก้ว' (meaning 'order one glass of water').\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอให้เป็นน้ำ 1 แก้ว\",\n      \"english\": \"Order one glass of water\",\n      \"romanization\": \"Tōtō pān nāw 1 แก้ว\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอให้เป็นน้ำ 1 แก้ว\",\n      \"explanation\": \"This phrase is used to order one glass of water in Thai.\"\n    },\n    {\n      \"language\": \"Burmese\",\n      \"quote\": \"မှာ အိမ်ကြီး တစ်ခု ရှိပါက အိမ်ကြီး တစ်ခု ရှိပါက အိမ်ကြီး တစ်ခု ရှိပါက\",\n      \"explanation\": \"This is a Burmese sentence that translates to 'If there is a house, there is a house.' It is not the correct phrase for ordering water.\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Language Guide: Ordering Food and Drink\",\n    \"Burmese Language Reference: Basic Phrases\"\n  ]\n}",
+        "rejection": "Invalid explanation or pronunciation script"
+      },
+      {
+        "content": "{\n  \"explanation\": \"The phrase 'ขอให้เป็นน้ำ' is correct, but the sentence structure needs adjustment for clarity and natural flow. The correct sentence is 'ขอให้เป็นน้ำ 1 แก้ว' (I would like to order one glass of water).\",\n  \"examples\": [\n    {\n      \"thai\": \"ขอให้เป็นน้ำ 1 แก้ว\",\n      \"english\": \"I would like to order one glass of water\",\n      \"romanization\": \"Tōtō pōn nā 1 แก้ว\"\n    },\n    {\n      \"thai\": \"ขอให้เป็นน้ำ 2 แก้ว\",\n      \"english\": \"I would like to order two glasses of water\",\n      \"romanization\": \"Tōtō pōn nā 2 แก้ว\"\n    }\n  ],\n  \"language_notes\": [\n    {\n      \"language\": \"Thai\",\n      \"quote\": \"ขอให้เป็นน้ำ 1 แก้ว\",\n      \"explanation\": \"This phrase is used to request a specific item in Thai, with 'ขอ' meaning 'I would like' and 'เป็นน้ำ' meaning 'to be water.'\"\n    },\n    {\n      \"language\": \"English\",\n      \"quote\": \"I would like to order one glass of water\",\n      \"explanation\": \"This is a natural way to express the request in English, matching the Thai phrase 'ขอให้เป็นน้ำ 1 แก้ว.'\"\n    }\n  ],\n  \"reference_titles\": [\n    \"Thai Language Guide: Ordering Food and Drink\",\n    \"Thai Pronunciation Guide: Common Phrases\"\n  ]\n}",
+        "rejection": "Invalid explanation or pronunciation script"
+      }
+    ]
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": "language-discussion",
+    "repeat": 3,
+    "status": 502,
+    "passed": false,
+    "seconds": 15.77,
+    "response": {
+      "code": "invalid_thai_generation",
+      "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model."
+    },
+    "attempts": [
+      {
+        "content": "{\n  \"explanation\": \"မင်္ဂလာပါ သည် မျှော်လင့်မှု သို့မဟုတ် အလိုက် အသုံးပြုမှု မှာ မျှော်လင့်မှု သို့မဟုတ် အလိုက် အသုံးပြုမှု မှာ မျှော်လင့်မှု သို့မဟုတ် အလိုက် အသုံးပြုမှု မှာ မျှော်လင့်မှု သို့မဟုတ် အလိုက် အသုံးပြုမှု မှာ မျှော်လင့်မှု သို့မဟုတ် အလိုက် အသုံးပြုမှု မှာ မျှော်လင့်မှု သို့မဟုတ် အလိုက် အသုံးပြုမှု မှာ မျှော်လင့်မှု သို့မဟုတ် အလိုက် အသုံးပြုမှု မှာ မျှော်လင့်မှု သို့မဟုတ် အလိုက် အသုံးပြုမှု မှာ မျှော်လင့်မှု သို့မဟုတ် အလိုက် အသုံးပြုမှု မှာ မျှော်လင့်မှု သို့မဟုတ် အလိုက် အသုံးပြုမှု မှာ မျှော်လင့်မှု သို့မဟုတ် အလိုက် အသုံးပြုမှု မှာ မျှော်လင့်မှု သို့မဟုတ် အလိုက် အသုံးပြုမှု မှာ မျှော်လင့်မှု သို့မဟုတ် အလိုက် အသုံးပြုမှု မှာ မျှော်လင့်မှု သို့မဟုတ် အလိုက် အ",
+        "rejection": "Unterminated string starting at: line 2 column 18 (char 19)"
+      },
+      {
+        "content": "{\n  \"explanation\": \"မင်္ဂလာပါ is a common Burmese greeting meaning 'Happy New Year' or 'Wishing you a happy new year.' It is often used to express good wishes at the beginning of the year. The phrase is commonly said in the form မင်္ဂလာပါ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မှာ မ",
+        "rejection": "Unterminated string starting at: line 2 column 18 (char 19)"
+      }
+    ]
+  }
+]

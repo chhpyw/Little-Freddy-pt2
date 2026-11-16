@@ -1,0 +1,215 @@
+[
+  {
+    "model": "qwen3:1.7b",
+    "case_id": "greeting",
+    "verdict": "clear_error",
+    "issues": [
+      "Generated explanation says ค่ะ means hello. สวัสดี means hello; ค่ะ is a polite statement particle."
+    ],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case_id": "introduction",
+    "verdict": "clear_error",
+    "issues": [
+      "Changes the name spelling to แอนน์ and inserts an unsupported pronunciation sequence.",
+      "Claims ดิฉัน can be used to appear credible; the reviewed distinction is formal register, not credibility."
+    ],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case_id": "rice",
+    "verdict": "no_clear_error_observed",
+    "issues": [],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case_id": "water",
+    "verdict": "clear_error",
+    "issues": [
+      "Introduces ขอ ข้าว หนึ่ง แก้ว and says rice is water here. น้ำ is water; ข้าว is rice."
+    ],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case_id": "near",
+    "verdict": "no_clear_error_observed",
+    "issues": [],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case_id": "far",
+    "verdict": "no_clear_error_observed",
+    "issues": [],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case_id": "twenty",
+    "verdict": "no_clear_error_observed",
+    "issues": [],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case_id": "price",
+    "verdict": "clear_error",
+    "issues": [
+      "Claims ค่ะ marks truth and untruth. It is a feminine polite statement particle; คะ ends this polite question."
+    ],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case_id": "decline",
+    "verdict": "no_clear_error_observed",
+    "issues": [],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case_id": "bag-question",
+    "verdict": "no_clear_error_observed",
+    "issues": [],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case_id": "confirmation",
+    "verdict": "review_needed",
+    "issues": [
+      "Describes polite alternatives as formal and uses ambiguous wording about women/men. Confirm speaker-style/register guidance; politeness is not identical to formality."
+    ],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case_id": "particles",
+    "verdict": "clear_error",
+    "issues": [
+      "Calls ค่ะ the ending in the question มีถุงไหมคะ, and invents a different phrase. The displayed source correctly has ค่ะ for the choosing statement and คะ for the bag question."
+    ],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case_id": "greeting",
+    "verdict": "no_clear_error_observed",
+    "issues": [],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case_id": "introduction",
+    "verdict": "no_clear_error_observed",
+    "issues": [],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case_id": "rice",
+    "verdict": "no_clear_error_observed",
+    "issues": [
+      "Commentary uses unmarked khrap while the fixed pronunciation guide retains khráp. Prefer the fixed guide."
+    ],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case_id": "water",
+    "verdict": "no_clear_error_observed",
+    "issues": [],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case_id": "near",
+    "verdict": "no_clear_error_observed",
+    "issues": [],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case_id": "far",
+    "verdict": "no_clear_error_observed",
+    "issues": [],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case_id": "twenty",
+    "verdict": "no_clear_error_observed",
+    "issues": [
+      "ยี่ is used in compounds such as ยี่สิบ; the normal standalone counting word two is สอง. This contextual explanation should not teach ยี่ as the universal word two."
+    ],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case_id": "price",
+    "verdict": "no_clear_error_observed",
+    "issues": [],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case_id": "decline",
+    "verdict": "no_clear_error_observed",
+    "issues": [],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case_id": "bag-question",
+    "verdict": "clear_error",
+    "issues": [
+      "Calls conversational ไหม falling. The supplied conversational guide is high mái; citation-form mǎi is rising."
+    ],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case_id": "confirmation",
+    "verdict": "clear_error",
+    "issues": [
+      "Writes ใช้ค่ะ in commentary instead of ใช่ค่ะ. ใช้ means use; the reviewed confirmation is ใช่."
+    ],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case_id": "particles",
+    "verdict": "no_clear_error_observed",
+    "issues": [],
+    "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+    "human_review_pending": true
+  }
+]
