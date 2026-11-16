@@ -1,9 +1,20 @@
 # Freddy Learns Thai
 
+**A new language. A whole new world.**
+
+![Freddy Learns Thai branded project overview in navy, orange, cream, and white, featuring the dashboard, AI tutor, learning tools, and document-based RAG workflow.](docs/images/freddy-readme-preview.png)
+
+*Branded project preview. Screens and progress values are illustrative; use the
+installation and launch instructions below for current setup commands.*
+
+**[Features](#features) · [Installation](#installation) · [Ollama & models](#ollama-and-models) · [Launch](#launch) · [Tests](#automated-tests) · [Troubleshooting](#manual-verification-and-troubleshooting)**
+
+## About the project
+
 A personal Thai learning workspace built with Flask, SQLite, HTML, CSS, and vanilla
 JavaScript. It combines structured lessons, local Ollama conversation practice,
 learning from uploaded documents, listening/speaking exercises, and spaced repetition.
-The navy, orange, and white interface adapts to desktop and mobile layouts.
+The navy, orange, cream, and white interface adapts to desktop and mobile layouts.
 
 ## Features
 
