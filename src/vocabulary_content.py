@@ -8,6 +8,7 @@ LESSON_CATEGORIES = dict(greetings='Greetings', food='Food', numbers='Numbers',
 EXAMPLES = {
   'ขอบคุณ': ('ขอบคุณครับ', 'khɔ̀ɔp khun khráp', 'Thank you.'),
   'ฉัน': ('ฉันชื่อแอนค่ะ', 'chǎn chʉ̂ʉ ɛɛn khâ', 'My name is Ann.'),
+  'ชื่อ': ('ชื่อแอนค่ะ', 'chʉ̂ʉ ɛɛn khâ', 'My name is Ann. (Casual introduction; pronoun omitted.)'),
   'หนึ่ง': ('หนึ่งบาทครับ', 'nʉ̀ng bàat khráp', 'One baht.'),
   'สอง': ('สองบาทครับ', 'sɔ̌ɔng bàat khráp', 'Two baht.'),
   'สาม': ('สามบาทครับ', 'sǎam bàat khráp', 'Three baht.'),
@@ -15,9 +16,10 @@ EXAMPLES = {
   'ร้อย': ('หนึ่งร้อยบาทครับ', 'nʉ̀ng rɔ́ɔi bàat khráp', 'One hundred baht.'),
   'กาแฟ': ('ขอกาแฟหนึ่งแก้วค่ะ', 'khɔ̌ɔ kaa fɛɛ nʉ̀ng kɛ̂ɛo khâ', 'One cup of coffee, please.'),
   'เลี้ยวขวา': ('เลี้ยวขวาครับ', 'líao khwǎa khráp', 'Turn right.'),
-  'ใกล้': ('ห้องน้ำอยู่ใกล้ค่ะ', 'hɔ̂ng náam yùu klâi khâ', 'The toilet is nearby.'),
-  'ไกล': ('ห้องน้ำอยู่ไกลค่ะ', 'hɔ̂ng náam yùu klai khâ', 'The toilet is far away.'),
-  'ไม่เอา': ('ไม่เอาถุงค่ะ', 'mâi ao thǔng khâ', 'I do not want a bag.'),
+  'ใกล้': ('ห้องน้ำอยู่แถวนี้ค่ะ', 'hɔ̂ng náam yùu thɛ̌ɛo níi khâ', 'The restroom is around here. (Contextual near expression: แถวนี้ = around here.)'),
+  'ไกล': ('ห้องน้ำอยู่ไกลจากที่นี่ค่ะ', 'hɔ̂ng náam yùu klai jàak thîi nîi khâ', 'The restroom is far from here.'),
+  'ไม่เอา': ('ไม่เอาค่ะ ขอบคุณค่ะ', 'mâi ao khâ khɔ̀ɔp khun khâ', 'I do not want it, thank you. (Direct general refusal.)'),
+  'ถุง': ('ไม่รับถุงค่ะ ขอบคุณค่ะ', 'mâi ráp thǔng khâ khɔ̀ɔp khun khâ', 'I won’t take a bag, thank you.'),
   'อันนั้น': ('เอาอันนั้นค่ะ', 'ao an nán khâ', 'I will take that one.'),
   'ได้': ('ได้ครับ', 'dâai khráp', 'Okay.')
 }

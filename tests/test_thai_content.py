@@ -87,3 +87,35 @@ class ThaiContentTests(unittest.TestCase):
     prompt = backend.tutor_prompt(dict(level='Intermediate', mode='Free Chat', pronunciation=False))
     self.assertIn('Do not include romanization', prompt)
     self.assertNotIn('doubled vowels for length', prompt)
+
+  def test_reviewed_phrases_match_context_across_catalog_and_speech(self):
+    cards = {word['thai']: word for lesson in catalog() for word in lesson['words']}
+    expected = {
+      'ใกล้': ('ห้องน้ำอยู่แถวนี้ค่ะ', 'hɔ̂ng náam yùu thɛ̌ɛo níi khâ', 'around here'),
+      'ไกล': ('ห้องน้ำอยู่ไกลจากที่นี่ค่ะ', 'hɔ̂ng náam yùu klai jàak thîi nîi khâ', 'far from here'),
+      'ถุง': ('ไม่รับถุงค่ะ ขอบคุณค่ะ', 'mâi ráp thǔng khâ khɔ̀ɔp khun khâ', 'bag, thank you'),
+      'ข้าว': ('ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ', 'khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp', 'not spicy'),
+      'ชื่อ': ('ชื่อแอนค่ะ', 'chʉ̂ʉ ɛɛn khâ', 'My name is Ann')
+    }
+    for word, (thai, roman, meaning) in expected.items():
+      self.assertEqual(cards[word]['example_thai'], thai)
+      self.assertEqual(cards[word]['example_roman'], roman)
+      self.assertIn(meaning, cards[word]['example_english'])
+      speech = next(item for item in CONVERSATIONS if item['thai'] == thai)
+      self.assertEqual(speech['roman'], roman)
+      self.assertIn(meaning, speech['english'])
+    self.assertEqual(cards['ฉัน']['example_thai'], 'ฉันชื่อแอนค่ะ')
+    self.assertEqual(cards['กาแฟ']['example_thai'], 'ขอกาแฟหนึ่งแก้วค่ะ')
+    shopping = next(lesson for lesson in LESSONS if lesson['id'] == 'shopping')
+    self.assertEqual(shopping['questions'][0]['answer'], 'ไม่รับถุงค่ะ ขอบคุณค่ะ')
+
+  def test_citation_and_conversational_tones_remain_distinct(self):
+    shopping = next(lesson for lesson in LESSONS if lesson['id'] == 'shopping')
+    self.assertEqual(next(word['roman'] for word in shopping['vocabulary'] if word['thai'] == 'ไหม'), 'mǎi')
+    question = next(item for item in CONVERSATIONS if item['id'] == 'bag-question')
+    self.assertEqual((question['thai'], question['roman']), ('มีถุงไหมคะ', 'mii thǔng mái khá'))
+    self.assertTrue(next(item for item in CONVERSATIONS if item['id'] == 'bag-decline')['roman'].split(' ')[3] == 'khâ')
+    falling = next(tone for tone in TONE_GUIDE if tone['id'] == 'falling')
+    self.assertEqual(falling['thai'], 'ใช่')
+    for form in ['ใช่ค่ะ (châi khâ)', 'ใช่ครับ (châi khráp)']:
+      self.assertIn(form, falling['explanation'])

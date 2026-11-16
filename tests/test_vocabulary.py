@@ -62,7 +62,11 @@ class VocabularyTests(unittest.TestCase):
     self.assertIn('Daily Conversations', catalog['categories'])
     for lesson in catalog['lessons']:
       for word in lesson['words']:
-        self.assertIn(word['thai'], word['example_thai'])
+        if word['thai'] == 'ใกล้':
+          self.assertEqual(word['example_thai'], 'ห้องน้ำอยู่แถวนี้ค่ะ')
+          self.assertIn('Contextual near expression', word['example_english'])
+        else:
+          self.assertIn(word['thai'], word['example_thai'])
         for key in ['roman', 'english', 'example_roman', 'example_english']:
           self.assertTrue(word[key])
       self.assertEqual(self.save(lesson_id=lesson['id']).json['added'], 8)

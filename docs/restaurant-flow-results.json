@@ -1,0 +1,693 @@
+{
+  "transport": "real HTTP Werkzeug Flask -> real Ollama; no generation mocks",
+  "configured_model": "qwen3.5:4b",
+  "turns": [
+    {
+      "learner": "Let's practice ordering food at a Thai restaurant. I am a beginner.",
+      "status": 200,
+      "seconds": 6.06,
+      "usable": true,
+      "response": {
+        "ai_commentary_accepted": true,
+        "doc_sources": [],
+        "generation_attempts": 1,
+        "model": "qwen3.5:4b",
+        "request_id": "3a018e4f8923",
+        "response": "AI-generated conversation (not language reviewed): Hello! Let's order some fried rice together. Would you like it spicy or not? Remember, 'จาน' counts platefuls of food.\nReviewed curriculum example (food; not native-verified): ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ\nCurriculum pronunciation guide: khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp\nCurriculum meaning: One plate of fried rice, not spicy, please.\nCurriculum usage note: ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+        "response_kind": "reviewed_curriculum",
+        "reviewed_examples": [
+          {
+            "english": "One plate of fried rice, not spicy, please.",
+            "id": "food-rice",
+            "lesson_id": "food",
+            "romanization": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp",
+            "thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ",
+            "usage": "ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+            "vocabulary": [
+              {
+                "english": "May I have / please give me",
+                "roman": "khɔ̌ɔ",
+                "thai": "ขอ"
+              },
+              {
+                "english": "Rice",
+                "roman": "khâao",
+                "thai": "ข้าว"
+              },
+              {
+                "english": "Water",
+                "roman": "náam",
+                "thai": "น้ำ"
+              },
+              {
+                "english": "Coffee",
+                "roman": "kaa fɛɛ",
+                "thai": "กาแฟ"
+              },
+              {
+                "english": "Glass; classifier for drinks served by the glass",
+                "roman": "kɛ̂ɛo",
+                "thai": "แก้ว"
+              },
+              {
+                "english": "Plate; classifier for food served by the plate",
+                "roman": "jaan",
+                "thai": "จาน"
+              },
+              {
+                "english": "Not spicy",
+                "roman": "mâi phèt",
+                "thai": "ไม่เผ็ด"
+              },
+              {
+                "english": "Delicious",
+                "roman": "à rɔ̀i",
+                "thai": "อร่อย"
+              }
+            ]
+          }
+        ],
+        "script_validation": "thai-fields-v1",
+        "teaching": {
+          "examples": [
+            {
+              "english": "One plate of fried rice, not spicy, please.",
+              "romanization": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp",
+              "thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ"
+            }
+          ],
+          "explanation": "Hello! Let's order some fried rice together. Would you like it spicy or not? Remember, 'จาน' counts platefuls of food.",
+          "language_notes": [],
+          "reference_titles": []
+        },
+        "warnings": [],
+        "web_sources": []
+      },
+      "diagnostics": [
+        {
+          "configured_model": "qwen3.5:4b",
+          "contract": "reviewed_ids",
+          "event": "chat_start",
+          "history_count": 1,
+          "request_id": "3a018e4f8923",
+          "reviewed_count": 2
+        },
+        {
+          "actual_model": "qwen3.5:4b",
+          "attempt": 1,
+          "configured_model": "qwen3.5:4b",
+          "done_reason": "stop",
+          "elapsed_ms": 6055,
+          "eval_count": 65,
+          "event": "ollama_complete",
+          "http_status": 200,
+          "kind": "ok",
+          "model": "qwen3.5:4b",
+          "prompt_eval_count": 1673,
+          "request_id": "3a018e4f8923"
+        },
+        {
+          "actual_model": "qwen3.5:4b",
+          "attempt": 1,
+          "configured_model": "qwen3.5:4b",
+          "content_characters": 223,
+          "event": "generation_accepted",
+          "request_id": "3a018e4f8923"
+        }
+      ]
+    },
+    {
+      "learner": "I would like one plate of non-spicy fried rice, please.",
+      "status": 200,
+      "seconds": 4.74,
+      "usable": true,
+      "response": {
+        "ai_commentary_accepted": true,
+        "doc_sources": [],
+        "generation_attempts": 1,
+        "model": "qwen3.5:4b",
+        "request_id": "e3d2f911d6e6",
+        "response": "AI-generated conversation (not language reviewed): Great job! You used the correct phrase: ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ (khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp). This means 'One plate of fried rice, not spicy, please.' Remember, 'จาน' counts platefuls of food. Would you like to try ordering a drink next? Try: ขอกาแฟแก้วหนึ่ง (khɔ̌ɔ kaa fɛɛ kɛ̂ɛo nʉ̀ng) — One glass of coffee.\nReviewed curriculum example (food; not native-verified): ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ\nCurriculum pronunciation guide: khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp\nCurriculum meaning: One plate of fried rice, not spicy, please.\nCurriculum usage note: ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+        "response_kind": "reviewed_curriculum",
+        "reviewed_examples": [
+          {
+            "english": "One plate of fried rice, not spicy, please.",
+            "id": "food-rice",
+            "lesson_id": "food",
+            "romanization": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp",
+            "thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ",
+            "usage": "ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+            "vocabulary": [
+              {
+                "english": "May I have / please give me",
+                "roman": "khɔ̌ɔ",
+                "thai": "ขอ"
+              },
+              {
+                "english": "Rice",
+                "roman": "khâao",
+                "thai": "ข้าว"
+              },
+              {
+                "english": "Water",
+                "roman": "náam",
+                "thai": "น้ำ"
+              },
+              {
+                "english": "Coffee",
+                "roman": "kaa fɛɛ",
+                "thai": "กาแฟ"
+              },
+              {
+                "english": "Glass; classifier for drinks served by the glass",
+                "roman": "kɛ̂ɛo",
+                "thai": "แก้ว"
+              },
+              {
+                "english": "Plate; classifier for food served by the plate",
+                "roman": "jaan",
+                "thai": "จาน"
+              },
+              {
+                "english": "Not spicy",
+                "roman": "mâi phèt",
+                "thai": "ไม่เผ็ด"
+              },
+              {
+                "english": "Delicious",
+                "roman": "à rɔ̀i",
+                "thai": "อร่อย"
+              }
+            ]
+          }
+        ],
+        "script_validation": "thai-fields-v1",
+        "teaching": {
+          "examples": [
+            {
+              "english": "One plate of fried rice, not spicy, please.",
+              "romanization": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp",
+              "thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ"
+            }
+          ],
+          "explanation": "Great job! You used the correct phrase: ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ (khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp). This means 'One plate of fried rice, not spicy, please.' Remember, 'จาน' counts platefuls of food. Would you like to try ordering a drink next? Try: ขอกาแฟแก้วหนึ่ง (khɔ̌ɔ kaa fɛɛ kɛ̂ɛo nʉ̀ng) — One glass of coffee.",
+          "language_notes": [],
+          "reference_titles": []
+        },
+        "warnings": [],
+        "web_sources": []
+      },
+      "diagnostics": [
+        {
+          "configured_model": "qwen3.5:4b",
+          "contract": "reviewed_ids",
+          "event": "chat_start",
+          "history_count": 3,
+          "request_id": "e3d2f911d6e6",
+          "reviewed_count": 1
+        },
+        {
+          "actual_model": "qwen3.5:4b",
+          "attempt": 1,
+          "configured_model": "qwen3.5:4b",
+          "done_reason": "stop",
+          "elapsed_ms": 4732,
+          "eval_count": 161,
+          "event": "ollama_complete",
+          "http_status": 200,
+          "kind": "ok",
+          "model": "qwen3.5:4b",
+          "prompt_eval_count": 1388,
+          "request_id": "e3d2f911d6e6"
+        },
+        {
+          "actual_model": "qwen3.5:4b",
+          "attempt": 1,
+          "configured_model": "qwen3.5:4b",
+          "content_characters": 441,
+          "event": "generation_accepted",
+          "request_id": "e3d2f911d6e6"
+        }
+      ]
+    },
+    {
+      "learner": "Can I add one glass of water?",
+      "status": 200,
+      "seconds": 4.13,
+      "usable": true,
+      "response": {
+        "ai_commentary_accepted": true,
+        "doc_sources": [],
+        "generation_attempts": 1,
+        "model": "qwen3.5:4b",
+        "request_id": "685e84f206b6",
+        "response": "AI-generated conversation (not language reviewed): Yes, you can! You say: 'ขอน้ำหนึ่งแก้วครับ' (khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp). This means 'One glass of water, please.' Remember, 'แก้ว' counts drinks served by the glass. Would you like to finish your order now?\nReviewed curriculum example (food; not native-verified): ขอน้ำหนึ่งแก้วครับ\nCurriculum pronunciation guide: khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp\nCurriculum meaning: One glass of water, please.\nCurriculum usage note: ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+        "response_kind": "reviewed_curriculum",
+        "reviewed_examples": [
+          {
+            "english": "One glass of water, please.",
+            "id": "food-water",
+            "lesson_id": "food",
+            "romanization": "khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp",
+            "thai": "ขอน้ำหนึ่งแก้วครับ",
+            "usage": "ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+            "vocabulary": [
+              {
+                "english": "May I have / please give me",
+                "roman": "khɔ̌ɔ",
+                "thai": "ขอ"
+              },
+              {
+                "english": "Rice",
+                "roman": "khâao",
+                "thai": "ข้าว"
+              },
+              {
+                "english": "Water",
+                "roman": "náam",
+                "thai": "น้ำ"
+              },
+              {
+                "english": "Coffee",
+                "roman": "kaa fɛɛ",
+                "thai": "กาแฟ"
+              },
+              {
+                "english": "Glass; classifier for drinks served by the glass",
+                "roman": "kɛ̂ɛo",
+                "thai": "แก้ว"
+              },
+              {
+                "english": "Plate; classifier for food served by the plate",
+                "roman": "jaan",
+                "thai": "จาน"
+              },
+              {
+                "english": "Not spicy",
+                "roman": "mâi phèt",
+                "thai": "ไม่เผ็ด"
+              },
+              {
+                "english": "Delicious",
+                "roman": "à rɔ̀i",
+                "thai": "อร่อย"
+              }
+            ]
+          }
+        ],
+        "script_validation": "thai-fields-v1",
+        "teaching": {
+          "examples": [
+            {
+              "english": "One glass of water, please.",
+              "romanization": "khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp",
+              "thai": "ขอน้ำหนึ่งแก้วครับ"
+            }
+          ],
+          "explanation": "Yes, you can! You say: 'ขอน้ำหนึ่งแก้วครับ' (khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp). This means 'One glass of water, please.' Remember, 'แก้ว' counts drinks served by the glass. Would you like to finish your order now?",
+          "language_notes": [],
+          "reference_titles": []
+        },
+        "warnings": [],
+        "web_sources": []
+      },
+      "diagnostics": [
+        {
+          "configured_model": "qwen3.5:4b",
+          "contract": "reviewed_ids",
+          "event": "chat_start",
+          "history_count": 5,
+          "request_id": "685e84f206b6",
+          "reviewed_count": 1
+        },
+        {
+          "actual_model": "qwen3.5:4b",
+          "attempt": 1,
+          "configured_model": "qwen3.5:4b",
+          "done_reason": "stop",
+          "elapsed_ms": 4125,
+          "eval_count": 107,
+          "event": "ollama_complete",
+          "http_status": 200,
+          "kind": "ok",
+          "model": "qwen3.5:4b",
+          "prompt_eval_count": 1552,
+          "request_id": "685e84f206b6"
+        },
+        {
+          "actual_model": "qwen3.5:4b",
+          "attempt": 1,
+          "configured_model": "qwen3.5:4b",
+          "content_characters": 315,
+          "event": "generation_accepted",
+          "request_id": "685e84f206b6"
+        }
+      ]
+    },
+    {
+      "learner": "Can you show the pronunciation again?",
+      "status": 200,
+      "seconds": 2.36,
+      "usable": true,
+      "response": {
+        "ai_commentary_accepted": true,
+        "doc_sources": [],
+        "generation_attempts": 1,
+        "model": "qwen3.5:4b",
+        "request_id": "a292c483d3f6",
+        "response": "AI-generated conversation (not language reviewed): Sure! Let's say: 'ขอน้ำหนึ่งแก้วครับ' (khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp). Listen to the tones: khɔ̌ɔ is low, náam is mid, nʉ̀ng is falling, kɛ̂ɛo is high. Remember, 'แก้ว' counts for drinks like water or coffee.\nReviewed curriculum example (food; not native-verified): ขอน้ำหนึ่งแก้วครับ\nCurriculum pronunciation guide: khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp\nCurriculum meaning: One glass of water, please.\nCurriculum usage note: ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+        "response_kind": "reviewed_curriculum",
+        "reviewed_examples": [
+          {
+            "english": "One glass of water, please.",
+            "id": "food-water",
+            "lesson_id": "food",
+            "romanization": "khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp",
+            "thai": "ขอน้ำหนึ่งแก้วครับ",
+            "usage": "ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+            "vocabulary": [
+              {
+                "english": "May I have / please give me",
+                "roman": "khɔ̌ɔ",
+                "thai": "ขอ"
+              },
+              {
+                "english": "Rice",
+                "roman": "khâao",
+                "thai": "ข้าว"
+              },
+              {
+                "english": "Water",
+                "roman": "náam",
+                "thai": "น้ำ"
+              },
+              {
+                "english": "Coffee",
+                "roman": "kaa fɛɛ",
+                "thai": "กาแฟ"
+              },
+              {
+                "english": "Glass; classifier for drinks served by the glass",
+                "roman": "kɛ̂ɛo",
+                "thai": "แก้ว"
+              },
+              {
+                "english": "Plate; classifier for food served by the plate",
+                "roman": "jaan",
+                "thai": "จาน"
+              },
+              {
+                "english": "Not spicy",
+                "roman": "mâi phèt",
+                "thai": "ไม่เผ็ด"
+              },
+              {
+                "english": "Delicious",
+                "roman": "à rɔ̀i",
+                "thai": "อร่อย"
+              }
+            ]
+          }
+        ],
+        "script_validation": "thai-fields-v1",
+        "teaching": {
+          "examples": [
+            {
+              "english": "One glass of water, please.",
+              "romanization": "khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp",
+              "thai": "ขอน้ำหนึ่งแก้วครับ"
+            }
+          ],
+          "explanation": "Sure! Let's say: 'ขอน้ำหนึ่งแก้วครับ' (khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp). Listen to the tones: khɔ̌ɔ is low, náam is mid, nʉ̀ng is falling, kɛ̂ɛo is high. Remember, 'แก้ว' counts for drinks like water or coffee.",
+          "language_notes": [],
+          "reference_titles": []
+        },
+        "warnings": [],
+        "web_sources": []
+      },
+      "diagnostics": [
+        {
+          "configured_model": "qwen3.5:4b",
+          "contract": "reviewed_ids",
+          "event": "chat_start",
+          "history_count": 7,
+          "request_id": "a292c483d3f6",
+          "reviewed_count": 1
+        },
+        {
+          "actual_model": "qwen3.5:4b",
+          "attempt": 1,
+          "configured_model": "qwen3.5:4b",
+          "done_reason": "stop",
+          "elapsed_ms": 2354,
+          "eval_count": 126,
+          "event": "ollama_complete",
+          "http_status": 200,
+          "kind": "ok",
+          "model": "qwen3.5:4b",
+          "prompt_eval_count": 1664,
+          "request_id": "a292c483d3f6"
+        },
+        {
+          "actual_model": "qwen3.5:4b",
+          "attempt": 1,
+          "configured_model": "qwen3.5:4b",
+          "content_characters": 313,
+          "event": "generation_accepted",
+          "request_id": "a292c483d3f6"
+        }
+      ]
+    },
+    {
+      "learner": "How do I ask the price?",
+      "status": 200,
+      "seconds": 4.29,
+      "usable": true,
+      "response": {
+        "ai_commentary_accepted": true,
+        "doc_sources": [],
+        "generation_attempts": 1,
+        "model": "qwen3.5:4b",
+        "request_id": "a70b057e144f",
+        "response": "AI-generated conversation (not language reviewed): Great question! To ask the price, you say: 'อันนี้เท่าไหร่คะ?' (an níi thâo rài khá). This means 'How much is this one?' Remember, 'ไหร่' asks about price or time. Would you like to try asking for a plate of noodles next?\nReviewed curriculum example (shopping; not native-verified): สวัสดีค่ะ อันนี้เท่าไหร่คะ\nCurriculum pronunciation guide: sà wàt dii khâ an níi thâo rài khá\nCurriculum meaning: Hello. How much is this one?\nCurriculum usage note: มี + item + ไหม = Do you have …? เอา + item = I’ll take … . ไม่เอา + ครับ / ค่ะ = I do not want it (a direct refusal, softened by the particle). For declining an offered shopping bag, use ไม่รับถุงค่ะ ขอบคุณค่ะ (mâi ráp thǔng khâ khɔ̀ɔp khun khâ). This is an alternative situation to requesting a bag. ไหม has the citation-form reading mǎi; conversational mái is used in the dialogue. คะ (khá, high) ends the feminine polite question; ค่ะ (khâ, falling) ends the statement. อันนี้ is a generic this one; use the appropriate classifier when naming a specific kind of object. สามสิบ = 30.",
+        "response_kind": "reviewed_curriculum",
+        "reviewed_examples": [
+          {
+            "english": "Hello. How much is this one?",
+            "id": "shopping-price",
+            "lesson_id": "shopping",
+            "romanization": "sà wàt dii khâ an níi thâo rài khá",
+            "thai": "สวัสดีค่ะ อันนี้เท่าไหร่คะ",
+            "usage": "มี + item + ไหม = Do you have …? เอา + item = I’ll take … . ไม่เอา + ครับ / ค่ะ = I do not want it (a direct refusal, softened by the particle). For declining an offered shopping bag, use ไม่รับถุงค่ะ ขอบคุณค่ะ (mâi ráp thǔng khâ khɔ̀ɔp khun khâ). This is an alternative situation to requesting a bag. ไหม has the citation-form reading mǎi; conversational mái is used in the dialogue. คะ (khá, high) ends the feminine polite question; ค่ะ (khâ, falling) ends the statement. อันนี้ is a generic this one; use the appropriate classifier when naming a specific kind of object. สามสิบ = 30.",
+            "vocabulary": [
+              {
+                "english": "Take / want",
+                "roman": "ao",
+                "thai": "เอา"
+              },
+              {
+                "english": "Do not want",
+                "roman": "mâi ao",
+                "thai": "ไม่เอา"
+              },
+              {
+                "english": "This one",
+                "roman": "an níi",
+                "thai": "อันนี้"
+              },
+              {
+                "english": "That one",
+                "roman": "an nán",
+                "thai": "อันนั้น"
+              },
+              {
+                "english": "Have / there is",
+                "roman": "mii",
+                "thai": "มี"
+              },
+              {
+                "english": "Yes/no question particle (often pronounced mái in conversation)",
+                "roman": "mǎi",
+                "thai": "ไหม"
+              },
+              {
+                "english": "Bag",
+                "roman": "thǔng",
+                "thai": "ถุง"
+              },
+              {
+                "english": "Can / okay",
+                "roman": "dâai",
+                "thai": "ได้"
+              }
+            ]
+          }
+        ],
+        "script_validation": "thai-fields-v1",
+        "teaching": {
+          "examples": [
+            {
+              "english": "Hello. How much is this one?",
+              "romanization": "sà wàt dii khâ an níi thâo rài khá",
+              "thai": "สวัสดีค่ะ อันนี้เท่าไหร่คะ"
+            }
+          ],
+          "explanation": "Great question! To ask the price, you say: 'อันนี้เท่าไหร่คะ?' (an níi thâo rài khá). This means 'How much is this one?' Remember, 'ไหร่' asks about price or time. Would you like to try asking for a plate of noodles next?",
+          "language_notes": [],
+          "reference_titles": []
+        },
+        "warnings": [],
+        "web_sources": []
+      },
+      "diagnostics": [
+        {
+          "configured_model": "qwen3.5:4b",
+          "contract": "reviewed_ids",
+          "event": "chat_start",
+          "history_count": 8,
+          "request_id": "a70b057e144f",
+          "reviewed_count": 1
+        },
+        {
+          "actual_model": "qwen3.5:4b",
+          "attempt": 1,
+          "configured_model": "qwen3.5:4b",
+          "done_reason": "stop",
+          "elapsed_ms": 4276,
+          "eval_count": 95,
+          "event": "ollama_complete",
+          "http_status": 200,
+          "kind": "ok",
+          "model": "qwen3.5:4b",
+          "prompt_eval_count": 1833,
+          "request_id": "a70b057e144f"
+        },
+        {
+          "actual_model": "qwen3.5:4b",
+          "attempt": 1,
+          "configured_model": "qwen3.5:4b",
+          "content_characters": 331,
+          "event": "generation_accepted",
+          "request_id": "a70b057e144f"
+        }
+      ]
+    },
+    {
+      "learner": "How do I say thank you at the end?",
+      "status": 200,
+      "seconds": 2.86,
+      "usable": true,
+      "response": {
+        "ai_commentary_accepted": true,
+        "doc_sources": [],
+        "generation_attempts": 1,
+        "model": "qwen3.5:4b",
+        "request_id": "7f153bf5aa2b",
+        "response": "AI-generated conversation (not language reviewed): You can say: ขอบคุณครับ (khɔ̀ɔp khráp). This means 'Thank you.' Remember, 'ขอบคุณ' is used to show gratitude after receiving food or service.\nReviewed curriculum example (food; not native-verified): อร่อยครับ ขอบคุณครับ\nCurriculum pronunciation guide: à rɔ̀i khráp khɔ̀ɔp khun khráp\nCurriculum meaning: Delicious. Thank you.\nCurriculum usage note: ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+        "response_kind": "reviewed_curriculum",
+        "reviewed_examples": [
+          {
+            "english": "Delicious. Thank you.",
+            "id": "food-thanks",
+            "lesson_id": "food",
+            "romanization": "à rɔ̀i khráp khɔ̀ɔp khun khráp",
+            "thai": "อร่อยครับ ขอบคุณครับ",
+            "usage": "ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+            "vocabulary": [
+              {
+                "english": "May I have / please give me",
+                "roman": "khɔ̌ɔ",
+                "thai": "ขอ"
+              },
+              {
+                "english": "Rice",
+                "roman": "khâao",
+                "thai": "ข้าว"
+              },
+              {
+                "english": "Water",
+                "roman": "náam",
+                "thai": "น้ำ"
+              },
+              {
+                "english": "Coffee",
+                "roman": "kaa fɛɛ",
+                "thai": "กาแฟ"
+              },
+              {
+                "english": "Glass; classifier for drinks served by the glass",
+                "roman": "kɛ̂ɛo",
+                "thai": "แก้ว"
+              },
+              {
+                "english": "Plate; classifier for food served by the plate",
+                "roman": "jaan",
+                "thai": "จาน"
+              },
+              {
+                "english": "Not spicy",
+                "roman": "mâi phèt",
+                "thai": "ไม่เผ็ด"
+              },
+              {
+                "english": "Delicious",
+                "roman": "à rɔ̀i",
+                "thai": "อร่อย"
+              }
+            ]
+          }
+        ],
+        "script_validation": "thai-fields-v1",
+        "teaching": {
+          "examples": [
+            {
+              "english": "Delicious. Thank you.",
+              "romanization": "à rɔ̀i khráp khɔ̀ɔp khun khráp",
+              "thai": "อร่อยครับ ขอบคุณครับ"
+            }
+          ],
+          "explanation": "You can say: ขอบคุณครับ (khɔ̀ɔp khráp). This means 'Thank you.' Remember, 'ขอบคุณ' is used to show gratitude after receiving food or service.",
+          "language_notes": [],
+          "reference_titles": []
+        },
+        "warnings": [],
+        "web_sources": []
+      },
+      "diagnostics": [
+        {
+          "configured_model": "qwen3.5:4b",
+          "contract": "reviewed_ids",
+          "event": "chat_start",
+          "history_count": 8,
+          "request_id": "7f153bf5aa2b",
+          "reviewed_count": 1
+        },
+        {
+          "actual_model": "qwen3.5:4b",
+          "attempt": 1,
+          "configured_model": "qwen3.5:4b",
+          "done_reason": "stop",
+          "elapsed_ms": 2851,
+          "eval_count": 75,
+          "event": "ollama_complete",
+          "http_status": 200,
+          "kind": "ok",
+          "model": "qwen3.5:4b",
+          "prompt_eval_count": 1791,
+          "request_id": "7f153bf5aa2b"
+        },
+        {
+          "actual_model": "qwen3.5:4b",
+          "attempt": 1,
+          "configured_model": "qwen3.5:4b",
+          "content_characters": 248,
+          "event": "generation_accepted",
+          "request_id": "7f153bf5aa2b"
+        }
+      ]
+    }
+  ],
+  "usable": 6,
+  "ai_accepted": 6,
+  "fallbacks": 0
+}

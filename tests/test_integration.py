@@ -13,6 +13,7 @@ from uuid import uuid4
 from html.parser import HTMLParser
 
 import app as backend
+from tutor_fixtures import tutorReply, teaching
 
 
 class IntegrationTests(unittest.TestCase):
@@ -130,7 +131,7 @@ class IntegrationTests(unittest.TestCase):
     self.assertIn("frame-ancestors 'none'", result.headers.get('Content-Security-Policy', ''))
 
   @patch.object(backend, 'get_embedding', return_value=[1, 0])
-  @patch.object(backend, 'ollama_request', return_value={'message': {'content': 'Hello [integration.txt]'}})
+  @patch.object(backend, 'ollama_request', return_value=tutorReply(explanation='Hello [integration.txt]'))
   def test_end_to_end_feature_flow_uses_isolated_storage(self, ollama, embedding):
     self.assertEqual(self.upload('integration.txt', b'Hello is sawat dii.').status_code, 200)
     chat = self.client.post('/chat', json={'messages': [{'role': 'user', 'content': 'Explain integration.txt'}],
@@ -183,13 +184,41 @@ class IntegrationTests(unittest.TestCase):
       self.assertEqual(list(pool.map(upload, ['one.txt', 'two.txt'])), [200, 200])
     self.assertEqual(set(backend.load_index()), {'one.txt', 'two.txt'})
 
+  def test_reindex_retries_transient_failure_and_preserves_other_vectors(self):
+    import reindex
+    document = Path(self.directory.name, 'thai.txt')
+    document.write_text('a' * 700)
+    original = document.read_bytes()
+    other = [{'text': 'unrelated content', 'embedding': [0, 1]}]
+    backend.save_index({'other.txt': other})
+    report = []
+    with patch.object(backend, 'get_embedding', side_effect=[None, [1, 0], [0, 1]]) as embedding:
+      self.assertEqual(reindex.reindex_all(report=report), 1)
+    self.assertEqual(embedding.call_count, 3)
+    self.assertEqual(backend.load_index()['other.txt'], other)
+    self.assertEqual(len(backend.load_index()['thai.txt']), 2)
+    self.assertEqual(document.read_bytes(), original)
+    self.assertEqual(report[0]['status'], 'indexed')
+
+  def test_reindex_dimension_failure_or_exhausted_retry_keeps_index_bytes(self):
+    import reindex
+    Path(self.directory.name, 'thai.txt').write_text('a' * 700)
+    backend.save_index({'thai.txt': [{'text': 'original', 'embedding': [1, 0]}]})
+    original = Path(backend.INDEX_FILE).read_bytes()
+    for responses, reason in [([[1, 0], [1, 0, 0]], 'dimensions'), ([None, None], '2 attempt(s)')]:
+      report = []
+      with patch.object(backend, 'get_embedding', side_effect=responses):
+        self.assertEqual(reindex.reindex_all(report=report), 0)
+      self.assertIn(reason, report[0]['reason'])
+      self.assertEqual(Path(backend.INDEX_FILE).read_bytes(), original)
+
   def test_reindex_keeps_previous_chunks_on_partial_failure(self):
     import reindex
     Path(self.directory.name, 'thai.txt').write_text('a' * 700)
     previous = {'thai.txt': [{'text': 'previous complete content', 'embedding': [1, 0]}]}
     backend.save_index(previous)
     with patch.object(backend, 'get_embedding', side_effect=[[1, 0], None]):
-      self.assertEqual(reindex.reindex_all(), 0)
+      self.assertEqual(reindex.reindex_all(max_attempts=1), 0)
     self.assertEqual(backend.load_index(), previous)
 
   @patch.object(backend, 'get_embedding', return_value=None)
@@ -198,9 +227,9 @@ class IntegrationTests(unittest.TestCase):
     backend.save_index({'thai.txt': [{'text': 'hello', 'embedding': [1, 0]}]})
     result = self.client.post('/chat', json={'messages': [{'role': 'user', 'content': 'Greet me in Thai'}],
       'tutor': dict(level='Beginner', mode='Free Chat', pronunciation=True)})
-    self.assertEqual(result.status_code, 200)
-    self.assertEqual(len(result.json['warnings']), 2)
-    self.assertEqual(result.json['doc_sources'], [])
+    self.assertEqual(result.status_code, 502)
+    self.assertEqual(result.json['code'], 'invalid_thai_generation')
+    self.assertNotIn('response', result.json)
 
   def test_gitignore_excludes_private_runtime_files(self):
     paths = ['.venv/private', 'uploads/private.pdf', 'vector_index.json', 'learner.sqlite3',

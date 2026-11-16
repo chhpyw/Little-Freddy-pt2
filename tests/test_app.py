@@ -6,6 +6,7 @@ import unittest
 from unittest.mock import patch
 
 import app as backend
+from tutor_fixtures import tutorReply, teaching
 
 
 class AppTests(unittest.TestCase):
@@ -85,7 +86,7 @@ class AppTests(unittest.TestCase):
     self.assertIn('Thai lesson context', ollama.call_args.args[1]['messages'][0]['content'])
     self.assertIn('Source: thai.pdf', ollama.call_args.args[1]['messages'][0]['content'])
 
-  @patch.object(backend, 'ollama_request', return_value={'message': {'content': 'สวัสดี'}})
+  @patch.object(backend, 'ollama_request', return_value=tutorReply())
   @patch.object(backend, 'get_embedding', return_value=[1, 0])
   def test_tutor_levels_modes_history_and_pdf_context(self, embedding, ollama):
     backend.save_index({'lesson.pdf': [{'text': 'ข้าว means rice', 'embedding': [1, 0]}]})
@@ -104,7 +105,7 @@ class AppTests(unittest.TestCase):
                          'Do not correct every turn', 'Source: lesson.pdf', 'ข้าว means rice']:
           self.assertIn(expected, prompt)
         self.assertIn('Include clearly labeled' if level == 'Beginner' else 'Do not include romanization', prompt)
-        self.assertEqual(payload['messages'][1:], history)
+        self.assertEqual(payload['messages'][1:], [history[0], history[2]])
 
   @patch.object(backend, 'get_embedding', return_value=[1, 0])
   @patch.object(backend, 'ollama_request')
@@ -113,7 +114,7 @@ class AppTests(unittest.TestCase):
     history = [{'role': 'assistant', 'content': 'What would you like to order?'},
                {'role': 'user', 'content': 'Teach me to order tea from cafe.txt'}]
     ollama.side_effect = [{'message': {'content': 'Tea costs 37 baht [cafe.txt].'}},
-                          {'message': {'content': 'ขอชาหนึ่งแก้ว — One tea, please. Tea costs 37 baht [cafe.txt].'}}]
+                          tutorReply(thai='ขอชาหนึ่งแก้ว', english='One tea, please.', explanation='Tea costs 37 baht [cafe.txt].')]
     result = self.client.post('/chat', json={'messages': history, 'tutor': {
       'level': 'Intermediate', 'mode': 'Free Chat', 'pronunciation': False}})
     self.assertEqual(result.status_code, 200)
@@ -123,7 +124,7 @@ class AppTests(unittest.TestCase):
     self.assertEqual(ollama.call_count, 2)
     first, retry = [call.args[1] for call in ollama.call_args_list]
     self.assertEqual(first['messages'][1:], retry['messages'][1:])
-    self.assertEqual(retry['messages'][1:], history)
+    self.assertEqual(retry['messages'][1:], [history[-1]])
     self.assertIn(first['messages'][0]['content'], retry['messages'][0]['content'])
     self.assertIn('Tea costs 37 baht.', retry['messages'][0]['content'])
     self.assertEqual({k: v for k, v in first.items() if k != 'messages'},
@@ -139,8 +140,11 @@ class AppTests(unittest.TestCase):
         result = self.client.post('/chat', json={'messages': [{'role': 'user', 'content': 'Teach a greeting'}],
           'tutor': dict(level='Intermediate', mode='Free Chat', pronunciation=True)})
         self.assertEqual(result.status_code, 200)
-        self.assertEqual(result.json['response'], 'Original explanation')
-        self.assertIn('even after a retry', result.json['warnings'][0])
+        self.assertEqual(result.json['response_kind'], 'reviewed_fallback')
+        self.assertFalse(result.json['ai_commentary_accepted'])
+        self.assertEqual(result.json['teaching']['explanation'], '')
+        self.assertNotIn('Original explanation', result.json['response'])
+        self.assertTrue(result.json['reviewed_examples'])
         self.assertEqual(ollama.call_count, 2)
 
   def test_chat_validation(self):

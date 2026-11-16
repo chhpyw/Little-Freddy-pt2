@@ -1,0 +1,81 @@
+[
+  {
+    "check": "configured models installed",
+    "passed": true,
+    "chat_model": "qwen3:1.7b",
+    "embed_model": "nomic-embed-text"
+  },
+  {
+    "check": "live embedding",
+    "passed": true,
+    "dimensions": 768
+  },
+  {
+    "check": "live tutor Intermediate / Free Chat",
+    "passed": true,
+    "status": 200,
+    "response": "\u0e02\u0e2d\u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e35 (Thai) - \u0e02\u0e2d means 'hello' and \u0e14\u0e35\u0e04\u0e23\u0e31\u0e1a (English) means 'good day' \u2014 this is a simple and friendly greeting.\nThai example (script checked only): \u0e02\u0e2d\u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e35 \u0e04\u0e23\u0e31\u0e1a\nPronunciation guide: T\u014dsaw\u0101td\u012b krap\nEnglish meaning: Hello\nLanguage quotation (Thai): \u0e02\u0e2d\u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e35 \u0e04\u0e23\u0e31\u0e1a\nThis is a common Thai greeting used to greet someone politely.\nLanguage quotation (English): Hello\nA simple and friendly way to greet someone.\nReference title: Thai Greetings and Phrases (2023)\nReference title: Basic Thai Vocabulary for Beginners",
+    "error": null,
+    "warnings": [],
+    "response_characters": 511,
+    "contains_thai": true,
+    "seconds": 1.68
+  },
+  {
+    "check": "live synthetic Thai text reindex",
+    "passed": true,
+    "diagnostics": [
+      {
+        "filename": "thai.txt",
+        "status": "indexed",
+        "chunks": 2,
+        "dimensions": 768
+      }
+    ]
+  },
+  {
+    "check": "temporary Thai text cleanup",
+    "passed": true
+  },
+  {
+    "check": "live PDF extraction and embedding upload",
+    "passed": true,
+    "status": 200
+  },
+  {
+    "check": "live explicit PDF retrieval",
+    "passed": false,
+    "status": 502,
+    "response": "",
+    "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model.",
+    "answer_has_price": false,
+    "source_metadata": [],
+    "answer_cites_filename": false
+  },
+  {
+    "check": "live semantic retrieval",
+    "passed": false,
+    "status": 502,
+    "response": "",
+    "error": "The local model could not produce valid Thai teaching fields after two attempts. No teaching response was displayed. Please retry or choose another local model.",
+    "answer_has_price": false,
+    "source_metadata": [],
+    "answer_cites_filename": false
+  },
+  {
+    "check": "live synthetic PDF reindex",
+    "passed": true,
+    "diagnostics": [
+      {
+        "filename": "freddy-smoke.pdf",
+        "status": "indexed",
+        "chunks": 1,
+        "dimensions": 768
+      }
+    ]
+  },
+  {
+    "check": "temporary PDF deletion and index removal",
+    "passed": true
+  }
+]

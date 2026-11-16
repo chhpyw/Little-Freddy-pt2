@@ -2,13 +2,58 @@
 
 Audit date: 14 November 2026, Asia/Bangkok.
 
+## Usability recovery update on 16 November
+
+A stale Flask process was serving old unstructured replies and qwen3:1.7b to the newer frontend. It has been restarted on port 5055 with qwen3.5:4b, confirmed by a real request and Ollama model metadata. Structured recovery now separates timeouts from validation failures, preserves drafts and offers explicitly labeled reviewed curriculum fallback in supported contexts. Rejected replies never enter history. Actual results: 88 Python tests passed, four JavaScript suites passed; six-turn real Flask HTTP restaurant dialogue passed 6/6 with accepted AI commentary and no fallback. SQLite checksum unchanged. See [diagnosis, results and limitations](tutor-usability-fix.md) and [recorded live dialogue](restaurant-flow-results.json). No native verification is claimed. No push was made.
+
+## Latest reliability update on 15 November
+
+qwen3.5:4b is now the configurable default; CHAT_MODEL overrides it. Supported fixed beginner examples, meanings, guides and usage notes come from reviewed curriculum IDs. Generated conversation is separately labeled unreviewed; no native verification is claimed. Wrong-script rejection and one clean-history retry remain active. RAG, source citations, lessons, vocabulary and SQLite data are preserved.
+
+The [human-reviewable semantic benchmark](tutor-reliability-benchmark.md) records 12 cases covering greetings, food, directions, numbers, shopping and polite speech. Both models matched all 12 fixed goldens. Assistant editorial screening of generated commentary found clear errors in 5/12 responses for qwen3:1.7b and 2/12 for qwen3.5:4b, with one additional register concern for the smaller model. This is not a native or comprehensive language-accuracy grade. Repeated script/schema results were 9 accepted / 3 rejected for each model. Final live PDF/RAG checks were 8 passed / 2 failed for 1.7b and 10 passed / 0 failed for 4b. Automated results: 82 Python tests passed, 0 failed; all four JavaScript suites passed. Personal storage checksums remained unchanged. No push was made.
+
+Earlier sections below retain their original acceptance policies and historical model defaults; the linked reliability report describes the current implementation and failed cases.
+
+## Tutor script safety follow-up
+
+The most recent change replaces the earlier warning-only behavior with structured tutor fields, server-side script validation, one clean-history retry and an error after failed generation. Invalid Burmese/Myanmar, Khmer and other-script teaching examples are not rendered or saved as tutor history. Legitimate other-language quotations and document titles remain possible in separate labeled fields. Old unvalidated assistant turns are filtered; learner messages and SQLite progress are preserved.
+
+See [the full script-safety report](tutor-script-safety.md) for the Unicode ranges, API/frontend contract, hardware check, exact live outputs and reproduction commands. Final automated results are **77 Python tests passed, 0 failed; all 4 JavaScript suites passed**. Repeated live script/schema acceptance was **5 of 12** for qwen3:1.7b and **9 of 12** for the installed qwen3.5:4b. Invalid generations were blocked. PDF/RAG smoke results were **8 passed / 2 failed** for the default model and **10 passed / 0 failed** for the alternative. Neither these acceptance counts nor Unicode validation establish accurate Thai, English meanings, romanization or trustworthy model-supplied reference titles. Accepted outputs from both models still contained teaching errors.
+
+The Apple M4 Pro / 24 GiB machine successfully ran the installed 4b model at a bounded 4096-token context. It is a compatible candidate for further evaluation, not a verified Thai teacher; no model was downloaded or default switched. The authored corrections below remain intact. No personal data was changed and nothing was committed or pushed in this follow-up. Earlier results below are historical and use the acceptance policy described for their own step.
+
+## Earlier context review applied
+
+The user's Thai-language review is applied below. This records the supplied review, not independent native verification. This section and [the current human-review table](thai-human-review.md) supersede earlier phrase decisions in the historical audit tables.
+
+| Context | Current Thai | Romanization | English and teaching decision |
+| --- | --- | --- | --- |
+| Nearby restroom | ห้องน้ำอยู่แถวนี้ค่ะ | hɔ̂ng náam yùu thɛ̌ɛo níi khâ | The restroom is around here. Added to the near-context card, an alternative directions reply and a new speech item. แถวนี้ is labeled as a contextual near expression, not a literal reading of ใกล้. |
+| Far restroom | ห้องน้ำอยู่ไกลจากที่นี่ค่ะ | hɔ̂ng náam yùu klai jàak thîi nîi khâ | The restroom is far from here. Reference point is explicit across card, dialogue and speech. |
+| Declining an offered bag | ไม่รับถุงค่ะ ขอบคุณค่ะ | mâi ráp thǔng khâ khɔ̀ɔp khun khâ | I won’t take a bag, thank you. Added to the ถุง card, alternative shop reply, contextual quiz and new speech item. ไม่เอา retains a separately labeled direct general refusal containing that headword. |
+| Non-spicy fried rice | ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ | khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp | One plate of fried rice, not spicy, please. The softening นะครับ is reflected in the dialogue, derived cards and new speech exercise. |
+| Casual introduction | ชื่อแอนค่ะ | chʉ̂ʉ ɛɛn khâ | My name is Ann. Pronoun omission is explained in the pattern, dialogue, ชื่อ card and new speech item. |
+| Valid introduction alternative | ฉันชื่อแอนค่ะ | chǎn chʉ̂ʉ ɛɛn khâ | My name is Ann, with an explicit familiar pronoun. Retained on the ฉัน card and in the dialogue as a valid alternative. |
+| Confirmation | ใช่; ใช่ค่ะ / ใช่ครับ | châi; châi khâ / châi khráp | Yes / correct in context. The tone target remains ใช่; the guide explains polite forms and question-dependent answers. |
+| Bag question | มีถุงไหมคะ | mii thǔng mái khá | Do you have a bag? Correct Thai retained; the new speech item uses conversational high mái. |
+
+ใกล้ remains falling klâi and ไกล remains mid klai. คะ is high khá for the feminine polite question; ค่ะ is falling khâ for the statement. ไหม retains rising citation-form mǎi in its vocabulary/quiz guide; conversational high mái appears in the shopping dialogue and bag-question exercise. Both remain accepted romanized quiz answers, along with the historical unmarked alias. Citation form here means the isolated/classroom pronunciation, not a reference to document citations.
+
+Correct coffee and coconut-water expressions are preserved: ขอกาแฟหนึ่งแก้วค่ะ and ขอน้ำมะพร้าวหนึ่งแก้วครับ. The latter remains the documented correction for earlier chatbot output; it was not replaced or expanded with invented ingredients. Application chat/RAG logic and source-citation rendering are unchanged.
+
+Directions and shopping label the new replies as alternative situations, not contradictory turns in one transaction. Current totals are 23 dialogue lines, 40 vocabulary headwords, 20 quiz questions and 16 example overrides. Six additional speech items bring the catalog to 16 items / 32 activity states. Existing speech IDs/target texts and lesson IDs remain intact. Saved completions remain; the displayed speech denominator grows with new activities. The bag-refusal quiz now asks specifically about declining an offered bag and thanking the seller; saved lesson scores are not recalculated.
+
+Twelve exact pre-review built-in snapshots were added to the updater's manifest, bringing it to 35 historical snapshots. Tests check every version independently, including multiple versions sharing one Thai key. Manual/edited cards and scheduling/review fields remain protected. A current-database preview found zero saved cards to update; no content migration was applied to personal storage. The progress.sqlite3 checksum remains unchanged from the preceding follow-up.
+
+Final context-review validation: **70 Python tests passed, 0 failed; all 4 JavaScript suites passed; all 4 application scripts parsed; git diff --check passed.** This includes language, RAG/citation, persistence and safe-updater regressions. The near-card regression explicitly checks the reviewed แถวนี้ phrase and its contextual label instead of assuming every example literally contains its headword. No new live-model or device-audio evaluation was performed in this step. Names, TTS tones, prosody, pronoun pronunciation and relationship-dependent register remain human-review items. No commit or push was made.
+
 The authored beginner material is largely understandable, but the food dialogue has a context mismatch and several explanations oversimplify register or classifiers. Pronunciation notation is inconsistent between lessons, quizzes and decorative text. The corrections below address these issues. They do not establish the accuracy of arbitrary model-generated replies. **No native-speaker verification was performed.**
 
 ## Scope and evidence
 
-Reviewed all five A1 lessons: 40 vocabulary entries, 18 dialogue lines, 20 quiz questions including distractors and accepted answers, five sentence patterns, objectives and scenarios. Also reviewed the four course roadmaps, five curriculum tone examples, five speaking/listening tone examples and their pitch hints, five conversation activities, all 14 vocabulary-example overrides and the 40 resulting catalog cards, Thai interface text, pronunciation guidance, all tutor levels/modes, lesson context and retry prompts. The inventory below preserves the original text alongside the resulting text.
+The initial audit reviewed all five A1 lessons: 40 vocabulary entries, 18 dialogue lines, 20 quiz questions including distractors and accepted answers, five sentence patterns, objectives and scenarios. Also reviewed the four course roadmaps, five curriculum tone examples, five speaking/listening tone examples and their pitch hints, five conversation activities, all 14 then-existing vocabulary-example overrides and the 40 resulting catalog cards, Thai interface text, pronunciation guidance, all tutor levels/modes, lesson context and retry prompts. The historical inventory below preserves the initial original/result pairs; the latest context review above records subsequent changes.
 
-Uploaded documents, saved personal words, learner records and historical model outputs are not curated course content and were not edited. The live examples discussed below come from the preceding integration session in this conversation. This audit did not generate a new live chat sample.
+Uploaded documents, saved personal words, learner records and historical model outputs are not curated course content. The initial audit did not edit personal storage or generate a new live chat sample. The subsequent follow-up below records a fresh live check and a conservative saved-card update tool.
 
 References are teaching resources, not a substitute for review by a qualified Thai teacher. Their transcription systems differ; the app uses the convention defined below. Some older NIU pages also contain inconsistent accents or particle spellings, so individual printed forms were not copied indiscriminately.
 
@@ -93,22 +138,62 @@ Quiz input remains lenient for historical unmarked aliases; these aliases are no
 
 ## Compatibility and validation
 
-Lesson IDs, question order/Thai answer keys, vocabulary word order/Thai keys, speech item IDs/target Thai text and database schemas are unchanged. The ambiguous greeting distractor changed; historical scores are retained. Existing saved vocabulary is a snapshot: it is deliberately not rewritten, so previously saved cards can retain earlier wording. Automatic card migration would require a separate change that preserves user edits and review scheduling. Re-import currently does not overwrite duplicates.
+Lesson IDs, question order/Thai answer keys, vocabulary word order/Thai keys, speech item IDs/target Thai text and database schemas are unchanged. The ambiguous greeting distractor changed; historical scores are retained. Existing saved vocabulary is a snapshot; re-import does not overwrite duplicates. The follow-up adds an explicit maintenance tool for exact matches to known historical built-in snapshots. Manual/edited cards and unknown versions are left untouched, as are scheduling fields and review rows.
 
-No RAG retrieval, citation rendering, storage, progress, review scheduling, request retry or generation-setting logic changed in this audit. The earlier integration fix in app.py and tests/test_app.py was retained. Template and JavaScript edits change text only, with no layout/style changes.
+The initial language audit changed no RAG retrieval, citation rendering, storage, progress, review scheduling, request retry or generation-setting logic. The follow-up improves the standalone re-index utility and adds an explicit saved-card maintenance tool; application chat/retrieval logic and design remain unchanged. The earlier integration fix in app.py and tests/test_app.py was retained.
 
 | Validation | Actual outcome |
 | --- | --- |
-| Python full suite | 63 passed, 0 failed with `.venv/bin/python -m unittest discover -s tests -v`. Includes five new editorial regression tests, legacy quiz acceptance, greeting ambiguity, derived-card context and prompt contracts. |
+| Python full suite | Latest context review: 70 passed, 0 failed (previous follow-up: 68 passes) with `.venv/bin/python -m unittest discover -s tests -q`. Initial language audit had 63 passes. Includes language regressions, two additional re-index tests and three saved-card update tests. |
 | JavaScript suites | All 4 passed: navigation, tutor UI/citations, speech adapters, vocabulary UI. Used the provided Node runtime because standalone node is absent from shell PATH. |
 | JavaScript syntax | All 4 application scripts parsed, including edited learning.js. |
 | RAG and progress regressions | Existing mocked/integration extraction, retrieval/citations, rollback, persistence and concurrency tests passed as part of the Python/JavaScript suites. |
-| Live model accuracy | Not rerun for this audit. Prior live failures remain evidence of unreliable linguistic output; prompt edits are not native verification. |
+| Live Ollama and RAG | Previous follow-up, before the latest context review: 10 checks passed, 0 failed. Intermediate / Free Chat returned สวัสดีครับ followed by Hello!, HTTP 200, no warnings. Both retrieval answers contained 37 and the filename, with matching source metadata. This is a smoke test, not language-quality certification. |
 | Manual acceptance | Native-speaker review, audible Thai TTS, real recognition and responsive visual inspection remain outstanding. |
 
-Expected malformed-file/storage-error fixture logs are not test failures. No commit or GitHub push was made.
+Expected malformed-file/storage-error fixture logs are not test failures. No commit or GitHub push was made during this follow-up.
 
-## Complete authored content inventory
+## Follow-up diagnosis and maintenance results
+
+### Re-indexing investigation
+
+The earlier `Processing thai.txt... FAILED (Incomplete embeddings; previous index kept)` line was emitted by `test_reindex_keeps_previous_chunks_on_partial_failure` in tests/test_integration.py. It creates a temporary 700-character file, mocks the first embedding as valid and the second as None, and expects zero successful documents with the previous index retained. It is a deliberate failure fixture, not evidence of a broken personal document or a failed live Ollama request. The current default uploads folder is empty and vector_index.json is absent; no real thai.txt could be repaired, and no personal index was rebuilt or deleted.
+
+The utility nevertheless needed better diagnostics and transient-failure handling. It now retries a missing/invalid embedding up to twice per chunk by default (configurable from one to three attempts), identifies the failed chunk and reason, rejects inconsistent dimensions within a document, and publishes only complete document results. Unrelated vector entries survive successful re-indexing; exhausted retries and dimension failures leave the existing index byte-for-byte unchanged in regression tests. The CLI returns a nonzero exit code for document failures and can save a JSON report. It still requires Flask and other writers to be stopped; the JSON index is not a multi-process database. Service-specific causes must be checked in Ollama logs; the old fixture contains no such cause.
+
+The new live synthetic thai.txt check succeeded: two chunks, both 768-dimensional embeddings, original file bytes retained during re-indexing. A synthetic PDF also re-indexed successfully. Both temporary documents were removed only from the isolated test directory after the checks.
+
+### Saved vocabulary investigation
+
+The configured default progress.sqlite3 contains zero saved vocabulary rows, so there were no outdated saved translations to update. No storage environment overrides were present. Preview and apply both reported total 0, eligible 0, updated 0; no backup was needed and the database SHA256 remained `972f1463afaca9f395bd49f5ac5232c92e16878bfe50b8a054b8bb0d31d9e68c` before and after the work.
+
+For populated installations, src/vocabulary_legacy.json initially recorded 23 changed built-in snapshots from commit b9cb57c; the latest context review adds 12 prior-version snapshots, for 35 total. This includes pronunciation, register glosses and example translations, not 23 necessarily incorrect Thai headwords. The updater requires a nonempty lesson_id and an exact match of every stored content field to one of those snapshots before substituting the current catalog entry. A matching Thai headword alone never authorizes an overwrite. Manual cards, customized built-in cards, already current cards and unrecognized versions are preserved. A byte-identical recreation of a historical built-in card with the same lesson provenance cannot be distinguished from that historical import; arbitrary historical user edits are not inferred.
+
+The apply operation locks writers, makes a complete SQLite backup beside the database with a unique `-before-content-….sqlite3` filename, and updates only the content fields in one transaction. IDs, Thai keys, creation dates, due dates, intervals, ease, repetitions, review revisions and review history do not change. A failing update rolls back all card changes and retains the backup. Tests cover all 35 historical snapshots independently, manual and edited cards, backups, historical review rows, unchanged scheduling, idempotency and a simulated mid-update storage failure. No automatic background migration was introduced.
+
+Stop Flask during maintenance. Preview first; apply only after inspecting the eligible count:
+
+```sh
+.venv/bin/python scripts/update_builtin_vocabulary.py
+.venv/bin/python scripts/update_builtin_vocabulary.py --apply
+# For another installation, pass --database /absolute/path/to/progress.sqlite3.
+# Re-index only when there are actual documents to process:
+.venv/bin/python reindex.py --attempts 2 --report /tmp/freddy-reindex.json
+```
+
+### Human review and live evidence
+
+The [concise human review table](thai-human-review.md) includes English meaning, Thai, romanization, context and the issue for 12 uncertain or context-sensitive phrases. It covers names, pronouns, refusals, implicit location references, dish/serving choices, question-particle pronunciation and prior chatbot corrections. **No native verification is claimed.**
+
+Raw final results are in [followup-live-results.json](followup-live-results.json). Reproduce the targeted tutor, multi-chunk Thai text and PDF/RAG checks with:
+
+```sh
+.venv/bin/python scripts/live_ollama_smoke.py --tutor-level Intermediate --report /tmp/freddy-followup-live.json
+```
+
+The run used real local qwen3:1.7b and nomic-embed-text with temporary documents, index and learner database. The first sandboxed attempt could not reach the local service; the completed run outside that restriction passed all 10 checks. Both explicit and semantic RAG answers had the expected price and filename citation. The test now requires citations in the answer rather than merely recording their absence. The Intermediate reply was a relevant Thai greeting with an appropriate English meaning, but omitted romanization despite the pronunciation setting being enabled; the presence smoke test does not assert that preference or full teaching quality. Broader naturalness, pronunciation accuracy, all-mode reliability and device audio remain human acceptance work.
+
+## Historical authored content inventory
 
 The following original/result pairs make unchanged entries visible as well as corrections. Retained entries have no clear error identified in this audit; context and teacher-review qualifications above still apply. English distractors are intentionally incorrect answers, not proposed translations.
 
@@ -285,4 +370,4 @@ The following original/result pairs make unchanged entries visible as well as co
 
 ### Generated vocabulary cards
 
-All 40 generated cards were checked against the 40 word entries above and their selected example. The 14 explicit overrides are listed above; other examples are taken from the corresponding dialogue by substring matching. This means the corrected fried-rice line also becomes the example for ข้าว, จาน and ไม่เผ็ด. Substring matching is not a semantic validator, but the current selected examples contain the intended word in a compatible sense. Existing personal saved cards are not part of this generated catalog.
+All 40 generated cards were checked against the 40 word entries above and their selected example. The 14 initial explicit overrides are listed above (there are now 16); other examples are taken from the corresponding dialogue by substring matching. This means the corrected fried-rice line also becomes the example for ข้าว, จาน and ไม่เผ็ด. Substring matching is not a semantic validator, but the initial selected examples contained the intended word in a compatible sense. The latest reviewed ใกล้ example deliberately uses the separately labeled contextual expression แถวนี้. Existing personal saved cards are not part of this generated catalog.

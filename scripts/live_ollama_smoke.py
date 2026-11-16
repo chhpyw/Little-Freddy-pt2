@@ -10,6 +10,7 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from src.config import DEFAULT_CHAT_MODEL
 
 
 def samplePdf():
@@ -30,6 +31,9 @@ def main():
   parser = argparse.ArgumentParser(description=__doc__)
   parser.add_argument('--all-tutor-settings', action='store_true', help='Exercise all 12 level/mode combinations, which may take several minutes.')
   parser.add_argument('--report', help='Optional JSON result path outside learner storage.')
+  parser.add_argument('--tutor-level', choices=('Beginner', 'Intermediate', 'Advanced'), default='Beginner')
+  parser.add_argument('--tutor-mode', choices=('Free Chat', 'Guided Lesson', 'Roleplay', 'Grammar Help'), default='Free Chat')
+  parser.add_argument('--model', default=os.environ.get('CHAT_MODEL', DEFAULT_CHAT_MODEL))
   args = parser.parse_args()
   results = []
   with tempfile.TemporaryDirectory(prefix='freddy-live-') as directory:
@@ -37,6 +41,7 @@ def main():
     os.environ['FREDDY_UPLOAD_FOLDER'] = str(Path(directory, 'uploads'))
     os.environ['FREDDY_INDEX_FILE'] = str(Path(directory, 'index.json'))
     os.environ['FREDDY_PROGRESS_DATABASE'] = str(Path(directory, 'learner.sqlite3'))
+    os.environ['CHAT_MODEL'] = args.model
     import requests
     import app as backend
     session = requests.Session(); session.trust_env = False
@@ -53,14 +58,24 @@ def main():
       embedding = backend.get_embedding('A synthetic Thai lesson about a practice cafe.')
       check('live embedding', backend.valid_embedding(embedding), dimensions=len(embedding) if embedding else 0)
       client = backend.app.test_client()
-      settings = [(level, mode) for level in backend.TUTOR_LEVELS for mode in backend.TUTOR_MODES] if args.all_tutor_settings else [('Beginner', 'Free Chat')]
+      settings = [(level, mode) for level in backend.TUTOR_LEVELS for mode in backend.TUTOR_MODES] if args.all_tutor_settings else [(args.tutor_level, args.tutor_mode)]
       for level, mode in settings:
         started = time.monotonic()
         response = client.post('/chat', json={'messages': [{'role': 'user', 'content': 'Give one short Thai greeting with a brief English gloss. Keep the answer to one sentence.'}],
           'tutor': dict(level=level, mode=mode, pronunciation=True)})
         answer = (response.json or {}).get('response', '')
-        check('live tutor ' + level + ' / ' + mode, response.status_code == 200 and any('\u0e01' <= c <= '\u0e2e' for c in answer),
-              status=response.status_code, response_characters=len(answer), contains_thai=any("\u0e01" <= c <= "\u0e2e" for c in answer), seconds=round(time.monotonic() - started, 2))
+        check('live tutor ' + level + ' / ' + mode, response.status_code == 200 and (response.json or {}).get('ai_commentary_accepted') is True and (response.json or {}).get('script_validation') == 'thai-fields-v1' and any('\u0e01' <= c <= '\u0e2e' for c in answer),
+              status=response.status_code, response=answer, error=(response.json or {}).get('error'), warnings=(response.json or {}).get('warnings', []), response_characters=len(answer), contains_thai=any("\u0e01" <= c <= "\u0e2e" for c in answer), seconds=round(time.monotonic() - started, 2))
+      import reindex
+      thai_path = Path(directory, 'uploads', 'thai.txt')
+      thai_content = ('สวัสดีครับ ขอน้ำหนึ่งแก้วครับ\n' * 30).encode('utf-8')
+      thai_path.write_bytes(thai_content)
+      diagnostics = []
+      count = reindex.reindex_all(report=diagnostics)
+      check('live synthetic Thai text reindex', count == 1 and len(backend.load_index().get('thai.txt', [])) > 1
+            and thai_path.read_bytes() == thai_content, diagnostics=diagnostics)
+      response = client.delete('/files/thai.txt')
+      check('temporary Thai text cleanup', response.status_code == 200 and not backend.load_index() and not thai_path.exists())
       response = client.post('/upload', data={'file': (samplePdf(), 'freddy-smoke.pdf')})
       check('live PDF extraction and embedding upload', response.status_code == 200, status=response.status_code)
       for question, name in [('What is the coconut water price in freddy-smoke.pdf? Include the number and filename.', 'explicit PDF retrieval'),
@@ -68,9 +83,12 @@ def main():
         response = client.post('/chat', json={'messages': [{'role': 'user', 'content': question}],
           'tutor': dict(level='Beginner', mode='Free Chat', pronunciation=True)})
         answer = (response.json or {}).get('response', '')
-        check('live ' + name, response.status_code == 200 and '37' in answer and 'freddy-smoke.pdf' in response.json.get('doc_sources', []),
-              status=response.status_code, answer_has_price='37' in answer,
+        check('live ' + name, response.status_code == 200 and '37' in answer and 'freddy-smoke.pdf' in answer and 'freddy-smoke.pdf' in response.json.get('doc_sources', []),
+              status=response.status_code, response=answer, error=(response.json or {}).get('error'), answer_has_price='37' in answer,
               source_metadata=response.json.get('doc_sources', []), answer_cites_filename='freddy-smoke.pdf' in answer)
+      diagnostics = []
+      count = reindex.reindex_all(report=diagnostics)
+      check('live synthetic PDF reindex', count == 1 and diagnostics[0]['status'] == 'indexed', diagnostics=diagnostics)
       response = client.delete('/files/freddy-smoke.pdf')
       check('temporary PDF deletion and index removal', response.status_code == 200 and not backend.load_index() and not Path(directory, 'uploads', 'freddy-smoke.pdf').exists())
     except requests.RequestException as error:

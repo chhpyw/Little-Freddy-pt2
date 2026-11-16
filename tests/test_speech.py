@@ -29,7 +29,7 @@ class SpeechTests(unittest.TestCase):
     self.assertIn(b'id="speaking"', page.data)
     content = self.client.get('/api/speech').json
     self.assertEqual([tone['id'] for tone in content['tones']], ['mid', 'low', 'falling', 'high', 'rising'])
-    self.assertEqual(len(content['items']), 10)
+    self.assertEqual(len(content['items']), 16)
     self.assertIn('seasite.niu.edu', content['source'])
     for tone in content['tones']:
       for key in ('thai', 'roman', 'english', 'explanation', 'contour'):
@@ -37,7 +37,9 @@ class SpeechTests(unittest.TestCase):
     for item in content['items']:
       self.assertNotIn('answer', item)
     self.assertEqual({item['id'] for item in content['items'] if not item['id'].startswith('tone-')},
-                     {'greeting', 'introduction', 'food', 'shopping', 'directions'})
+                     {'greeting', 'introduction', 'food', 'shopping', 'directions',
+                      'casual-introduction', 'nearby-restroom', 'far-restroom',
+                      'bag-decline', 'non-spicy-rice', 'bag-question'})
 
   def test_transcript_feedback_ignores_spaces_but_preserves_thai_marks(self):
     result = self.attempt(response=' สวัสดี ครับ! ').json
@@ -51,7 +53,7 @@ class SpeechTests(unittest.TestCase):
     # Thai tone marks must never be discarded in matching.
     self.assertFalse(self.attempt(item='tone-high', response='ซาย').json['matched'])
     result = self.client.get('/api/speech/progress').json
-    self.assertEqual((result['attempts'], result['completed'], result['total']), (3, 1, 20))
+    self.assertEqual((result['attempts'], result['completed'], result['total']), (3, 1, 2 * len(SPEECH_ITEMS)))
 
   def test_listening_server_assessment_and_idempotent_retry(self):
     attempt_id = str(uuid4())
@@ -72,10 +74,10 @@ class SpeechTests(unittest.TestCase):
       self.assertTrue(self.attempt(item=item['id'], response=item['thai']).json['matched'])
     fresh = backend.app.test_client().get('/api/progress').json
     self.assertEqual((fresh['completed'], fresh['attempts'], fresh['average_score']), (0, 0, 0))
-    self.assertEqual((fresh['speech']['completed'], fresh['speech']['attempts']), (20, 20))
+    self.assertEqual((fresh['speech']['completed'], fresh['speech']['attempts']), (2 * len(SPEECH_ITEMS), 2 * len(SPEECH_ITEMS)))
     with sqlite3.connect(backend.app.config['PROGRESS_DATABASE']) as connection:
-      self.assertEqual(connection.execute('SELECT COUNT(*) FROM speech_attempts').fetchone()[0], 20)
-    self.assertEqual(backend.app.test_client().get('/api/speech/progress').json['completed'], 20)
+      self.assertEqual(connection.execute('SELECT COUNT(*) FROM speech_attempts').fetchone()[0], 2 * len(SPEECH_ITEMS))
+    self.assertEqual(backend.app.test_client().get('/api/speech/progress').json['completed'], 2 * len(SPEECH_ITEMS))
 
   def test_additive_schema_preserves_existing_lesson_database(self):
     with sqlite3.connect(backend.app.config['PROGRESS_DATABASE']) as connection:

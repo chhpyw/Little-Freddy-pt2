@@ -5,6 +5,7 @@ import unittest
 from unittest.mock import patch
 
 import app as backend
+from tutor_fixtures import tutorReply, teaching, reviewedReply
 from src.curriculum import LESSONS
 
 
@@ -77,7 +78,7 @@ class LearningTests(unittest.TestCase):
 
   @patch.object(backend, 'load_index', return_value={})
   @patch.object(backend, 'get_embedding', return_value=None)
-  @patch.object(backend, 'ollama_request', return_value={'message': {'content': 'สวัสดีครับ'}})
+  @patch.object(backend, 'ollama_request', return_value=reviewedReply('food-rice'))
   def test_lesson_ai_context_and_validation(self, ollama, embedding, index):
     body = {'messages': [{'role': 'user', 'content': 'สวัสดี'}], 'lesson_id': 'food',
             'translations': False, 'tutor': {'level': 'Beginner', 'mode': 'Roleplay', 'pronunciation': True}}

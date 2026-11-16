@@ -30,8 +30,10 @@ LESSONS = [
     ('ชื่อ', 'chʉ̂ʉ', 'Name / be named'), ('คุณ', 'khun', 'You (polite / neutral)'), ('ผม', 'phǒm', 'I, commonly used by men in polite speech'), ('ฉัน', 'chǎn', 'I (familiar; often used by women)')], [
     ('สวัสดีครับ ผมชื่อเฟรดดี้', 'sà wàt dii khráp phǒm chʉ̂ʉ Freddy', 'Hello. My name is Freddy.'),
     ('สวัสดีค่ะ คุณชื่ออะไรคะ', 'sà wàt dii khâ khun chʉ̂ʉ à rai khá', 'Hello. What is your name?'),
-    ('ผมชื่อเฟรดดี้ครับ', 'phǒm chʉ̂ʉ Freddy khráp', 'My name is Freddy.')],
-    'ผม / ฉัน + ชื่อ + name = My name is … . คุณชื่ออะไร = What is your name? ฉัน is familiar; ดิฉัน is a more formal feminine option. ครับ can end statements or questions; use ค่ะ for statements and คะ for questions in the feminine polite style.',
+    ('ผมชื่อเฟรดดี้ครับ', 'phǒm chʉ̂ʉ Freddy khráp', 'My name is Freddy.'),
+    ('ชื่อแอนค่ะ', 'chʉ̂ʉ ɛɛn khâ', 'My name is Ann. (Casual introduction.)'),
+    ('ฉันชื่อแอนค่ะ', 'chǎn chʉ̂ʉ ɛɛn khâ', 'My name is Ann. (With an explicit familiar pronoun.)')],
+    'ผม / ฉัน + ชื่อ + name = My name is … . In a casual introduction the pronoun can be omitted: ชื่อแอนค่ะ (chʉ̂ʉ ɛɛn khâ). ฉันชื่อแอนค่ะ remains a valid familiar alternative; these are alternative introductions. คุณชื่ออะไร = What is your name? ฉัน is familiar; ดิฉัน is a more formal feminine option. ครับ can end statements or questions; use ค่ะ for statements and คะ for questions in the feminine polite style.',
     'Meet a new neighbor. Greet them, exchange names, and thank them.', [
       mc('Which phrase means hello?', ['สวัสดี', 'ขอบคุณ', 'ชื่อ'], 'สวัสดี'),
       mc('Which particle commonly makes a woman’s statement polite?', ['ค่ะ', 'คุณ', 'ผม'], 'ค่ะ'),
@@ -53,11 +55,11 @@ LESSONS = [
     ('ขอ', 'khɔ̌ɔ', 'May I have / please give me'), ('ข้าว', 'khâao', 'Rice'), ('น้ำ', 'náam', 'Water'),
     ('กาแฟ', 'kaa fɛɛ', 'Coffee'), ('แก้ว', 'kɛ̂ɛo', 'Glass; classifier for drinks served by the glass'), ('จาน', 'jaan', 'Plate; classifier for food served by the plate'),
     ('ไม่เผ็ด', 'mâi phèt', 'Not spicy'), ('อร่อย', 'à rɔ̀i', 'Delicious')], [
-    ('ขอข้าวผัดหนึ่งจาน ไม่เผ็ดครับ', 'khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt khráp', 'One plate of fried rice, not spicy, please.'),
+    ('ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ', 'khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp', 'One plate of fried rice, not spicy, please.'),
     ('ขอน้ำหนึ่งแก้วครับ', 'khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp', 'One glass of water, please.'),
     ('ยี่สิบบาทค่ะ', 'yîi sìp bàat khâ', 'Twenty baht.'),
     ('อร่อยครับ ขอบคุณครับ', 'à rɔ̀i khráp khɔ̀ɔp khun khráp', 'Delicious. Thank you.')],
-    'ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.',
+    'ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.',
     'Order fried rice and a drink at a café. Ask for non-spicy food, then ask the price.', [
       mc('What does ไม่เผ็ด mean?', ['Not spicy', 'Very spicy', 'Coffee'], 'Not spicy'),
       mc('Choose the classifier for a glass of water.', ['แก้ว', 'จาน', 'บาท'], 'แก้ว'),
@@ -69,8 +71,10 @@ LESSONS = [
     ('ใกล้', 'klâi', 'Near'), ('ไกล', 'klai', 'Far')], [
     ('สวัสดีค่ะ ห้องน้ำอยู่ที่ไหนคะ', 'sà wàt dii khâ hɔ̂ng náam yùu thîi nǎi khá', 'Hello. Where is the toilet?'),
     ('ตรงไป แล้วเลี้ยวซ้ายครับ', 'trong pai lɛ́ɛo líao sáai khráp', 'Go straight, then turn left.'),
-    ('ขอบคุณค่ะ', 'khɔ̀ɔp khun khâ', 'Thank you.')],
-    'Place + อยู่ที่ไหน + ครับ / คะ = Where is the place? แล้ว = then. ใกล้ (falling) and ไกล (mid) differ in tone and meaning.',
+    ('ขอบคุณค่ะ', 'khɔ̀ɔp khun khâ', 'Thank you.'),
+    ('ห้องน้ำอยู่แถวนี้ค่ะ', 'hɔ̂ng náam yùu thɛ̌ɛo níi khâ', 'The restroom is around here. (Nearby-location reply.)'),
+    ('ห้องน้ำอยู่ไกลจากที่นี่ค่ะ', 'hɔ̂ng náam yùu klai jàak thîi nîi khâ', 'The restroom is far from here. (Alternative far-location reply.)')],
+    'Place + อยู่ที่ไหน + ครับ / คะ = Where is the place? แล้ว = then. ใกล้ (klâi, falling) and ไกล (klai, mid) differ in tone and meaning. แถวนี้ (thɛ̌ɛo níi) means around here; it is a contextual nearby-location expression, not a literal reading of ใกล้. The final two dialogue replies are alternatives, not sequential directions.',
     'Ask a local for the toilet and a café. Repeat the directions to check your understanding.', [
       mc('เลี้ยวขวา means …', ['Turn right', 'Turn left', 'Go straight'], 'Turn right'),
       mc('Which word means near?', ['ใกล้', 'ไกล', 'ไป'], 'ใกล้'),
@@ -82,12 +86,13 @@ LESSONS = [
     ('ถุง', 'thǔng', 'Bag'), ('ได้', 'dâai', 'Can / okay')], [
     ('สวัสดีค่ะ อันนี้เท่าไหร่คะ', 'sà wàt dii khâ an níi thâo rài khá', 'Hello. How much is this one?'),
     ('สามสิบบาทครับ', 'sǎam sìp bàat khráp', 'Thirty baht.'),
-    ('เอาอันนี้ค่ะ มีถุงไหมคะ', 'ao an níi khâ mii thǔng mǎi khá', 'I’ll take this one. Do you have a bag?'),
+    ('เอาอันนี้ค่ะ มีถุงไหมคะ', 'ao an níi khâ mii thǔng mái khá', 'I’ll take this one. Do you have a bag?'),
     ('มีครับ', 'mii khráp', 'Yes, we do.'),
-    ('ขอบคุณค่ะ', 'khɔ̀ɔp khun khâ', 'Thank you.')],
-    'มี + item + ไหม = Do you have …? เอา + item = I’ll take … . ไม่เอา + ครับ / ค่ะ = I do not want it (a direct refusal, softened by the particle). Add ขอบคุณ to thank the listener. อันนี้ is a generic this one; use the appropriate classifier when naming a specific kind of object. สามสิบ = 30.',
+    ('ขอบคุณค่ะ', 'khɔ̀ɔp khun khâ', 'Thank you.'),
+    ('ไม่รับถุงค่ะ ขอบคุณค่ะ', 'mâi ráp thǔng khâ khɔ̀ɔp khun khâ', 'I won’t take a bag, thank you. (Alternative when a bag is offered.)')],
+    'มี + item + ไหม = Do you have …? เอา + item = I’ll take … . ไม่เอา + ครับ / ค่ะ = I do not want it (a direct refusal, softened by the particle). For declining an offered shopping bag, use ไม่รับถุงค่ะ ขอบคุณค่ะ (mâi ráp thǔng khâ khɔ̀ɔp khun khâ). This is an alternative situation to requesting a bag. ไหม has the citation-form reading mǎi; conversational mái is used in the dialogue. คะ (khá, high) ends the feminine polite question; ค่ะ (khâ, falling) ends the statement. อันนี้ is a generic this one; use the appropriate classifier when naming a specific kind of object. สามสิบ = 30.',
     'Buy something at a neighborhood shop. Ask the price, choose an item, request a bag, and say thank you.', [
-      mc('How do you politely decline?', ['ไม่เอาค่ะ', 'เอาอันนี้ค่ะ', 'มีค่ะ'], 'ไม่เอาค่ะ'),
+      mc('A shopping bag is offered. Which response declines it and thanks the seller?', ['ไม่รับถุงค่ะ ขอบคุณค่ะ', 'เอาอันนี้ค่ะ', 'มีค่ะ'], 'ไม่รับถุงค่ะ ขอบคุณค่ะ'),
       mc('สามสิบบาท means …', ['30 baht', '3 baht', '13 baht'], '30 baht'),
       blank('มีถุง ___ คะ (Do you have a bag?)', 'ไหม', 'mǎi', 'mai', 'mái'),
       blank('เอา ___ ค่ะ (I’ll take this one)', 'อันนี้', 'an níi', 'an ni')])

@@ -1,0 +1,352 @@
+[
+  {
+    "thai": "สวัสดี",
+    "roman": "sawàt dii",
+    "english": "Hello",
+    "category": "Greetings",
+    "example_thai": "สวัสดีครับ ผมชื่อเฟรดดี้",
+    "example_roman": "sawàt dii khráp phǒm chʉ̂ʉ Freddy",
+    "example_english": "Hello. My name is Freddy.",
+    "lesson_id": "greetings"
+  },
+  {
+    "thai": "ครับ",
+    "roman": "khráp",
+    "english": "Polite particle, commonly used by men",
+    "category": "Greetings",
+    "example_thai": "สวัสดีครับ ผมชื่อเฟรดดี้",
+    "example_roman": "sawàt dii khráp phǒm chʉ̂ʉ Freddy",
+    "example_english": "Hello. My name is Freddy.",
+    "lesson_id": "greetings"
+  },
+  {
+    "thai": "ค่ะ",
+    "roman": "khâ",
+    "english": "Polite statement particle, commonly used by women",
+    "category": "Greetings",
+    "example_thai": "สวัสดีค่ะ คุณชื่ออะไรคะ",
+    "example_roman": "sawàt dii khâ khun chʉ̂ʉ àrai khá",
+    "example_english": "Hello. What is your name?",
+    "lesson_id": "greetings"
+  },
+  {
+    "thai": "ชื่อ",
+    "roman": "chʉ̂ʉ",
+    "english": "Name / be named",
+    "category": "Daily Conversations",
+    "example_thai": "สวัสดีครับ ผมชื่อเฟรดดี้",
+    "example_roman": "sawàt dii khráp phǒm chʉ̂ʉ Freddy",
+    "example_english": "Hello. My name is Freddy.",
+    "lesson_id": "greetings"
+  },
+  {
+    "thai": "คุณ",
+    "roman": "khun",
+    "english": "You",
+    "category": "Daily Conversations",
+    "example_thai": "สวัสดีค่ะ คุณชื่ออะไรคะ",
+    "example_roman": "sawàt dii khâ khun chʉ̂ʉ àrai khá",
+    "example_english": "Hello. What is your name?",
+    "lesson_id": "greetings"
+  },
+  {
+    "thai": "ผม",
+    "roman": "phǒm",
+    "english": "I, commonly used by men",
+    "category": "Daily Conversations",
+    "example_thai": "สวัสดีครับ ผมชื่อเฟรดดี้",
+    "example_roman": "sawàt dii khráp phǒm chʉ̂ʉ Freddy",
+    "example_english": "Hello. My name is Freddy.",
+    "lesson_id": "greetings"
+  },
+  {
+    "thai": "ฉัน",
+    "roman": "chǎn",
+    "english": "I",
+    "category": "Daily Conversations",
+    "example_thai": "ฉันชื่อแอนค่ะ",
+    "example_roman": "chǎn chʉ̂ʉ Ann khâ",
+    "example_english": "My name is Ann.",
+    "lesson_id": "greetings"
+  },
+  {
+    "thai": "เท่าไหร่",
+    "roman": "thâo rài",
+    "english": "How much?",
+    "category": "Numbers",
+    "example_thai": "สวัสดีครับ เท่าไหร่ครับ",
+    "example_roman": "sawàt dii khráp thâo rài khráp",
+    "example_english": "Hello. How much is it?",
+    "lesson_id": "numbers"
+  },
+  {
+    "thai": "ขอ",
+    "roman": "khɔ̌ɔ",
+    "english": "May I have / please give me",
+    "category": "Food",
+    "example_thai": "ขอข้าวหนึ่งจานครับ ไม่เผ็ดครับ",
+    "example_roman": "khɔ̌ɔ khâao nʉ̀ng jaan khráp mâi phèt khráp",
+    "example_english": "One plate of rice, please. Not spicy, please.",
+    "lesson_id": "food"
+  },
+  {
+    "thai": "ข้าว",
+    "roman": "khâao",
+    "english": "Rice",
+    "category": "Food",
+    "example_thai": "ขอข้าวหนึ่งจานครับ ไม่เผ็ดครับ",
+    "example_roman": "khɔ̌ɔ khâao nʉ̀ng jaan khráp mâi phèt khráp",
+    "example_english": "One plate of rice, please. Not spicy, please.",
+    "lesson_id": "food"
+  },
+  {
+    "thai": "น้ำ",
+    "roman": "náam",
+    "english": "Water",
+    "category": "Food",
+    "example_thai": "ขอน้ำหนึ่งแก้วครับ",
+    "example_roman": "khɔ̌ɔ náam nʉ̀ng kâew khráp",
+    "example_english": "One glass of water, please.",
+    "lesson_id": "food"
+  },
+  {
+    "thai": "กาแฟ",
+    "roman": "gaa fae",
+    "english": "Coffee",
+    "category": "Food",
+    "example_thai": "ขอกาแฟหนึ่งแก้วค่ะ",
+    "example_roman": "khɔ̌ɔ gaa fae nʉ̀ng kâew khâ",
+    "example_english": "One cup of coffee, please.",
+    "lesson_id": "food"
+  },
+  {
+    "thai": "แก้ว",
+    "roman": "kâew",
+    "english": "Glass / cup classifier",
+    "category": "Food",
+    "example_thai": "ขอน้ำหนึ่งแก้วครับ",
+    "example_roman": "khɔ̌ɔ náam nʉ̀ng kâew khráp",
+    "example_english": "One glass of water, please.",
+    "lesson_id": "food"
+  },
+  {
+    "thai": "จาน",
+    "roman": "jaan",
+    "english": "Plate classifier",
+    "category": "Food",
+    "example_thai": "ขอข้าวหนึ่งจานครับ ไม่เผ็ดครับ",
+    "example_roman": "khɔ̌ɔ khâao nʉ̀ng jaan khráp mâi phèt khráp",
+    "example_english": "One plate of rice, please. Not spicy, please.",
+    "lesson_id": "food"
+  },
+  {
+    "thai": "ไม่เผ็ด",
+    "roman": "mâi phèt",
+    "english": "Not spicy",
+    "category": "Food",
+    "example_thai": "ขอข้าวหนึ่งจานครับ ไม่เผ็ดครับ",
+    "example_roman": "khɔ̌ɔ khâao nʉ̀ng jaan khráp mâi phèt khráp",
+    "example_english": "One plate of rice, please. Not spicy, please.",
+    "lesson_id": "food"
+  },
+  {
+    "thai": "อร่อย",
+    "roman": "àrɔ̀i",
+    "english": "Delicious",
+    "category": "Food",
+    "example_thai": "อร่อยครับ ขอบคุณครับ",
+    "example_roman": "àrɔ̀i khráp khɔ̀ɔp khun khráp",
+    "example_english": "Delicious. Thank you.",
+    "lesson_id": "food"
+  },
+  {
+    "thai": "อยู่ที่ไหน",
+    "roman": "yùu thîi nǎi",
+    "english": "Where is …?",
+    "category": "Transportation",
+    "example_thai": "สวัสดีค่ะ ห้องน้ำอยู่ที่ไหนคะ",
+    "example_roman": "sawàt dii khâ hɔ̂ng náam yùu thîi nǎi khá",
+    "example_english": "Hello. Where is the toilet?",
+    "lesson_id": "directions"
+  },
+  {
+    "thai": "ห้องน้ำ",
+    "roman": "hɔ̂ng náam",
+    "english": "Toilet",
+    "category": "Transportation",
+    "example_thai": "สวัสดีค่ะ ห้องน้ำอยู่ที่ไหนคะ",
+    "example_roman": "sawàt dii khâ hɔ̂ng náam yùu thîi nǎi khá",
+    "example_english": "Hello. Where is the toilet?",
+    "lesson_id": "directions"
+  },
+  {
+    "thai": "ไป",
+    "roman": "pai",
+    "english": "Go",
+    "category": "Transportation",
+    "example_thai": "ตรงไป แล้วเลี้ยวซ้ายครับ",
+    "example_roman": "trong pai láew líao sáai khráp",
+    "example_english": "Go straight, then turn left.",
+    "lesson_id": "directions"
+  },
+  {
+    "thai": "ตรงไป",
+    "roman": "trong pai",
+    "english": "Go straight",
+    "category": "Transportation",
+    "example_thai": "ตรงไป แล้วเลี้ยวซ้ายครับ",
+    "example_roman": "trong pai láew líao sáai khráp",
+    "example_english": "Go straight, then turn left.",
+    "lesson_id": "directions"
+  },
+  {
+    "thai": "เลี้ยวซ้าย",
+    "roman": "líao sáai",
+    "english": "Turn left",
+    "category": "Transportation",
+    "example_thai": "ตรงไป แล้วเลี้ยวซ้ายครับ",
+    "example_roman": "trong pai láew líao sáai khráp",
+    "example_english": "Go straight, then turn left.",
+    "lesson_id": "directions"
+  },
+  {
+    "thai": "อันนี้",
+    "roman": "an níi",
+    "english": "This one",
+    "category": "Shopping",
+    "example_thai": "สวัสดีค่ะ อันนี้เท่าไหร่คะ",
+    "example_roman": "sawàt dii khâ an níi thâo rài khá",
+    "example_english": "Hello. How much is this one?",
+    "lesson_id": "shopping"
+  },
+  {
+    "thai": "ไหม",
+    "roman": "mǎi",
+    "english": "Yes/no question particle",
+    "category": "Daily Conversations",
+    "example_thai": "เอาอันนี้ค่ะ มีถุงไหมคะ",
+    "example_roman": "ao an níi khâ mii thǔng mǎi khá",
+    "example_english": "I’ll take this one. Do you have a bag?",
+    "lesson_id": "shopping"
+  },
+  {
+    "thai": "ชื่อ",
+    "roman": "chʉ̂ʉ",
+    "english": "Name / be named",
+    "category": "Daily Conversations",
+    "example_thai": "สวัสดีครับ ผมชื่อเฟรดดี้",
+    "example_roman": "sà wàt dii khráp phǒm chʉ̂ʉ Freddy",
+    "example_english": "Hello. My name is Freddy.",
+    "lesson_id": "greetings"
+  },
+  {
+    "thai": "ขอ",
+    "roman": "khɔ̌ɔ",
+    "english": "May I have / please give me",
+    "category": "Food",
+    "example_thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดครับ",
+    "example_roman": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt khráp",
+    "example_english": "One plate of fried rice, not spicy, please.",
+    "lesson_id": "food"
+  },
+  {
+    "thai": "ข้าว",
+    "roman": "khâao",
+    "english": "Rice",
+    "category": "Food",
+    "example_thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดครับ",
+    "example_roman": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt khráp",
+    "example_english": "One plate of fried rice, not spicy, please.",
+    "lesson_id": "food"
+  },
+  {
+    "thai": "จาน",
+    "roman": "jaan",
+    "english": "Plate; classifier for food served by the plate",
+    "category": "Food",
+    "example_thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดครับ",
+    "example_roman": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt khráp",
+    "example_english": "One plate of fried rice, not spicy, please.",
+    "lesson_id": "food"
+  },
+  {
+    "thai": "ไม่เผ็ด",
+    "roman": "mâi phèt",
+    "english": "Not spicy",
+    "category": "Food",
+    "example_thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดครับ",
+    "example_roman": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt khráp",
+    "example_english": "One plate of fried rice, not spicy, please.",
+    "lesson_id": "food"
+  },
+  {
+    "thai": "ใกล้",
+    "roman": "klâi",
+    "english": "Near",
+    "category": "Transportation",
+    "example_thai": "ห้องน้ำอยู่ใกล้ค่ะ",
+    "example_roman": "hɔ̂ng náam yùu klâi khâ",
+    "example_english": "The toilet is nearby.",
+    "lesson_id": "directions"
+  },
+  {
+    "thai": "ไกล",
+    "roman": "klai",
+    "english": "Far",
+    "category": "Transportation",
+    "example_thai": "ห้องน้ำอยู่ไกลค่ะ",
+    "example_roman": "hɔ̂ng náam yùu klai khâ",
+    "example_english": "The toilet is far away.",
+    "lesson_id": "directions"
+  },
+  {
+    "thai": "เอา",
+    "roman": "ao",
+    "english": "Take / want",
+    "category": "Shopping",
+    "example_thai": "เอาอันนี้ค่ะ มีถุงไหมคะ",
+    "example_roman": "ao an níi khâ mii thǔng mǎi khá",
+    "example_english": "I’ll take this one. Do you have a bag?",
+    "lesson_id": "shopping"
+  },
+  {
+    "thai": "ไม่เอา",
+    "roman": "mâi ao",
+    "english": "Do not want",
+    "category": "Shopping",
+    "example_thai": "ไม่เอาถุงค่ะ",
+    "example_roman": "mâi ao thǔng khâ",
+    "example_english": "I do not want a bag.",
+    "lesson_id": "shopping"
+  },
+  {
+    "thai": "มี",
+    "roman": "mii",
+    "english": "Have / there is",
+    "category": "Daily Conversations",
+    "example_thai": "เอาอันนี้ค่ะ มีถุงไหมคะ",
+    "example_roman": "ao an níi khâ mii thǔng mǎi khá",
+    "example_english": "I’ll take this one. Do you have a bag?",
+    "lesson_id": "shopping"
+  },
+  {
+    "thai": "ไหม",
+    "roman": "mǎi",
+    "english": "Yes/no question particle (often pronounced mái in conversation)",
+    "category": "Daily Conversations",
+    "example_thai": "เอาอันนี้ค่ะ มีถุงไหมคะ",
+    "example_roman": "ao an níi khâ mii thǔng mǎi khá",
+    "example_english": "I’ll take this one. Do you have a bag?",
+    "lesson_id": "shopping"
+  },
+  {
+    "thai": "ถุง",
+    "roman": "thǔng",
+    "english": "Bag",
+    "category": "Shopping",
+    "example_thai": "เอาอันนี้ค่ะ มีถุงไหมคะ",
+    "example_roman": "ao an níi khâ mii thǔng mǎi khá",
+    "example_english": "I’ll take this one. Do you have a bag?",
+    "lesson_id": "shopping"
+  }
+]

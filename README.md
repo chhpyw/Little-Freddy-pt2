@@ -26,7 +26,7 @@ The navy, orange, and white interface adapts to desktop and mobile layouts.
   viewing, and deletion. New uploads publish only after every chunk is embedded.
   Duplicate filenames return a conflict instead of replacing documents.
 - **Speaking & Listening:** five tone guides with source-linked examples,
-  romanization and illustrative pitch contours; ten listening and ten speaking
+  romanization and illustrative pitch contours; sixteen listening and sixteen speaking
   activities; Thai browser TTS, replay/stop and optional slower playback; microphone
   transcription where supported. Feedback compares text, never tone or pronunciation
   accuracy. Browser recognition may use an online provider.
@@ -64,14 +64,21 @@ Install Ollama and start its desktop app, or run `ollama serve` if a server is n
 already listening on port 11434. Do not start a second server on the same port.
 
 ```sh
-ollama pull qwen3:1.7b
+ollama pull qwen3.5:4b
 ollama pull nomic-embed-text
 ollama list
 ```
 
-`qwen3:1.7b` provides chat and `nomic-embed-text` provides embeddings. Core local
+`qwen3.5:4b` is the default chat model. `CHAT_MODEL` overrides it with another installed
+model, including `qwen3:1.7b`. `nomic-embed-text` provides embeddings. Core local
 features do not require an API key or paid API. Lessons, scoring, vocabulary, and
 progress work without Ollama; chat and new document embeddings require it.
+
+Supported beginner teaching examples now come from the reviewed curriculum, with
+fixed meanings, pronunciation guides and usage notes. Generated conversation is
+separately labeled unreviewed. Review does not imply native verification; both
+models can still produce inaccurate explanations. See the [semantic benchmark and
+failed cases](docs/tutor-reliability-benchmark.md).
 
 ## Launch
 
@@ -95,7 +102,7 @@ automatically load `.env` files.
 | Variable | Default | Purpose |
 | --- | --- | --- |
 | `OLLAMA_URL` | `http://127.0.0.1:11434` | Ollama base URL |
-| `CHAT_MODEL` | `qwen3:1.7b` | Installed chat model |
+| `CHAT_MODEL` | `qwen3.5:4b` | Installed chat model |
 | `EMBED_MODEL` | `nomic-embed-text` | Installed embedding model |
 | `OLLAMA_API_KEY` | Unset | Optional bearer credential for a compatible backend |
 | `PORT` | `5000` | Flask port |
@@ -181,8 +188,14 @@ if HTTP status is 200. See [integration results and limitations](docs/integratio
   “address already in use,” choose `PORT=5055` or stop your own earlier instance.
 - **Ollama unavailable/timeout:** start Ollama, check `ollama list`, confirm both
   model names and `OLLAMA_URL`, and retry a short prompt. The default Qwen3 thinking
-  path is disabled. Small local models can still omit Thai or ignore guidance; the
-  UI warns when a tutor response has no Thai script. A successful HTTP response
+  path is disabled. Tutor replies now use structured fields and script validation,
+  with one clean-history retry. Supported beginner contexts can show an explicitly
+  labeled reviewed lesson fallback when AI commentary fails; other contexts return
+  an error. Rejected replies are never saved, and drafts are kept for retry.
+  Restart Flask after Python changes and refresh the browser. See the
+  [usability diagnosis and live HTTP results](docs/tutor-usability-fix.md).
+  Unicode checks do not establish linguistic accuracy.
+  See [script safety and actual model results](docs/tutor-script-safety.md). A successful HTTP response
   does not validate teaching quality or the correctness of a translation.
 - **PDF upload fails:** use a text-based PDF, an allowed extension, and a file under
   50 MB. Rename duplicate files. Check the embedding model and directory permissions.

@@ -5,6 +5,14 @@ import json
 import numpy as np
 import sqlite3
 import tempfile
+import time
+import logging
+from uuid import uuid4
+from src.tutor_diagnostics import LAST_OLLAMA_CALL, validationDiagnostic, modelName
+from src.config import DEFAULT_CHAT_MODEL
+from src.tutor_curriculum import selectReviewed, reviewedSchema, reviewedInstruction, parseReviewed, restaurantContext, reviewedFallback
+from src.tutor_response import (RESPONSE_SCHEMA, STRUCTURED_INSTRUCTION, VALIDATION_VERSION,
+                                cleanHistory, tutorHistory, parseTeaching, formatTeaching)
 from threading import RLock
 from urllib.parse import urlsplit
 from werkzeug.exceptions import HTTPException
@@ -21,7 +29,7 @@ app.register_blueprint(vocabulary)
 
 # Configuration
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://127.0.0.1:11434").rstrip("/")
-CHAT_MODEL = os.environ.get("CHAT_MODEL", "qwen3:1.7b")
+CHAT_MODEL = os.environ.get("CHAT_MODEL", DEFAULT_CHAT_MODEL)
 EMBED_MODEL = os.environ.get("EMBED_MODEL", "nomic-embed-text")
 OLLAMA_API_KEY = os.environ.get("OLLAMA_API_KEY")
 
@@ -52,6 +60,9 @@ def protect_local_workspace():
 
 @app.after_request
 def security_headers(response):
+    if request.path == '/chat':
+        response.headers['X-Freddy-Tutor-Contract'] = VALIDATION_VERSION
+        response.headers['X-Freddy-Chat-Model'] = modelName(CHAT_MODEL)
     response.headers['X-Content-Type-Options'] = 'nosniff'
     response.headers['X-Frame-Options'] = 'DENY'
     response.headers['Referrer-Policy'] = 'same-origin'
@@ -89,15 +100,51 @@ def filesystem_error(error):
 def ollama_request(endpoint, payload):
     headers = {}
     if OLLAMA_API_KEY:
-        headers["Authorization"] = f"Bearer {OLLAMA_API_KEY}"
+        headers['Authorization'] = f'Bearer {OLLAMA_API_KEY}'
+    started = time.monotonic()
+    info = dict(kind='unavailable', model=modelName(payload.get('model')), actual_model='unreported')
     try:
-        resp = requests.post(f"{OLLAMA_URL}{endpoint}", json=payload, headers=headers, timeout=60)
+        resp = requests.post(f'{OLLAMA_URL}{endpoint}', json=payload, headers=headers, timeout=(5, 60))
+        info['http_status'] = resp.status_code
         resp.raise_for_status()
         result = resp.json()
-        return result if isinstance(result, dict) else None
-    except Exception as e:
-        app.logger.warning("Ollama request failed (%s): %s", endpoint, type(e).__name__)
-        return None
+        if not isinstance(result, dict):
+            info['kind'] = 'malformed_transport_json'
+            return None
+        info['kind'] = 'ok'
+        info['actual_model'] = modelName(result.get('model'))
+        info['done_reason'] = result.get('done_reason') if result.get('done_reason') in ('stop', 'length', 'load') else 'unreported'
+        for key in ('prompt_eval_count', 'eval_count'):
+            count = result.get(key)
+            info[key] = count if isinstance(count, int) and 0 <= count <= 1000000 else None
+        return result
+    except requests.Timeout:
+        info['kind'] = 'timeout'
+    except requests.ConnectionError:
+        info['kind'] = 'unavailable'
+    except requests.HTTPError:
+        info['kind'] = 'http_error'
+    except ValueError:
+        info['kind'] = 'malformed_transport_json'
+    except Exception:
+        info['kind'] = 'service_error'
+    finally:
+        info['elapsed_ms'] = round((time.monotonic() - started) * 1000)
+        LAST_OLLAMA_CALL.set(info)
+        if info['kind'] != 'ok':
+            app.logger.warning('Ollama service failure endpoint=%s kind=%s model=%s elapsed_ms=%s',
+                               endpoint, info['kind'], info['model'], info['elapsed_ms'])
+    return None
+
+
+def tutorEvent(event, request_id, **details):
+    # Callers supply only enums, numeric counts and sanitized model identifiers.
+    record = dict(event=event, request_id=request_id, configured_model=modelName(CHAT_MODEL))
+    record.update(details)
+    app.logger.info('tutor_event %s', json.dumps(record, sort_keys=True))
+
+
+app.logger.setLevel(logging.INFO)
 
 def valid_embedding(value):
     try:
@@ -227,6 +274,12 @@ def tutor_prompt(settings):
     "Connect it naturally to the learner's question; never append unrelated Thai text just to include Thai characters. "
     "Give a brief English meaning or explanation when needed for understanding, following the level and lesson translation preferences. "
     "Check that the Thai and English express the same meaning in context, with natural word order and the correct classifier for the item or serving. "
+    "Prefer ordinary short spoken Thai, omit a pronoun when context permits, and do not translate English word by word. "
+    "ข้าว means rice, จาน counts platefuls, and แก้ว counts glass servings; do not invent classifier meanings. "
+    "Never gloss ค่ะ as hello. Do not turn a polite particle into an English please word. "
+    "ใกล้ is falling klâi; ไกล is mid klai; คะ is high khá; ค่ะ is falling khâ; ไหม has citation mǎi and conversational mái. "
+    "Match quantities, negation, distance/reference point and speaker politeness in both languages. "
+    "Treat generated translations, grammar explanations and pronunciation as unreviewed suggestions, never verified facts. "
     "When ordering an item, use ขอ + item + quantity + classifier as appropriate; do not translate English please literally as ขอให้ (which has other uses, such as wishes). "
     "Use ครับ for masculine polite statements/questions, ค่ะ for feminine statements and คะ for feminine questions; follow the learner's preferred style without assuming gender. "
     "If unsure about a translation, tone or usage, say so and recommend checking with a qualified Thai speaker; never claim native verification. "
@@ -249,6 +302,7 @@ def index():
 
 @app.route('/chat', methods=['POST'])
 def chat():
+    request_id = uuid4().hex[:12]
     data = request.get_json(silent=True)
     if not isinstance(data, dict):
         return jsonify({"error": "Expected a JSON object."}), 400
@@ -320,7 +374,7 @@ def chat():
             else:
                 doc_context.append(f"Document {explicit_doc} was found but contains no indexable text.")
         else:
-            query_emb = get_embedding(user_query)
+            query_emb = get_embedding(user_query) if index else None
             if not query_emb and index:
                 warnings.append('Document retrieval is unavailable because the embedding service could not respond. This reply may lack document context.')
             if query_emb:
@@ -359,8 +413,23 @@ def chat():
         f"Always cite your sources using filenames or URLs if they are provided.\n\nContext:\n{full_context}"
     )
     
+    reference_question = (is_collection_query or use_web_search
+                          or any(name.casefold() in query_lower for name in index)
+                          or any(term in query_lower for term in ('pdf', 'document', 'according to')))
+    teaching_request = (lesson_context is not None or query_lower.startswith(('teach ', 'practice '))
+                        or any(term in query_lower for term in (
+                            'teach me', 'teach us', "let's practice", 'let’s practice',
+                            'how do i say', 'how to say', 'in thai', 'to thai',
+                            'greeting', 'pronunciation', 'romanization', 'คะ', 'ค่ะ')))
+    reviewed = (restaurantContext(user_query, messages, lesson_context)
+                if settings is not None and not reference_question and (not full_context or teaching_request) else [])
+    allow_notes = any(term in query_lower for term in ('quote', 'compare languages', 'language comparison', 'discuss burmese'))
     if settings is not None:
-        system_prompt = tutor_prompt(settings) + "\n\nReference context:\n" + full_context
+        output_instruction = reviewedInstruction(reviewed, settings['level']) if reviewed else STRUCTURED_INSTRUCTION
+        system_prompt = tutor_prompt(settings) + "\n" + output_instruction + "\n\nReference context:\n" + full_context
+
+    if reviewed and not allow_notes:
+        system_prompt += '\nFor this curriculum practice, language_notes and reference_titles must be empty arrays. Keep commentary in explanation.'
 
     if lesson_context:
         system_prompt += (
@@ -370,37 +439,94 @@ def chat():
             "\nStart with familiar vocabulary and one short question. "
             "For this lesson, override the default translation preference. English translations: " + ('include them.' if data.get('translations', True) else 'only on request.'))
 
-    augmented_messages = [{"role": "system", "content": system_prompt}] + messages
+    history = tutorHistory(messages, reviewed=bool(reviewed)) if settings is not None else messages
+    augmented_messages = [{"role": "system", "content": system_prompt}] + history
 
     try:
         payload = {"model": CHAT_MODEL, "messages": augmented_messages, "stream": False}
         if settings is not None:
             # Favor focused teaching over creative drift and bound each attempt.
-            payload['options'] = {'temperature': 0.2, 'num_predict': 384}
+            payload['options'] = {'temperature': 0.2, 'num_predict': 512 if reviewed else 768, 'num_ctx': 4096}
+            payload['format'] = reviewedSchema(reviewed, allow_notes=allow_notes) if reviewed else RESPONSE_SCHEMA
         # Qwen3's optional thinking can exhaust the request timeout for short practice turns.
         if CHAT_MODEL.split(':')[0] in ('qwen3', 'qwen3.5'):
             payload['think'] = False
-        result = ollama_request("/api/chat", payload)
-        if not result: return jsonify({"error": "Ollama is unavailable or could not respond. Start Ollama and check that the local chat model is installed."}), 500
+        if settings is not None:
+            translations = data.get('translations', True if lesson_context else (
+                settings['level'] != 'Advanced' or 'english' in query_lower or 'translation' in query_lower))
+            tutorEvent('chat_start', request_id, reviewed_count=len(reviewed), history_count=len(history),
+                       contract='reviewed_ids' if reviewed else 'teaching_fields')
+
+            def unavailable(code, field, attempts):
+                tutorEvent('reviewed_fallback' if reviewed else 'chat_error', request_id,
+                           reason=code, field=field, attempts=attempts)
+                notices = {
+                    'timeout': 'Ollama timed out. AI commentary was not accepted.',
+                    'unavailable': 'Ollama is unavailable. AI commentary was not accepted.',
+                    'model_mismatch': 'Ollama returned an unexpected model. AI commentary was not accepted.'
+                }
+                notice = notices.get(code, 'AI commentary could not be validated and was not accepted.')
+                if reviewed:
+                    teaching, sources = reviewedFallback(reviewed, settings['pronunciation'], translations)
+                    return jsonify(response=formatTeaching(teaching, sources), teaching=teaching,
+                                   reviewed_examples=sources, response_kind='reviewed_fallback',
+                                   ai_commentary_accepted=False, fallback_reason=code,
+                                   script_validation=VALIDATION_VERSION, generation_attempts=attempts,
+                                   request_id=request_id, model=CHAT_MODEL, doc_sources=[], web_sources=[],
+                                   warnings=warnings + [notice + ' Showing reviewed lesson examples only. Your draft is kept for retry.'])
+                status_code = 504 if code == 'timeout' else 503 if code == 'unavailable' else 502
+                return jsonify(error=notice + ' Your draft is kept. Please retry.',
+                               code='ollama_' + code if code in ('timeout', 'unavailable', 'http_error') else 'invalid_thai_generation',
+                               reason=code, request_id=request_id, model=CHAT_MODEL), status_code
+
+            last_code, last_field = 'schema_validation', 'response'
+            for attempt in range(2):
+                LAST_OLLAMA_CALL.set(None)
+                candidate = ollama_request('/api/chat', payload)
+                call = LAST_OLLAMA_CALL.get() or dict(kind='ok' if candidate else 'unavailable')
+                tutorEvent('ollama_complete', request_id, attempt=attempt + 1, **call)
+                if not candidate:
+                    return unavailable(call['kind'], 'service', attempt + 1)
+                actual = call.get('actual_model', 'unreported')
+                if actual != 'unreported' and actual not in (CHAT_MODEL, CHAT_MODEL + ':latest'):
+                    return unavailable('model_mismatch', 'model', attempt + 1)
+                message = candidate.get('message') if isinstance(candidate, dict) else None
+                content = message.get('content') if isinstance(message, dict) else None
+                try:
+                    if reviewed:
+                        teaching, selected_examples = parseReviewed(content, reviewed, settings['pronunciation'], translations, allow_notes=allow_notes)
+                    else:
+                        teaching, selected_examples = parseTeaching(content, settings['pronunciation']), []
+                    tutorEvent('generation_accepted', request_id, attempt=attempt + 1,
+                               actual_model=actual, content_characters=len(content))
+                    return jsonify(response=formatTeaching(teaching, selected_examples), teaching=teaching, reviewed_examples=selected_examples,
+                                   response_kind='reviewed_curriculum' if selected_examples else 'generated', ai_commentary_accepted=True,
+                                   script_validation=VALIDATION_VERSION, generation_attempts=attempt + 1,
+                                   request_id=request_id, model=actual if actual != 'unreported' else CHAT_MODEL,
+                                   doc_sources=list(doc_sources), web_sources=web_sources, warnings=warnings)
+                except (ValueError, TypeError) as validation_error:
+                    last_code, last_field = validationDiagnostic(validation_error)
+                    tutorEvent('generation_rejected', request_id, attempt=attempt + 1, reason=last_code,
+                               field=last_field, content_characters=len(content) if isinstance(content, str) else 0,
+                               unexpected_script=getattr(validation_error, 'script', None),
+                               done_reason=call.get('done_reason', 'unreported'))
+                    correction = ('\nCorrective instruction: validation failed: ' + last_code + ' at ' + last_field + '. '
+                                  'Return only the required JSON object with every required field. '
+                                  'When example_ids are requested, choose supplied IDs; never return examples in their place. '
+                                  'English explanation is allowed; Thai fields must be actual Thai, never Myanmar or other scripts. '
+                                  'Fill requested Latin romanization. Put other-language quotations only in correctly labeled notes. '
+                                  'Keep commentary to two short sentences. Do not add unrelated Thai or imitate wrong-language history.')
+                    payload = dict(payload, messages=[{'role': 'system', 'content': system_prompt + correction}]
+                                   + [item for item in history if item['role'] == 'user'])
+            return unavailable(last_code, last_field, 2)
+        result = ollama_request('/api/chat', payload)
+        if not result:
+            return jsonify(error='Ollama is unavailable or could not respond. Check the local chat model.'), 500
         message = result.get('message') if isinstance(result, dict) else None
         answer = message.get('content') if isinstance(message, dict) else None
         if not isinstance(answer, str) or not answer.strip():
-            return jsonify({'error': 'Ollama returned an empty response. Please try again.'}), 502
-        if settings is not None and not any('\u0e01' <= character <= '\u0e2e' for character in answer):
-            # Regenerate once with the same context, history, mode and generation settings.
-            # Character presence detects omissions only; it cannot certify teaching quality.
-            retry_payload = dict(payload, messages=[{
-                'role': 'system',
-                'content': system_prompt + '\n\nThe previous attempt omitted Thai script. Rewrite the answer to the learner’s latest request with a relevant Thai phrase or sentence integrated naturally into the teaching, and appropriate English explanation. Preserve the chosen mode, source facts and filename/URL citations. Do not append unrelated Thai or invent facts.'
-            }] + messages)
-            retry_result = ollama_request('/api/chat', retry_payload)
-            retry_message = retry_result.get('message') if isinstance(retry_result, dict) else None
-            retry_answer = retry_message.get('content') if isinstance(retry_message, dict) else None
-            if isinstance(retry_answer, str) and any('\u0e01' <= character <= '\u0e2e' for character in retry_answer):
-                answer = retry_answer
-            else:
-                warnings.append('The local model omitted Thai script even after a retry. Showing its original response; the Thai teaching requirement was not met. Please try again.')
-        return jsonify({"response": answer, "doc_sources": list(doc_sources), "web_sources": web_sources, "warnings": warnings})
+            return jsonify(error='Ollama returned an empty response. Please try again.'), 502
+        return jsonify(response=answer, doc_sources=list(doc_sources), web_sources=web_sources, warnings=warnings)
     except Exception as e:
         app.logger.error("Chat response failed: %s", type(e).__name__)
         return jsonify(error="The tutor could not complete this response. Please retry."), 502
@@ -499,4 +625,5 @@ def serve_file(filename):
 
 
 if __name__ == '__main__':
+    app.logger.info('Tutor startup model=%s contract=%s', modelName(CHAT_MODEL), VALIDATION_VERSION)
     app.run(host='127.0.0.1', port=int(os.environ.get('PORT', '5000')), debug=False)

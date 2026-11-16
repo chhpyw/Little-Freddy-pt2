@@ -58,6 +58,35 @@ function appendMessage(role, text, docs = [], web = []) {
   return message;
 }
 const TUTOR_SESSION_KEY = 'freddy-thai-tutor-session';
+const TUTOR_VALIDATION_VERSION = 'thai-fields-v1';
+function teachingText(teaching, reviewed = []) {
+  const foreign = /[\u1000-\u109f\uaa60-\uaa7f\ua9e0-\ua9ff\u{116d0}-\u{116ff}\u1780-\u17ff\u19e0-\u19ff]/u;
+  const safe = (text, thaiOnly = false) => typeof text === 'string' && !foreign.test(text) && [...text].every((char) =>
+    !/[\p{L}\p{M}]/u.test(char) || /\p{Script=Thai}/u.test(char) || (!thaiOnly && /[\p{Script=Latin}\u0300-\u036f]/u.test(char)));
+  if (!teaching || !safe(teaching.explanation) || !Array.isArray(teaching.examples) || !teaching.examples.length ||
+      !Array.isArray(teaching.language_notes) || !Array.isArray(teaching.reference_titles)) throw Error('Unvalidated tutor response was blocked. Please retry.');
+  const lines = teaching.explanation ? [`AI-generated conversation (not language reviewed): ${teaching.explanation}`] : [];
+  teaching.examples.forEach((example, index) => {
+    if (!safe(example.thai, true) || !/[\u0e01-\u0e2e]/u.test(example.thai) || !safe(example.english) || !safe(example.romanization) || /\p{Script=Thai}/u.test(example.romanization)) throw Error('Invalid Thai teaching fields were blocked. Please retry.');
+    const source = reviewed[index];
+    if (source && (source.thai !== example.thai || (example.english && source.english !== example.english) ||
+        (example.romanization && source.romanization !== example.romanization) || typeof source.lesson_id !== 'string')) throw Error('Curriculum source mismatch was blocked.');
+    lines.push(source ? `Reviewed curriculum example (${source.lesson_id}; not native-verified): ${example.thai}` : `Generated Thai text (script checked; language unreviewed): ${example.thai}`);
+    if (example.romanization) lines.push(`${source ? 'Curriculum pronunciation guide' : 'Generated pronunciation guide (unreviewed)'}: ${example.romanization}`);
+    if (example.english) lines.push(`${source ? 'Curriculum meaning' : 'Generated meaning (unreviewed)'}: ${example.english}`);
+    if (source && source.usage) lines.push(`Curriculum usage note: ${source.usage}`);
+  });
+  teaching.language_notes.forEach((note) => {
+    if (typeof note.language !== 'string' || !/^[a-z -]+$/i.test(note.language) || typeof note.quote !== 'string' || !safe(note.explanation) ||
+        (/thai/i.test(note.language) && (!safe(note.quote, true) || !/[\u0e01-\u0e2e]/u.test(note.quote)))) throw Error('Invalid language quotation was blocked.');
+    lines.push(`Language quotation (${note.language}): ${note.quote}`, note.explanation);
+  });
+  teaching.reference_titles.forEach((title) => {
+    if (typeof title !== 'string') throw Error('Invalid reference title.');
+    lines.push(`Reference title: ${title}`);
+  });
+  return lines.join('\n');
+}
 let conversationHistory = [];
 let conversationSources = [];
 function saveConversation() {
@@ -67,7 +96,8 @@ function saveConversation() {
       sources: conversationSources,
       level: $('tutor-level').value,
       mode: $('tutor-mode').value,
-      pronunciation: $('tutor-pronunciation').checked
+      pronunciation: $('tutor-pronunciation').checked,
+      draft: $('user-input').value
     }));
   } catch { /* Chat remains usable if browser storage is unavailable. */ }
 }
@@ -79,8 +109,19 @@ function restoreConversation() {
     if (['Beginner', 'Intermediate', 'Advanced'].includes(saved.level)) $('tutor-level').value = saved.level;
     if (['Free Chat', 'Guided Lesson', 'Roleplay', 'Grammar Help'].includes(saved.mode)) $('tutor-mode').value = saved.mode;
     if (typeof saved.pronunciation === 'boolean') $('tutor-pronunciation').checked = saved.pronunciation;
-    conversationHistory = saved.messages;
-    conversationSources = Array.isArray(saved.sources) ? saved.sources : [];
+    if (typeof saved.draft === 'string' && saved.draft.length <= 20000) $('user-input').value = saved.draft;
+    conversationHistory = [];
+    conversationSources = [];
+    saved.messages.forEach((message, index) => {
+      if (message.role === 'assistant') {
+        try {
+          if (message.script_validation !== TUTOR_VALIDATION_VERSION) return;
+          message = {...message, content: teachingText(message.teaching, message.reviewed_examples || [])};
+        } catch { return; }
+      }
+      conversationHistory.push(message);
+      conversationSources.push(Array.isArray(saved.sources) ? saved.sources[index] || {} : {});
+    });
     if (conversationHistory.length) {
       $('chat-window').replaceChildren();
       conversationHistory.forEach((message, index) => {
@@ -103,30 +144,49 @@ $('chat-form').addEventListener('submit', async (event) => {
   chatBusy = true;
   $('send-btn').disabled = true;
   $('clear-chat').disabled = true;
-  const userMessage = appendMessage('user', text);
+  saveConversation();
+  const last = conversationHistory[conversationHistory.length - 1];
+  const reusePending = last && last.role === 'user' && last.content === text;
+  const userMessage = reusePending ? null : appendMessage('user', text);
   $('user-input').value = '';
-  const pendingHistory = [...conversationHistory, { role: 'user', content: text }];
+  const pendingHistory = reusePending ? [...conversationHistory] : [...conversationHistory, { role: 'user', content: text }];
+  const pendingSources = reusePending ? [...conversationSources] : [...conversationSources, {}];
   const pending = appendMessage('assistant', 'Your tutor is thinking…');
   status('chat-status', 'Waiting for your local Ollama tutor…');
   try {
     const data = await api('/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: pendingHistory, use_web_search: $('web-search-toggle').checked, tutor: { level: $('tutor-level').value, mode: $('tutor-mode').value, pronunciation: $('tutor-pronunciation').checked } }) });
+    if (data.script_validation !== TUTOR_VALIDATION_VERSION) throw Error('The Flask server is using an older tutor response format. Restart Flask and refresh this page.');
+    const reply = teachingText(data.teaching, data.reviewed_examples || []);
+    const fallback = data.response_kind === 'reviewed_fallback';
+    if (fallback && (data.ai_commentary_accepted !== false || !Array.isArray(data.reviewed_examples) ||
+        data.reviewed_examples.length !== data.teaching.examples.length)) throw Error('An unvalidated lesson fallback was blocked.');
     pending.remove();
-    appendMessage('assistant', data.response, data.doc_sources || [], data.web_sources || []);
-    conversationHistory = [...pendingHistory, { role: 'assistant', content: data.response }];
-    conversationSources.push({}, { docs: data.doc_sources || [], web: data.web_sources || [] });
+    appendMessage('assistant', fallback ? `Reviewed lesson fallback — AI commentary was not accepted.\n${reply}` : reply, data.doc_sources || [], data.web_sources || []);
+    if (fallback) {
+      conversationHistory = pendingHistory; // Learner context only; no rejected AI reply.
+      conversationSources = pendingSources;
+      if (!$('user-input').value) $('user-input').value = text;
+      saveConversation();
+      status('chat-status', (data.warnings || []).join(' ') || 'Showing reviewed lesson examples only. Your draft is kept.');
+      return;
+    }
+    conversationHistory = [...pendingHistory, { role: 'assistant', content: reply, teaching: data.teaching, reviewed_examples: data.reviewed_examples || [], script_validation: data.script_validation }];
+    conversationSources = [...pendingSources, { docs: data.doc_sources || [], web: data.web_sources || [] }];
     saveConversation();
     status('chat-status', (data.warnings || []).join(' '));
   } catch (error) {
     pending.remove();
-    userMessage.remove();
-    status('chat-status', `${error.message} Check that Flask and Ollama are running, then send again.`, 'error');
+    if (userMessage) userMessage.remove();
+    status('chat-status', `${error.message} Your draft was kept; retry when ready.`, 'error');
     if (!$('user-input').value) $('user-input').value = text;
+    saveConversation();
   } finally {
     chatBusy = false;
     $('send-btn').disabled = false;
     $('clear-chat').disabled = false;
   }
 });
+$('user-input').addEventListener('input', saveConversation);
 $('user-input').addEventListener('keydown', (event) => {
   if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
     event.preventDefault();

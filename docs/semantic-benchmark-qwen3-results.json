@@ -1,0 +1,1222 @@
+[
+  {
+    "model": "qwen3:1.7b",
+    "case": {
+      "id": "greeting",
+      "category": "greetings",
+      "expected_example_id": "greeting",
+      "prompt": "Teach a polite greeting and ask the other person their name. Explain which part means hello.",
+      "expected": {
+        "thai": "สวัสดีค่ะ คุณชื่ออะไรคะ",
+        "english": "Hello. What is your name?",
+        "romanization": "sà wàt dii khâ khun chʉ̂ʉ à rai khá"
+      },
+      "semantic_checklist": [
+        "สวัสดี means hello, not ค่ะ.",
+        "ค่ะ ends the statement; คะ ends the question."
+      ]
+    },
+    "status": 200,
+    "seconds": 1.41,
+    "schema_accepted": true,
+    "fixed_meaning_matches_golden": true,
+    "generated_semantic_review": {
+      "model": "qwen3:1.7b",
+      "case_id": "greeting",
+      "verdict": "clear_error",
+      "issues": [
+        "Generated explanation says ค่ะ means hello. สวัสดี means hello; ค่ะ is a polite statement particle."
+      ],
+      "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+      "human_review_pending": true
+    },
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): สวัสดีค่ะ คุณชื่ออะไรคะ ค่ะ means hello and is used by women in polite speech.\nReviewed curriculum example (greetings; not native-verified): สวัสดีค่ะ คุณชื่ออะไรคะ\nCurriculum pronunciation guide: sà wàt dii khâ khun chʉ̂ʉ à rai khá\nCurriculum meaning: Hello. What is your name?\nCurriculum usage note: ผม / ฉัน + ชื่อ + name = My name is … . In a casual introduction the pronoun can be omitted: ชื่อแอนค่ะ (chʉ̂ʉ ɛɛn khâ). ฉันชื่อแอนค่ะ remains a valid familiar alternative; these are alternative introductions. คุณชื่ออะไร = What is your name? ฉัน is familiar; ดิฉัน is a more formal feminine option. ครับ can end statements or questions; use ค่ะ for statements and คะ for questions in the feminine polite style.\nReference title: greeting",
+      "reviewed_examples": [
+        {
+          "english": "Hello. What is your name?",
+          "id": "greeting",
+          "lesson_id": "greetings",
+          "romanization": "sà wàt dii khâ khun chʉ̂ʉ à rai khá",
+          "thai": "สวัสดีค่ะ คุณชื่ออะไรคะ",
+          "usage": "ผม / ฉัน + ชื่อ + name = My name is … . In a casual introduction the pronoun can be omitted: ชื่อแอนค่ะ (chʉ̂ʉ ɛɛn khâ). ฉันชื่อแอนค่ะ remains a valid familiar alternative; these are alternative introductions. คุณชื่ออะไร = What is your name? ฉัน is familiar; ดิฉัน is a more formal feminine option. ครับ can end statements or questions; use ค่ะ for statements and คะ for questions in the feminine polite style.",
+          "vocabulary": [
+            {
+              "english": "Hello",
+              "roman": "sà wàt dii",
+              "thai": "สวัสดี"
+            },
+            {
+              "english": "Thank you",
+              "roman": "khɔ̀ɔp khun",
+              "thai": "ขอบคุณ"
+            },
+            {
+              "english": "Polite particle, commonly used by men",
+              "roman": "khráp",
+              "thai": "ครับ"
+            },
+            {
+              "english": "Polite statement particle, commonly used by women",
+              "roman": "khâ",
+              "thai": "ค่ะ"
+            },
+            {
+              "english": "Name / be named",
+              "roman": "chʉ̂ʉ",
+              "thai": "ชื่อ"
+            },
+            {
+              "english": "You (polite / neutral)",
+              "roman": "khun",
+              "thai": "คุณ"
+            },
+            {
+              "english": "I, commonly used by men in polite speech",
+              "roman": "phǒm",
+              "thai": "ผม"
+            },
+            {
+              "english": "I (familiar; often used by women)",
+              "roman": "chǎn",
+              "thai": "ฉัน"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Hello. What is your name?",
+            "romanization": "sà wàt dii khâ khun chʉ̂ʉ à rai khá",
+            "thai": "สวัสดีค่ะ คุณชื่ออะไรคะ"
+          }
+        ],
+        "explanation": "สวัสดีค่ะ คุณชื่ออะไรคะ ค่ะ means hello and is used by women in polite speech.",
+        "language_notes": [],
+        "reference_titles": [
+          "greeting"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    }
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": {
+      "id": "introduction",
+      "category": "greetings",
+      "expected_example_id": "introduction",
+      "prompt": "Teach me to introduce myself as Ann casually. Explain whether a pronoun is required.",
+      "expected": {
+        "thai": "ชื่อแอนค่ะ",
+        "english": "My name is Ann. (Casual introduction.)",
+        "romanization": "chʉ̂ʉ ɛɛn khâ"
+      },
+      "semantic_checklist": [
+        "ชื่อ means name/be named.",
+        "Subject omission is natural in context; ฉันชื่อแอนค่ะ remains valid."
+      ]
+    },
+    "status": 200,
+    "seconds": 2.49,
+    "schema_accepted": true,
+    "fixed_meaning_matches_golden": true,
+    "generated_semantic_review": {
+      "model": "qwen3:1.7b",
+      "case_id": "introduction",
+      "verdict": "clear_error",
+      "issues": [
+        "Changes the name spelling to แอนน์ and inserts an unsupported pronunciation sequence.",
+        "Claims ดิฉัน can be used to appear credible; the reviewed distinction is formal register, not credibility."
+      ],
+      "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+      "human_review_pending": true
+    },
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 2,
+      "response": "AI-generated conversation (not language reviewed): ฉันชื่อแอนน์ค่ะ (chǎn chʉ̂ʉ ɛɛn ŋ̱̱̌  khâ) คือการแนะนำตัวแบบสบายๆ ไม่ต้องใช้คำว่า 'ฉัน' นะ แต่ถ้าต้องการให้ดูเป็นคนที่น่าเชื่อถือ สามารถใช้ 'ดิฉัน' ได้\nReviewed curriculum example (greetings; not native-verified): ชื่อแอนค่ะ\nCurriculum pronunciation guide: chʉ̂ʉ ɛɛn khâ\nCurriculum meaning: My name is Ann. (Casual introduction.)\nCurriculum usage note: ผม / ฉัน + ชื่อ + name = My name is … . In a casual introduction the pronoun can be omitted: ชื่อแอนค่ะ (chʉ̂ʉ ɛɛn khâ). ฉันชื่อแอนค่ะ remains a valid familiar alternative; these are alternative introductions. คุณชื่ออะไร = What is your name? ฉัน is familiar; ดิฉัน is a more formal feminine option. ครับ can end statements or questions; use ค่ะ for statements and คะ for questions in the feminine polite style.",
+      "reviewed_examples": [
+        {
+          "english": "My name is Ann. (Casual introduction.)",
+          "id": "introduction",
+          "lesson_id": "greetings",
+          "romanization": "chʉ̂ʉ ɛɛn khâ",
+          "thai": "ชื่อแอนค่ะ",
+          "usage": "ผม / ฉัน + ชื่อ + name = My name is … . In a casual introduction the pronoun can be omitted: ชื่อแอนค่ะ (chʉ̂ʉ ɛɛn khâ). ฉันชื่อแอนค่ะ remains a valid familiar alternative; these are alternative introductions. คุณชื่ออะไร = What is your name? ฉัน is familiar; ดิฉัน is a more formal feminine option. ครับ can end statements or questions; use ค่ะ for statements and คะ for questions in the feminine polite style.",
+          "vocabulary": [
+            {
+              "english": "Hello",
+              "roman": "sà wàt dii",
+              "thai": "สวัสดี"
+            },
+            {
+              "english": "Thank you",
+              "roman": "khɔ̀ɔp khun",
+              "thai": "ขอบคุณ"
+            },
+            {
+              "english": "Polite particle, commonly used by men",
+              "roman": "khráp",
+              "thai": "ครับ"
+            },
+            {
+              "english": "Polite statement particle, commonly used by women",
+              "roman": "khâ",
+              "thai": "ค่ะ"
+            },
+            {
+              "english": "Name / be named",
+              "roman": "chʉ̂ʉ",
+              "thai": "ชื่อ"
+            },
+            {
+              "english": "You (polite / neutral)",
+              "roman": "khun",
+              "thai": "คุณ"
+            },
+            {
+              "english": "I, commonly used by men in polite speech",
+              "roman": "phǒm",
+              "thai": "ผม"
+            },
+            {
+              "english": "I (familiar; often used by women)",
+              "roman": "chǎn",
+              "thai": "ฉัน"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "My name is Ann. (Casual introduction.)",
+            "romanization": "chʉ̂ʉ ɛɛn khâ",
+            "thai": "ชื่อแอนค่ะ"
+          }
+        ],
+        "explanation": "ฉันชื่อแอนน์ค่ะ (chǎn chʉ̂ʉ ɛɛn ŋ̱̱̌  khâ) คือการแนะนำตัวแบบสบายๆ ไม่ต้องใช้คำว่า 'ฉัน' นะ แต่ถ้าต้องการให้ดูเป็นคนที่น่าเชื่อถือ สามารถใช้ 'ดิฉัน' ได้",
+        "language_notes": [],
+        "reference_titles": []
+      },
+      "warnings": [],
+      "web_sources": []
+    }
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": {
+      "id": "rice",
+      "category": "food",
+      "expected_example_id": "food-rice",
+      "prompt": "Teach ordering one plate of non-spicy fried rice. Briefly explain the serving classifier and politeness.",
+      "expected": {
+        "thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ",
+        "english": "One plate of fried rice, not spicy, please.",
+        "romanization": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp"
+      },
+      "semantic_checklist": [
+        "Exactly one plate; fried rice, not plain rice.",
+        "ไม่เผ็ด means not spicy, not mildly spicy.",
+        "จาน counts platefuls; ข้าว is rice, not a classifier.",
+        "นะครับ softens this request."
+      ]
+    },
+    "status": 200,
+    "seconds": 1.51,
+    "schema_accepted": true,
+    "fixed_meaning_matches_golden": true,
+    "generated_semantic_review": {
+      "model": "qwen3:1.7b",
+      "case_id": "rice",
+      "verdict": "no_clear_error_observed",
+      "issues": [],
+      "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+      "human_review_pending": true
+    },
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ - ขอ = May I have, ข้าวผัด = fried rice, หนึ่งจาน = one plate, ไม่เผ็ด = not spicy, นะครับ = softens the request. ครับ = polite ending. จาน = classifier for food served by the plate. นะครับ = softens the request to show respect.\nReviewed curriculum example (food; not native-verified): ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ\nCurriculum pronunciation guide: khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp\nCurriculum meaning: One plate of fried rice, not spicy, please.\nCurriculum usage note: ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.\nReference title: food-rice",
+      "reviewed_examples": [
+        {
+          "english": "One plate of fried rice, not spicy, please.",
+          "id": "food-rice",
+          "lesson_id": "food",
+          "romanization": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp",
+          "thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ",
+          "usage": "ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+          "vocabulary": [
+            {
+              "english": "May I have / please give me",
+              "roman": "khɔ̌ɔ",
+              "thai": "ขอ"
+            },
+            {
+              "english": "Rice",
+              "roman": "khâao",
+              "thai": "ข้าว"
+            },
+            {
+              "english": "Water",
+              "roman": "náam",
+              "thai": "น้ำ"
+            },
+            {
+              "english": "Coffee",
+              "roman": "kaa fɛɛ",
+              "thai": "กาแฟ"
+            },
+            {
+              "english": "Glass; classifier for drinks served by the glass",
+              "roman": "kɛ̂ɛo",
+              "thai": "แก้ว"
+            },
+            {
+              "english": "Plate; classifier for food served by the plate",
+              "roman": "jaan",
+              "thai": "จาน"
+            },
+            {
+              "english": "Not spicy",
+              "roman": "mâi phèt",
+              "thai": "ไม่เผ็ด"
+            },
+            {
+              "english": "Delicious",
+              "roman": "à rɔ̀i",
+              "thai": "อร่อย"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "One plate of fried rice, not spicy, please.",
+            "romanization": "khɔ̌ɔ khâao phàt nʉ̀ng jaan mâi phèt ná khráp",
+            "thai": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ"
+          }
+        ],
+        "explanation": "ขอข้าวผัดหนึ่งจาน ไม่เผ็ดนะครับ - ขอ = May I have, ข้าวผัด = fried rice, หนึ่งจาน = one plate, ไม่เผ็ด = not spicy, นะครับ = softens the request. ครับ = polite ending. จาน = classifier for food served by the plate. นะครับ = softens the request to show respect.",
+        "language_notes": [],
+        "reference_titles": [
+          "food-rice"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    }
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": {
+      "id": "water",
+      "category": "food",
+      "expected_example_id": "food-water",
+      "prompt": "Teach ordering one glass of water. Explain the quantity and classifier.",
+      "expected": {
+        "thai": "ขอน้ำหนึ่งแก้วครับ",
+        "english": "One glass of water, please.",
+        "romanization": "khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp"
+      },
+      "semantic_checklist": [
+        "น้ำ is water.",
+        "หนึ่งแก้ว is one glass serving; no invented ingredients.",
+        "ขอ requests the item; not a literal ขอให้ construction."
+      ]
+    },
+    "status": 200,
+    "seconds": 1.45,
+    "schema_accepted": true,
+    "fixed_meaning_matches_golden": true,
+    "generated_semantic_review": {
+      "model": "qwen3:1.7b",
+      "case_id": "water",
+      "verdict": "clear_error",
+      "issues": [
+        "Introduces ขอ ข้าว หนึ่ง แก้ว and says rice is water here. น้ำ is water; ข้าว is rice."
+      ],
+      "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+      "human_review_pending": true
+    },
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): ขอ ข้าว หนึ่ง แก้ว ครับ - ขอ + item + number + classifier + ครับ. หนึ่ง is one, แก้ว is glass, ครับ is polite. ข้าว is rice, but here it's water. น้ำ is water, แก้ว is glass. ขอ น้ำ หนึ่ง แก้ว ครับ means 'One glass of water, please.'\nReviewed curriculum example (food; not native-verified): ขอน้ำหนึ่งแก้วครับ\nCurriculum pronunciation guide: khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp\nCurriculum meaning: One glass of water, please.\nCurriculum usage note: ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.\nReference title: food-water",
+      "reviewed_examples": [
+        {
+          "english": "One glass of water, please.",
+          "id": "food-water",
+          "lesson_id": "food",
+          "romanization": "khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp",
+          "thai": "ขอน้ำหนึ่งแก้วครับ",
+          "usage": "ขอ + item + number + classifier + ครับ / ค่ะ. ข้าวผัด (khâao phàt) = fried rice. ไม่เผ็ด means not spicy, not slightly spicy. นะครับ (ná khráp) softens the request in this context. แก้ว counts drinks served by the glass; จาน counts platefuls of food, not empty plates. Reuse หนึ่ง and บาท.",
+          "vocabulary": [
+            {
+              "english": "May I have / please give me",
+              "roman": "khɔ̌ɔ",
+              "thai": "ขอ"
+            },
+            {
+              "english": "Rice",
+              "roman": "khâao",
+              "thai": "ข้าว"
+            },
+            {
+              "english": "Water",
+              "roman": "náam",
+              "thai": "น้ำ"
+            },
+            {
+              "english": "Coffee",
+              "roman": "kaa fɛɛ",
+              "thai": "กาแฟ"
+            },
+            {
+              "english": "Glass; classifier for drinks served by the glass",
+              "roman": "kɛ̂ɛo",
+              "thai": "แก้ว"
+            },
+            {
+              "english": "Plate; classifier for food served by the plate",
+              "roman": "jaan",
+              "thai": "จาน"
+            },
+            {
+              "english": "Not spicy",
+              "roman": "mâi phèt",
+              "thai": "ไม่เผ็ด"
+            },
+            {
+              "english": "Delicious",
+              "roman": "à rɔ̀i",
+              "thai": "อร่อย"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "One glass of water, please.",
+            "romanization": "khɔ̌ɔ náam nʉ̀ng kɛ̂ɛo khráp",
+            "thai": "ขอน้ำหนึ่งแก้วครับ"
+          }
+        ],
+        "explanation": "ขอ ข้าว หนึ่ง แก้ว ครับ - ขอ + item + number + classifier + ครับ. หนึ่ง is one, แก้ว is glass, ครับ is polite. ข้าว is rice, but here it's water. น้ำ is water, แก้ว is glass. ขอ น้ำ หนึ่ง แก้ว ครับ means 'One glass of water, please.'",
+        "language_notes": [],
+        "reference_titles": [
+          "food-water"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    }
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": {
+      "id": "near",
+      "category": "directions",
+      "expected_example_id": "directions-near",
+      "prompt": "Teach saying the nearby restroom is around here. Explain the reference point.",
+      "expected": {
+        "thai": "ห้องน้ำอยู่แถวนี้ค่ะ",
+        "english": "The restroom is around here. (Nearby-location reply.)",
+        "romanization": "hɔ̂ng náam yùu thɛ̌ɛo níi khâ"
+      },
+      "semantic_checklist": [
+        "แถวนี้ means around here.",
+        "Do not gloss the phrase as far from here or change the reference point."
+      ]
+    },
+    "status": 200,
+    "seconds": 1.06,
+    "schema_accepted": true,
+    "fixed_meaning_matches_golden": true,
+    "generated_semantic_review": {
+      "model": "qwen3:1.7b",
+      "case_id": "near",
+      "verdict": "no_clear_error_observed",
+      "issues": [],
+      "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+      "human_review_pending": true
+    },
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): ห้องน้ำอยู่แถวนี้ค่ะ (The restroom is around here.) แถวนี้ means 'around here' and is used to indicate a nearby location. The reference point is the speaker's current position.\nReviewed curriculum example (directions; not native-verified): ห้องน้ำอยู่แถวนี้ค่ะ\nCurriculum pronunciation guide: hɔ̂ng náam yùu thɛ̌ɛo níi khâ\nCurriculum meaning: The restroom is around here. (Nearby-location reply.)\nCurriculum usage note: Place + อยู่ที่ไหน + ครับ / คะ = Where is the place? แล้ว = then. ใกล้ (klâi, falling) and ไกล (klai, mid) differ in tone and meaning. แถวนี้ (thɛ̌ɛo níi) means around here; it is a contextual nearby-location expression, not a literal reading of ใกล้. The final two dialogue replies are alternatives, not sequential directions.\nReference title: directions-near",
+      "reviewed_examples": [
+        {
+          "english": "The restroom is around here. (Nearby-location reply.)",
+          "id": "directions-near",
+          "lesson_id": "directions",
+          "romanization": "hɔ̂ng náam yùu thɛ̌ɛo níi khâ",
+          "thai": "ห้องน้ำอยู่แถวนี้ค่ะ",
+          "usage": "Place + อยู่ที่ไหน + ครับ / คะ = Where is the place? แล้ว = then. ใกล้ (klâi, falling) and ไกล (klai, mid) differ in tone and meaning. แถวนี้ (thɛ̌ɛo níi) means around here; it is a contextual nearby-location expression, not a literal reading of ใกล้. The final two dialogue replies are alternatives, not sequential directions.",
+          "vocabulary": [
+            {
+              "english": "Where is …?",
+              "roman": "yùu thîi nǎi",
+              "thai": "อยู่ที่ไหน"
+            },
+            {
+              "english": "Toilet",
+              "roman": "hɔ̂ng náam",
+              "thai": "ห้องน้ำ"
+            },
+            {
+              "english": "Go",
+              "roman": "pai",
+              "thai": "ไป"
+            },
+            {
+              "english": "Go straight",
+              "roman": "trong pai",
+              "thai": "ตรงไป"
+            },
+            {
+              "english": "Turn left",
+              "roman": "líao sáai",
+              "thai": "เลี้ยวซ้าย"
+            },
+            {
+              "english": "Turn right",
+              "roman": "líao khwǎa",
+              "thai": "เลี้ยวขวา"
+            },
+            {
+              "english": "Near",
+              "roman": "klâi",
+              "thai": "ใกล้"
+            },
+            {
+              "english": "Far",
+              "roman": "klai",
+              "thai": "ไกล"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "The restroom is around here. (Nearby-location reply.)",
+            "romanization": "hɔ̂ng náam yùu thɛ̌ɛo níi khâ",
+            "thai": "ห้องน้ำอยู่แถวนี้ค่ะ"
+          }
+        ],
+        "explanation": "ห้องน้ำอยู่แถวนี้ค่ะ (The restroom is around here.) แถวนี้ means 'around here' and is used to indicate a nearby location. The reference point is the speaker's current position.",
+        "language_notes": [],
+        "reference_titles": [
+          "directions-near"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    }
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": {
+      "id": "far",
+      "category": "directions",
+      "expected_example_id": "directions-far",
+      "prompt": "Teach saying the restroom is far from here. Explain the difference between ใกล้ and ไกล.",
+      "expected": {
+        "thai": "ห้องน้ำอยู่ไกลจากที่นี่ค่ะ",
+        "english": "The restroom is far from here. (Alternative far-location reply.)",
+        "romanization": "hɔ̂ng náam yùu klai jàak thîi nîi khâ"
+      },
+      "semantic_checklist": [
+        "ไกล = far, mid klai; ใกล้ = near, falling klâi.",
+        "จากที่นี่ = from here, not near here."
+      ]
+    },
+    "status": 200,
+    "seconds": 1.22,
+    "schema_accepted": true,
+    "fixed_meaning_matches_golden": true,
+    "generated_semantic_review": {
+      "model": "qwen3:1.7b",
+      "case_id": "far",
+      "verdict": "no_clear_error_observed",
+      "issues": [],
+      "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+      "human_review_pending": true
+    },
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): Thai: ห้องน้ำอยู่ไกลจากที่นี่ค่ะ. English: The restroom is far from here. ใกล้ means near, and ไกล means far. ใกล้ is a soft, falling tone, while ไกล is a mid tone. They differ in distance and sound.\nReviewed curriculum example (directions; not native-verified): ห้องน้ำอยู่ไกลจากที่นี่ค่ะ\nCurriculum pronunciation guide: hɔ̂ng náam yùu klai jàak thîi nîi khâ\nCurriculum meaning: The restroom is far from here. (Alternative far-location reply.)\nCurriculum usage note: Place + อยู่ที่ไหน + ครับ / คะ = Where is the place? แล้ว = then. ใกล้ (klâi, falling) and ไกล (klai, mid) differ in tone and meaning. แถวนี้ (thɛ̌ɛo níi) means around here; it is a contextual nearby-location expression, not a literal reading of ใกล้. The final two dialogue replies are alternatives, not sequential directions.\nReference title: directions-far",
+      "reviewed_examples": [
+        {
+          "english": "The restroom is far from here. (Alternative far-location reply.)",
+          "id": "directions-far",
+          "lesson_id": "directions",
+          "romanization": "hɔ̂ng náam yùu klai jàak thîi nîi khâ",
+          "thai": "ห้องน้ำอยู่ไกลจากที่นี่ค่ะ",
+          "usage": "Place + อยู่ที่ไหน + ครับ / คะ = Where is the place? แล้ว = then. ใกล้ (klâi, falling) and ไกล (klai, mid) differ in tone and meaning. แถวนี้ (thɛ̌ɛo níi) means around here; it is a contextual nearby-location expression, not a literal reading of ใกล้. The final two dialogue replies are alternatives, not sequential directions.",
+          "vocabulary": [
+            {
+              "english": "Where is …?",
+              "roman": "yùu thîi nǎi",
+              "thai": "อยู่ที่ไหน"
+            },
+            {
+              "english": "Toilet",
+              "roman": "hɔ̂ng náam",
+              "thai": "ห้องน้ำ"
+            },
+            {
+              "english": "Go",
+              "roman": "pai",
+              "thai": "ไป"
+            },
+            {
+              "english": "Go straight",
+              "roman": "trong pai",
+              "thai": "ตรงไป"
+            },
+            {
+              "english": "Turn left",
+              "roman": "líao sáai",
+              "thai": "เลี้ยวซ้าย"
+            },
+            {
+              "english": "Turn right",
+              "roman": "líao khwǎa",
+              "thai": "เลี้ยวขวา"
+            },
+            {
+              "english": "Near",
+              "roman": "klâi",
+              "thai": "ใกล้"
+            },
+            {
+              "english": "Far",
+              "roman": "klai",
+              "thai": "ไกล"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "The restroom is far from here. (Alternative far-location reply.)",
+            "romanization": "hɔ̂ng náam yùu klai jàak thîi nîi khâ",
+            "thai": "ห้องน้ำอยู่ไกลจากที่นี่ค่ะ"
+          }
+        ],
+        "explanation": "Thai: ห้องน้ำอยู่ไกลจากที่นี่ค่ะ. English: The restroom is far from here. ใกล้ means near, and ไกล means far. ใกล้ is a soft, falling tone, while ไกล is a mid tone. They differ in distance and sound.",
+        "language_notes": [],
+        "reference_titles": [
+          "directions-far"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    }
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": {
+      "id": "twenty",
+      "category": "numbers",
+      "expected_example_id": "numbers-twenty",
+      "prompt": "Teach saying twenty baht. Explain the number, not two or thirty.",
+      "expected": {
+        "thai": "ยี่สิบบาทค่ะ",
+        "english": "Twenty baht.",
+        "romanization": "yîi sìp bàat khâ"
+      },
+      "semantic_checklist": [
+        "ยี่สิบ = 20, not 2, 12 or 30.",
+        "บาท is currency; ค่ะ is not part of the number."
+      ]
+    },
+    "status": 200,
+    "seconds": 0.85,
+    "schema_accepted": true,
+    "fixed_meaning_matches_golden": true,
+    "generated_semantic_review": {
+      "model": "qwen3:1.7b",
+      "case_id": "twenty",
+      "verdict": "no_clear_error_observed",
+      "issues": [],
+      "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+      "human_review_pending": true
+    },
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): ยี่สิบ means twenty, and it's used to say how much something costs. We use ค่ะ for feminine statements.\nReviewed curriculum example (numbers; not native-verified): ยี่สิบบาทค่ะ\nCurriculum pronunciation guide: yîi sìp bàat khâ\nCurriculum meaning: Twenty baht.\nCurriculum usage note: Item + เท่าไหร่ + polite particle = How much is the item? Number + บาท = price in baht. สิบเอ็ด = 11; ยี่สิบเอ็ด = 21.\nReference title: numbers-twenty",
+      "reviewed_examples": [
+        {
+          "english": "Twenty baht.",
+          "id": "numbers-twenty",
+          "lesson_id": "numbers",
+          "romanization": "yîi sìp bàat khâ",
+          "thai": "ยี่สิบบาทค่ะ",
+          "usage": "Item + เท่าไหร่ + polite particle = How much is the item? Number + บาท = price in baht. สิบเอ็ด = 11; ยี่สิบเอ็ด = 21.",
+          "vocabulary": [
+            {
+              "english": "One",
+              "roman": "nʉ̀ng",
+              "thai": "หนึ่ง"
+            },
+            {
+              "english": "Two",
+              "roman": "sɔ̌ɔng",
+              "thai": "สอง"
+            },
+            {
+              "english": "Three",
+              "roman": "sǎam",
+              "thai": "สาม"
+            },
+            {
+              "english": "Ten",
+              "roman": "sìp",
+              "thai": "สิบ"
+            },
+            {
+              "english": "Twenty",
+              "roman": "yîi sìp",
+              "thai": "ยี่สิบ"
+            },
+            {
+              "english": "Hundred",
+              "roman": "rɔ́ɔi",
+              "thai": "ร้อย"
+            },
+            {
+              "english": "Baht",
+              "roman": "bàat",
+              "thai": "บาท"
+            },
+            {
+              "english": "How much?",
+              "roman": "thâo rài",
+              "thai": "เท่าไหร่"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Twenty baht.",
+            "romanization": "yîi sìp bàat khâ",
+            "thai": "ยี่สิบบาทค่ะ"
+          }
+        ],
+        "explanation": "ยี่สิบ means twenty, and it's used to say how much something costs. We use ค่ะ for feminine statements.",
+        "language_notes": [],
+        "reference_titles": [
+          "numbers-twenty"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    }
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": {
+      "id": "price",
+      "category": "numbers",
+      "expected_example_id": "shopping-price",
+      "prompt": "Teach asking how much is this one, politely. Explain the question words.",
+      "expected": {
+        "thai": "สวัสดีค่ะ อันนี้เท่าไหร่คะ",
+        "english": "Hello. How much is this one?",
+        "romanization": "sà wàt dii khâ an níi thâo rài khá"
+      },
+      "semantic_checklist": [
+        "อันนี้ = this one, not that one.",
+        "เท่าไหร่ asks how much; no invented price.",
+        "คะ is the feminine polite question ending."
+      ]
+    },
+    "status": 200,
+    "seconds": 1.73,
+    "schema_accepted": true,
+    "fixed_meaning_matches_golden": true,
+    "generated_semantic_review": {
+      "model": "qwen3:1.7b",
+      "case_id": "price",
+      "verdict": "clear_error",
+      "issues": [
+        "Claims ค่ะ marks truth and untruth. It is a feminine polite statement particle; คะ ends this polite question."
+      ],
+      "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+      "human_review_pending": true
+    },
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): สวัสดีค่ะ อันนี้เท่าไหร่คะ (Hello, how much is this one?) ใช้คำว่า 'อันนี้' หมายถึง 'this one' ซึ่งเป็นคำที่ใช้ในคำถามแบบนี้ คำว่า 'ไหม' คือ particle ใช้เพื่อถามความจริงหรือไม่ อย่าลืมว่า ค่ะ คือ particle สำหรับการบอกความจริง ค่ะ คือ particle สำหรับการบอกความไม่จริง\nReviewed curriculum example (shopping; not native-verified): สวัสดีค่ะ อันนี้เท่าไหร่คะ\nCurriculum pronunciation guide: sà wàt dii khâ an níi thâo rài khá\nCurriculum meaning: Hello. How much is this one?\nCurriculum usage note: มี + item + ไหม = Do you have …? เอา + item = I’ll take … . ไม่เอา + ครับ / ค่ะ = I do not want it (a direct refusal, softened by the particle). For declining an offered shopping bag, use ไม่รับถุงค่ะ ขอบคุณค่ะ (mâi ráp thǔng khâ khɔ̀ɔp khun khâ). This is an alternative situation to requesting a bag. ไหม has the citation-form reading mǎi; conversational mái is used in the dialogue. คะ (khá, high) ends the feminine polite question; ค่ะ (khâ, falling) ends the statement. อันนี้ is a generic this one; use the appropriate classifier when naming a specific kind of object. สามสิบ = 30.\nReference title: shopping-price",
+      "reviewed_examples": [
+        {
+          "english": "Hello. How much is this one?",
+          "id": "shopping-price",
+          "lesson_id": "shopping",
+          "romanization": "sà wàt dii khâ an níi thâo rài khá",
+          "thai": "สวัสดีค่ะ อันนี้เท่าไหร่คะ",
+          "usage": "มี + item + ไหม = Do you have …? เอา + item = I’ll take … . ไม่เอา + ครับ / ค่ะ = I do not want it (a direct refusal, softened by the particle). For declining an offered shopping bag, use ไม่รับถุงค่ะ ขอบคุณค่ะ (mâi ráp thǔng khâ khɔ̀ɔp khun khâ). This is an alternative situation to requesting a bag. ไหม has the citation-form reading mǎi; conversational mái is used in the dialogue. คะ (khá, high) ends the feminine polite question; ค่ะ (khâ, falling) ends the statement. อันนี้ is a generic this one; use the appropriate classifier when naming a specific kind of object. สามสิบ = 30.",
+          "vocabulary": [
+            {
+              "english": "Take / want",
+              "roman": "ao",
+              "thai": "เอา"
+            },
+            {
+              "english": "Do not want",
+              "roman": "mâi ao",
+              "thai": "ไม่เอา"
+            },
+            {
+              "english": "This one",
+              "roman": "an níi",
+              "thai": "อันนี้"
+            },
+            {
+              "english": "That one",
+              "roman": "an nán",
+              "thai": "อันนั้น"
+            },
+            {
+              "english": "Have / there is",
+              "roman": "mii",
+              "thai": "มี"
+            },
+            {
+              "english": "Yes/no question particle (often pronounced mái in conversation)",
+              "roman": "mǎi",
+              "thai": "ไหม"
+            },
+            {
+              "english": "Bag",
+              "roman": "thǔng",
+              "thai": "ถุง"
+            },
+            {
+              "english": "Can / okay",
+              "roman": "dâai",
+              "thai": "ได้"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Hello. How much is this one?",
+            "romanization": "sà wàt dii khâ an níi thâo rài khá",
+            "thai": "สวัสดีค่ะ อันนี้เท่าไหร่คะ"
+          }
+        ],
+        "explanation": "สวัสดีค่ะ อันนี้เท่าไหร่คะ (Hello, how much is this one?) ใช้คำว่า 'อันนี้' หมายถึง 'this one' ซึ่งเป็นคำที่ใช้ในคำถามแบบนี้ คำว่า 'ไหม' คือ particle ใช้เพื่อถามความจริงหรือไม่ อย่าลืมว่า ค่ะ คือ particle สำหรับการบอกความจริง ค่ะ คือ particle สำหรับการบอกความไม่จริง",
+        "language_notes": [],
+        "reference_titles": [
+          "shopping-price"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    }
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": {
+      "id": "decline",
+      "category": "shopping",
+      "expected_example_id": "shopping-bag",
+      "prompt": "Teach how to decline an offered bag and thank the seller. Explain the shopping context.",
+      "expected": {
+        "thai": "ไม่รับถุงค่ะ ขอบคุณค่ะ",
+        "english": "I won’t take a bag, thank you. (Alternative when a bag is offered.)",
+        "romanization": "mâi ráp thǔng khâ khɔ̀ɔp khun khâ"
+      },
+      "semantic_checklist": [
+        "Declines, rather than requests, a bag.",
+        "ไม่รับ = not accepting/taking in this context; ขอบคุณ = thanks."
+      ]
+    },
+    "status": 200,
+    "seconds": 1.18,
+    "schema_accepted": true,
+    "fixed_meaning_matches_golden": true,
+    "generated_semantic_review": {
+      "model": "qwen3:1.7b",
+      "case_id": "decline",
+      "verdict": "no_clear_error_observed",
+      "issues": [],
+      "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+      "human_review_pending": true
+    },
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): ไม่รับถุงค่ะ ขอบคุณค่ะ (I won’t take the bag, thank you). This is a common way to decline an offered shopping bag while showing gratitude. The particle ค่ะ adds politeness to the statement.\nReviewed curriculum example (shopping; not native-verified): ไม่รับถุงค่ะ ขอบคุณค่ะ\nCurriculum pronunciation guide: mâi ráp thǔng khâ khɔ̀ɔp khun khâ\nCurriculum meaning: I won’t take a bag, thank you. (Alternative when a bag is offered.)\nCurriculum usage note: มี + item + ไหม = Do you have …? เอา + item = I’ll take … . ไม่เอา + ครับ / ค่ะ = I do not want it (a direct refusal, softened by the particle). For declining an offered shopping bag, use ไม่รับถุงค่ะ ขอบคุณค่ะ (mâi ráp thǔng khâ khɔ̀ɔp khun khâ). This is an alternative situation to requesting a bag. ไหม has the citation-form reading mǎi; conversational mái is used in the dialogue. คะ (khá, high) ends the feminine polite question; ค่ะ (khâ, falling) ends the statement. อันนี้ is a generic this one; use the appropriate classifier when naming a specific kind of object. สามสิบ = 30.\nReference title: shopping-bag",
+      "reviewed_examples": [
+        {
+          "english": "I won’t take a bag, thank you. (Alternative when a bag is offered.)",
+          "id": "shopping-bag",
+          "lesson_id": "shopping",
+          "romanization": "mâi ráp thǔng khâ khɔ̀ɔp khun khâ",
+          "thai": "ไม่รับถุงค่ะ ขอบคุณค่ะ",
+          "usage": "มี + item + ไหม = Do you have …? เอา + item = I’ll take … . ไม่เอา + ครับ / ค่ะ = I do not want it (a direct refusal, softened by the particle). For declining an offered shopping bag, use ไม่รับถุงค่ะ ขอบคุณค่ะ (mâi ráp thǔng khâ khɔ̀ɔp khun khâ). This is an alternative situation to requesting a bag. ไหม has the citation-form reading mǎi; conversational mái is used in the dialogue. คะ (khá, high) ends the feminine polite question; ค่ะ (khâ, falling) ends the statement. อันนี้ is a generic this one; use the appropriate classifier when naming a specific kind of object. สามสิบ = 30.",
+          "vocabulary": [
+            {
+              "english": "Take / want",
+              "roman": "ao",
+              "thai": "เอา"
+            },
+            {
+              "english": "Do not want",
+              "roman": "mâi ao",
+              "thai": "ไม่เอา"
+            },
+            {
+              "english": "This one",
+              "roman": "an níi",
+              "thai": "อันนี้"
+            },
+            {
+              "english": "That one",
+              "roman": "an nán",
+              "thai": "อันนั้น"
+            },
+            {
+              "english": "Have / there is",
+              "roman": "mii",
+              "thai": "มี"
+            },
+            {
+              "english": "Yes/no question particle (often pronounced mái in conversation)",
+              "roman": "mǎi",
+              "thai": "ไหม"
+            },
+            {
+              "english": "Bag",
+              "roman": "thǔng",
+              "thai": "ถุง"
+            },
+            {
+              "english": "Can / okay",
+              "roman": "dâai",
+              "thai": "ได้"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "I won’t take a bag, thank you. (Alternative when a bag is offered.)",
+            "romanization": "mâi ráp thǔng khâ khɔ̀ɔp khun khâ",
+            "thai": "ไม่รับถุงค่ะ ขอบคุณค่ะ"
+          }
+        ],
+        "explanation": "ไม่รับถุงค่ะ ขอบคุณค่ะ (I won’t take the bag, thank you). This is a common way to decline an offered shopping bag while showing gratitude. The particle ค่ะ adds politeness to the statement.",
+        "language_notes": [],
+        "reference_titles": [
+          "shopping-bag"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    }
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": {
+      "id": "bag-question",
+      "category": "shopping",
+      "expected_example_id": "shopping-question",
+      "prompt": "Teach asking do you have a bag after choosing this item. Explain the question particle.",
+      "expected": {
+        "thai": "เอาอันนี้ค่ะ มีถุงไหมคะ",
+        "english": "I’ll take this one. Do you have a bag?",
+        "romanization": "ao an níi khâ mii thǔng mái khá"
+      },
+      "semantic_checklist": [
+        "มีถุงไหม asks availability, not a refusal.",
+        "ไหม citation mǎi vs conversational mái; คะ high khá."
+      ]
+    },
+    "status": 200,
+    "seconds": 1.02,
+    "schema_accepted": true,
+    "fixed_meaning_matches_golden": true,
+    "generated_semantic_review": {
+      "model": "qwen3:1.7b",
+      "case_id": "bag-question",
+      "verdict": "no_clear_error_observed",
+      "issues": [],
+      "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+      "human_review_pending": true
+    },
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): ถามว่า 'มีถุงไหมคะ' หมายถึง 'Do you have a bag?' ใช้ particle ไหม เพื่อถามความมีหรือไม่มี\nReviewed curriculum example (shopping; not native-verified): เอาอันนี้ค่ะ มีถุงไหมคะ\nCurriculum pronunciation guide: ao an níi khâ mii thǔng mái khá\nCurriculum meaning: I’ll take this one. Do you have a bag?\nCurriculum usage note: มี + item + ไหม = Do you have …? เอา + item = I’ll take … . ไม่เอา + ครับ / ค่ะ = I do not want it (a direct refusal, softened by the particle). For declining an offered shopping bag, use ไม่รับถุงค่ะ ขอบคุณค่ะ (mâi ráp thǔng khâ khɔ̀ɔp khun khâ). This is an alternative situation to requesting a bag. ไหม has the citation-form reading mǎi; conversational mái is used in the dialogue. คะ (khá, high) ends the feminine polite question; ค่ะ (khâ, falling) ends the statement. อันนี้ is a generic this one; use the appropriate classifier when naming a specific kind of object. สามสิบ = 30.",
+      "reviewed_examples": [
+        {
+          "english": "I’ll take this one. Do you have a bag?",
+          "id": "shopping-question",
+          "lesson_id": "shopping",
+          "romanization": "ao an níi khâ mii thǔng mái khá",
+          "thai": "เอาอันนี้ค่ะ มีถุงไหมคะ",
+          "usage": "มี + item + ไหม = Do you have …? เอา + item = I’ll take … . ไม่เอา + ครับ / ค่ะ = I do not want it (a direct refusal, softened by the particle). For declining an offered shopping bag, use ไม่รับถุงค่ะ ขอบคุณค่ะ (mâi ráp thǔng khâ khɔ̀ɔp khun khâ). This is an alternative situation to requesting a bag. ไหม has the citation-form reading mǎi; conversational mái is used in the dialogue. คะ (khá, high) ends the feminine polite question; ค่ะ (khâ, falling) ends the statement. อันนี้ is a generic this one; use the appropriate classifier when naming a specific kind of object. สามสิบ = 30.",
+          "vocabulary": [
+            {
+              "english": "Take / want",
+              "roman": "ao",
+              "thai": "เอา"
+            },
+            {
+              "english": "Do not want",
+              "roman": "mâi ao",
+              "thai": "ไม่เอา"
+            },
+            {
+              "english": "This one",
+              "roman": "an níi",
+              "thai": "อันนี้"
+            },
+            {
+              "english": "That one",
+              "roman": "an nán",
+              "thai": "อันนั้น"
+            },
+            {
+              "english": "Have / there is",
+              "roman": "mii",
+              "thai": "มี"
+            },
+            {
+              "english": "Yes/no question particle (often pronounced mái in conversation)",
+              "roman": "mǎi",
+              "thai": "ไหม"
+            },
+            {
+              "english": "Bag",
+              "roman": "thǔng",
+              "thai": "ถุง"
+            },
+            {
+              "english": "Can / okay",
+              "roman": "dâai",
+              "thai": "ได้"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "I’ll take this one. Do you have a bag?",
+            "romanization": "ao an níi khâ mii thǔng mái khá",
+            "thai": "เอาอันนี้ค่ะ มีถุงไหมคะ"
+          }
+        ],
+        "explanation": "ถามว่า 'มีถุงไหมคะ' หมายถึง 'Do you have a bag?' ใช้ particle ไหม เพื่อถามความมีหรือไม่มี",
+        "language_notes": [],
+        "reference_titles": []
+      },
+      "warnings": [],
+      "web_sources": []
+    }
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": {
+      "id": "confirmation",
+      "category": "polite speech",
+      "expected_example_id": "polite-confirmation",
+      "prompt": "Teach how to say yes politely as a confirmation. Explain the particle alternatives without claiming this answers every question.",
+      "expected": {
+        "thai": "ใช่ค่ะ / ใช่ครับ",
+        "english": "Yes / correct. (Polite feminine / masculine alternatives.)",
+        "romanization": "châi khâ / châi khráp"
+      },
+      "semantic_checklist": [
+        "ใช่ can confirm yes/correct in context.",
+        "ค่ะ / ครับ are style alternatives, not both spoken obligatorily.",
+        "Thai often answers other yes/no questions by repeating the relevant verb."
+      ]
+    },
+    "status": 200,
+    "seconds": 0.9,
+    "schema_accepted": true,
+    "fixed_meaning_matches_golden": true,
+    "generated_semantic_review": {
+      "model": "qwen3:1.7b",
+      "case_id": "confirmation",
+      "verdict": "review_needed",
+      "issues": [
+        "Describes polite alternatives as formal and uses ambiguous wording about women/men. Confirm speaker-style/register guidance; politeness is not identical to formality."
+      ],
+      "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+      "human_review_pending": true
+    },
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): ใช่ค่ะ / ใช่ครับ คือวิธีพูด 'ใช่' อย่างเป็นทางการ ใช้กับผู้หญิงหรือผู้ชายตามที่คุณต้องการ\nReviewed curriculum example (speaking-listening; not native-verified): ใช่ค่ะ / ใช่ครับ\nCurriculum pronunciation guide: châi khâ / châi khráp\nCurriculum meaning: Yes / correct. (Polite feminine / masculine alternatives.)\nCurriculum usage note: ใช่ is valid for yes / correct in context. Polite forms: ใช่ค่ะ / ใช่ครับ. Not every yes/no question is answered with ใช่.",
+      "reviewed_examples": [
+        {
+          "english": "Yes / correct. (Polite feminine / masculine alternatives.)",
+          "id": "polite-confirmation",
+          "lesson_id": "speaking-listening",
+          "romanization": "châi khâ / châi khráp",
+          "thai": "ใช่ค่ะ / ใช่ครับ",
+          "usage": "ใช่ is valid for yes / correct in context. Polite forms: ใช่ค่ะ / ใช่ครับ. Not every yes/no question is answered with ใช่.",
+          "vocabulary": []
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "Yes / correct. (Polite feminine / masculine alternatives.)",
+            "romanization": "châi khâ / châi khráp",
+            "thai": "ใช่ค่ะ / ใช่ครับ"
+          }
+        ],
+        "explanation": "ใช่ค่ะ / ใช่ครับ คือวิธีพูด 'ใช่' อย่างเป็นทางการ ใช้กับผู้หญิงหรือผู้ชายตามที่คุณต้องการ",
+        "language_notes": [],
+        "reference_titles": []
+      },
+      "warnings": [],
+      "web_sources": []
+    }
+  },
+  {
+    "model": "qwen3:1.7b",
+    "case": {
+      "id": "particles",
+      "category": "polite speech",
+      "expected_example_id": "shopping-question",
+      "prompt": "Explain คะ versus ค่ะ using the choosing-an-item and bag-question phrase. Keep citation and conversational ไหม distinct.",
+      "expected": {
+        "thai": "เอาอันนี้ค่ะ มีถุงไหมคะ",
+        "english": "I’ll take this one. Do you have a bag?",
+        "romanization": "ao an níi khâ mii thǔng mái khá"
+      },
+      "semantic_checklist": [
+        "ค่ะ falling khâ for statement; คะ high khá for question.",
+        "ไหม citation rising mǎi; conversational high mái.",
+        "Do not call คะ rising or ค่ะ high."
+      ]
+    },
+    "status": 200,
+    "seconds": 1.27,
+    "schema_accepted": true,
+    "fixed_meaning_matches_golden": true,
+    "generated_semantic_review": {
+      "model": "qwen3:1.7b",
+      "case_id": "particles",
+      "verdict": "clear_error",
+      "issues": [
+        "Calls ค่ะ the ending in the question มีถุงไหมคะ, and invents a different phrase. The displayed source correctly has ค่ะ for the choosing statement and คะ for the bag question."
+      ],
+      "review_method": "assistant editorial screening against the supplied curriculum and semantic checklist; not native verification",
+      "human_review_pending": true
+    },
+    "response": {
+      "doc_sources": [],
+      "generation_attempts": 1,
+      "response": "AI-generated conversation (not language reviewed): คะ is used for feminine questions, while ค่ะ is used for statements. In the phrase 'มี ถุง ไหมคะ' (Do you have a bag?), ค่ะ is used to end the statement. In the phrase 'เอา ถุง ไหม' (Take a bag?), คะ is used to ask a question.\nReviewed curriculum example (shopping; not native-verified): เอาอันนี้ค่ะ มีถุงไหมคะ\nCurriculum pronunciation guide: ao an níi khâ mii thǔng mái khá\nCurriculum meaning: I’ll take this one. Do you have a bag?\nCurriculum usage note: มี + item + ไหม = Do you have …? เอา + item = I’ll take … . ไม่เอา + ครับ / ค่ะ = I do not want it (a direct refusal, softened by the particle). For declining an offered shopping bag, use ไม่รับถุงค่ะ ขอบคุณค่ะ (mâi ráp thǔng khâ khɔ̀ɔp khun khâ). This is an alternative situation to requesting a bag. ไหม has the citation-form reading mǎi; conversational mái is used in the dialogue. คะ (khá, high) ends the feminine polite question; ค่ะ (khâ, falling) ends the statement. อันนี้ is a generic this one; use the appropriate classifier when naming a specific kind of object. สามสิบ = 30.\nReference title: shopping-question",
+      "reviewed_examples": [
+        {
+          "english": "I’ll take this one. Do you have a bag?",
+          "id": "shopping-question",
+          "lesson_id": "shopping",
+          "romanization": "ao an níi khâ mii thǔng mái khá",
+          "thai": "เอาอันนี้ค่ะ มีถุงไหมคะ",
+          "usage": "มี + item + ไหม = Do you have …? เอา + item = I’ll take … . ไม่เอา + ครับ / ค่ะ = I do not want it (a direct refusal, softened by the particle). For declining an offered shopping bag, use ไม่รับถุงค่ะ ขอบคุณค่ะ (mâi ráp thǔng khâ khɔ̀ɔp khun khâ). This is an alternative situation to requesting a bag. ไหม has the citation-form reading mǎi; conversational mái is used in the dialogue. คะ (khá, high) ends the feminine polite question; ค่ะ (khâ, falling) ends the statement. อันนี้ is a generic this one; use the appropriate classifier when naming a specific kind of object. สามสิบ = 30.",
+          "vocabulary": [
+            {
+              "english": "Take / want",
+              "roman": "ao",
+              "thai": "เอา"
+            },
+            {
+              "english": "Do not want",
+              "roman": "mâi ao",
+              "thai": "ไม่เอา"
+            },
+            {
+              "english": "This one",
+              "roman": "an níi",
+              "thai": "อันนี้"
+            },
+            {
+              "english": "That one",
+              "roman": "an nán",
+              "thai": "อันนั้น"
+            },
+            {
+              "english": "Have / there is",
+              "roman": "mii",
+              "thai": "มี"
+            },
+            {
+              "english": "Yes/no question particle (often pronounced mái in conversation)",
+              "roman": "mǎi",
+              "thai": "ไหม"
+            },
+            {
+              "english": "Bag",
+              "roman": "thǔng",
+              "thai": "ถุง"
+            },
+            {
+              "english": "Can / okay",
+              "roman": "dâai",
+              "thai": "ได้"
+            }
+          ]
+        }
+      ],
+      "script_validation": "thai-fields-v1",
+      "teaching": {
+        "examples": [
+          {
+            "english": "I’ll take this one. Do you have a bag?",
+            "romanization": "ao an níi khâ mii thǔng mái khá",
+            "thai": "เอาอันนี้ค่ะ มีถุงไหมคะ"
+          }
+        ],
+        "explanation": "คะ is used for feminine questions, while ค่ะ is used for statements. In the phrase 'มี ถุง ไหมคะ' (Do you have a bag?), ค่ะ is used to end the statement. In the phrase 'เอา ถุง ไหม' (Take a bag?), คะ is used to ask a question.",
+        "language_notes": [],
+        "reference_titles": [
+          "shopping-question"
+        ]
+      },
+      "warnings": [],
+      "web_sources": []
+    }
+  }
+]
